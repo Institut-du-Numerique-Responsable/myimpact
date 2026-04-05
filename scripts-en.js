@@ -301,7 +301,7 @@ CO2GigaByteCloud = 0.2095,
 C02navigation_web = 10, // pollution en g co2 eq / heure
 CO2kmvoiture = 0.193,
 CO2kmtrain = 0.00173,
-CO2kmavion = 0.186,
+CO2kmavion = 0.186;
 $(document).ready(function () {
   var e = 0,
       t = 0,
