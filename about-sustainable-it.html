@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ISIT | Assessment of my individual / professional digital environmental footprint</title>
+    <meta name="description" content="The ISIT has created a calculator that allows us to simply calculate our professional digital impact." />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="stylesheet-inr.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="scripts-en.js"></script>
+     
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="img/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="tarteaucitron/tarteaucitron.js"></script>
+    <script>
+        tarteaucitron.user.matomoId = 8;
+        (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
+
+        tarteaucitron.user.matomoHost = 'https://analytics.academie-nr.org';
+
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.academie-nr.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '8']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div id="head">
+        <div id="head_container">
+          <div id="logo">
+            <a href="./" title="return to the calculator">
+              <img src="img/isit.png" alt="ISIT, Institute for Sustainable IT" />
+            </a>
+          </div>          
+          <div class="div-switch-language">
+            <a class="switch-language" href="/" title="Link to access english version">EN</a>
+            <a class="switch-language" href="/fr" title="Lien pour accéder à la version française">FR</a>
+            <a class="switch-language" href="/nl" title="Link naar de Nederlandse versie">NL</a>
+          </div>
+        </div>
+        <div id="title">
+          <h1>Notes and details of the sources used in the Sustainable IT Calculator engine</h1>
+          <div class="version">Version 1.1 released July 4 2022</div>
+        </div>
+        <div class="head-wrapper">
+            <div id="header_text">
+              <p>
+                  The Sustainable IT calculator is based on free and open data. The objective is to give everyone the possibility to calculate his or her digital environmental footprint in the context of his or her professional activity.
+              </p>
+              <p>  
+                The data comes mainly from the ADEME impact database, the ENERGY STAR program and the NUTS online tool, a datalake gathering manufacturers' data on GHG emissions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="page">
+      <div id="content">
+        <div class="background-image"></div>
+        <div id="data">
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">About equipments</h2>
+              <div class="section__intro">
+                <p>The list of equipments will be completed over time as new reliable data becomes available.</p>
+                <p>The impact of generic equipment (Laptop other, Desktop other, etc.) is an average made from the aggregation of data from various equipments or directly from existing averages in the above mentioned sources.</p>
+                <p>The reduction of impact linked to the purchase of reconditioned equipments will soon be taken into account.</p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">About the use of emails</h2>
+              <div class="section__intro">
+                <p>
+                  This data is particularly sensitive because it is very difficult to have exact measurements of email energy consumption. Many life cycles should be observed to be sure of the measurement (e.g. an email with a 1.5 MB attachment sent to 3 recipients, 1 email without attachment sent to 10 recipients, an email with 2 attachments of 300KB sent to 1 recipient, etc.).
+                </p>
+                <p>Thus the measure remains an approach to potential consumption but cannot take into account the complexity of situations in a certain way.</p>
+                <p>
+                  The source used is the ADEME Impact database, whose figures are presented here: 
+                  <a href="https://librairie.ademe.fr/cadic/6555/guide-en-route-vers-sobriete-numerique.pdf" title="Link to the source - New tab" target="_blank">https://librairie.ademe.fr/cadic/6555/guide-en-route-vers-sobriete-numerique.pdf (FR)</a>
+                </p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">About video conferencing</h2>
+              <div class="section__intro">
+                <p>
+                  Free and open data are still relatively unavailable. The calculator is based on the data published here:
+                </p>
+                <ul>
+                  <li><a href="https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/" title="Link to the source - New tab" target="_blank">https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/ (FR)</a></li>
+                 <li><a href="http://www2.eet.unsw.edu.au/~vijay/pubs/jrnl/14comcomVC.pdf" title="Link to the source - New tab" target="_blank">http://www2.eet.unsw.edu.au/~vijay/pubs/jrnl/14comcomVC.pdf</a></li>
+                </ul>
+               <p>Thus, the figure used remains an approach that will need to be refined over time.</p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">About cloud storage</h2>
+              <div class="section__intro">
+                <p>
+                 The footprint we can estimate regarding data manipulation in the cloud remains conditional on existing studies with disparate results.
+                </p>
+                <p>
+                  We have chosen to use the figures of the Green Cloud Computing study (2021) based on the work of Umweltbundesamt (the German federal agency for the environment) which allows a rational approach to the subject, used as a reference by DINUM (209.5 g CO2 / GB / year).
+                </p>
+                <p>Thus, it is a single indicator regardless of the cloud solution used.</p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">About other tasks done online</h2>
+              <div class="section__intro">
+                <p>
+                  The ADEME data allow us to estimate the energy cost of surfing the Internet. This figure, updated in the 2nd half of 2022 by ADEME, has enabled us to readjust the calculation proposed by our calculator to better estimate the carbon cost of one hour of Internet browsing. Sources:
+                </p>
+                <ul>
+                  <li><a href="https://nosgestesclimat.fr/documentation/numérique/internet" title="Link to the source - New tab" target="_blank">https://nosgestesclimat.fr/documentation/numérique/internet (FR)</a></li>
+                </ul>
+              </div>
+            </header>
+          </section>
+         <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">About the additional information</h2>
+              <div class="section__intro">
+                <p>
+                  Additional information, such as your country of residence, requested as part of your responses is intended to refine the consolidated, anonymous figures but is in no way a means of collecting personal data on respondents.
+                </p>
+              </div>
+            </header>
+          </section>        
+         <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">Principle of continuous improvement</h2>
+              <div class="section__intro">
+                <p>
+                  ISIT is committed to continuous improvement of the Sustainable IT calculator and to regularly updating the indicators based on public, free and open studies that improve the accuracy of the results provided. 
+                </p>
+                <p>ISIT welcomes your feedback and suggestions to improve the tool and correct, among other things, certain data that may be inaccurate or outdated following the publication of new studies. You can contact us at the following address <em>myimpact [@] isit-europe.org</em> to send us your comments and suggestions.
+                </p>
+              </div>
+            </header>
+          </section>   
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+        <div class="credits">
+          <h2 class="credits__title">About ISIT</h2>
+          <p>The ISIT (<a href="https://isit-europe.org" title=" Link to the ISIT website - New tab" target="_blank">Institute for Sustainable IT</a>) is a think & do tank whose mission is to address the three key issues of Sustainable IT: reducing the digital footprint (economic, social and environmental), the capacity of digital technology to reduce the footprint (economic, social and environmental) of humanity, and the creation of sustainable value / responsible innovation via digital technology to achieve e-inclusion for all.</p>
+          <p>The <a href="https://isit-be.org/the-institute" title="Link to the ISIT website - New tab" target="_blank">ISIT</a>, Institute for Sustainable IT, works on the issues of training in Sustainable IT, measuring the digital footprint and making available guides and best practice guidelines. The ISIT is present in three countries (France, Belgium & Switzerland) and has nearly 200 member organisations (July 2022).</p>
+          <p>This calculator was created in 2020 and updated in July 2022.</p>
+
+          <p class="opacity-light">July 2022 update by <a href="https://athom.co/" title="Link to the athom website - New tab" target="_blank">athom</a><br />Initial 2020 contribution by <a href="https://www.linkedin.com/in/gontier-julien-06653312" title=" Link to LinkedIn profile - New tab" target="_blank">Julien Gontier</a> (Decathlon)</p>
+          
+          <p class="opacity-light"><a href="about-sustainable-it.html" title="link to the sources">See the detail of the sources for the calculations</a> | <a href="legal-notice.html" title="link to the legal notice">legal notice</a></p>          
+        </div>
+      </div>
+    </footer>
+    <script>var acc = document.getElementsByClassName("collapsible"); var i; for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); } $(document).ready(function () { $('.info').stop().mouseout(function () { $(this).parents('.question').next('.encart').hide('slow'); return false; }); $('.encart').stop().click(function () { $('.encart').hide('fast'); return false; }); $('.info').stop().mouseover(function () { $(this).parents('.question').next('.encart').show('fast'); return false; }); });</script>
+  </body>
+</html>

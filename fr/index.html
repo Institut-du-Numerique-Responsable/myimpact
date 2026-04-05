@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>INR | Calculatrice empreinte environnementale du numérique pro.</title>
+    <meta name="description" content="L’INR propose une calculatrice permettant aux collaboratrices et collaborateurs d’organisations d’évaluer leur empreinte environnementale liée au numérique" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../stylesheet-inr.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="../jquery-3.3.1.min.js"></script>
+    <script src="scripts.js"></script>
+     
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="icon" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../img/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="../img/apple-touch-icon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+    <script>
+        tarteaucitron.user.matomoId = 8;
+        (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
+
+        tarteaucitron.user.matomoHost = 'https://analytics.academie-nr.org';
+
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.academie-nr.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '8']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div id="head">
+        <div id="head_container">
+          <div id="logo">
+              <img src="../img/inr.png" alt="INR, Institut du Numérique Responsable" />
+          </div>
+          <div class="div-switch-language">
+            <a class="switch-language" href="/" title="Link to access english version">EN</a>
+            <a class="switch-language" href="./" title="Lien pour accéder à la version française">FR</a>
+            <a class="switch-language" href="/nl" title="Link naar de Nederlandse versie">NL</a>
+          </div>
+
+        </div>
+        <div id="title">
+          <h1>Évaluation de mon empreinte environnementale professionnelle individuelle du numérique en kg eq. CO<sub>2</sub></h1>
+          <div class="version">Version 1.1 publiée le 1<sup>er</sup> Juillet 2022</div>
+        </div>
+        <div class="head-wrapper">
+          <div id="header_text">
+            <p>Nos usages du numérique sont en perpétuelle augmentation ; tant dans les sphères personnelle que professionnelle. Nos impacts sont difficilement quantifiables car dématérialisés. Par ailleurs, beaucoup d’outils de mesure existent désormais pour essayer d’aider cette démarche comptable.</p>
+            <div class="panel">
+              <p>Afin d’éclairer les impacts liés à notre surconsommation du numérique, l’INR a créé une calculatrice qui permet de calculer simplement son impact numérique professionnel. L’architecture de la calculatrice v1.0 a été mise à disposition de l’INR par Décathlon. La version 1.1 a été déployée en Juillet 2022 avec des indicateurs mis à jour et l’ajout de nouvelles sections pour affiner le calcul.</p>
+              <p>Les données sont principalement issues du centre de ressources sur les bilans de gaz à effet de serre de l'ADEME, le programme ENERGY STAR et l'outil en ligne NUTS, datalake regroupant les données des fabricants autour des émissions de GES.</p>
+            </div>
+            <button type="button" class="collapsible">Lire la suite</button>
+          </div>
+          <nav class="direct-access">
+            <h2 class="direct-access__title">Sommaire</h2>
+            <ul class="direct-access__list">
+              <li><a class="direct-access__link" href="#device">Équipements</a></li>
+              <li><a class="direct-access__link" href="#online">Usage Online</a></li>
+              <li><a class="direct-access__link" href="#cloud">Stockage Cloud</a></li>
+              <li><a class="direct-access__link" href="#emails">Envoi d'emails</a></li>
+              <li><a class="direct-access__link" href="#business-trips">Déplacements Pro</a></li>
+              <li><a class="direct-access__link" href="#total_impact_section">Mon impact en kg eq. CO<sub>2</sub> / an</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div id="page">
+      <div id="content">
+        <div class="background-image"></div>
+        <div id="data">
+          <section id="device" class="section">
+            <header class="section__header">
+              <h2 class="section__title">Équipements</h2>
+              <div class="section__intro">
+                <p>La fabrication des équipements représente une très grande majorité de l’empreinte du numérique. Les besoins moyens en matière et ressources pour la fabrication d’un équipement bureautique représentent plus de 70% du bilan environnemental de son cycle de vie sur une durée moyenne d’utilisation de 5 ans. (<a href="https://librairie.ademe.fr/cadic/6555/guide-en-route-vers-sobriete-numerique.pdf" title=" Lien vers la source - Nouvel Onglet" target="_blank">Source :  ADEME - PDF 2.5Mo</a>)</p>
+                <p>L'impact lié à la fabrication est une équivalence en kgCO2 donné par le constructeur selon le modèle.<br />La durée d'utilisation permet de vous rendre compte de l'impact total lié à votre usage avec cet équipement et de calculer une moyenne par an en incluant l'impact lié à la fabrication.</p>
+              </div>
+            </header>
+            <div class="section__main">
+              <div class="input_part">
+                <label class="question" for="select_country">Ma localisation</label>
+                <div class="answer">
+                  <select name="select_country" id="select_country">
+                    <option value="fr" selected="selected">France</option>
+                    <option value="be">Belgique</option>
+                    <option value="ch">Suisse</option>
+                  </select>
+                </div>
+                <div class="groupe" data-device-id="1">
+                  <div class="device-title">Mon équipement n°1</div>
+                  <div class="groupe__inner">
+                    <div class="qOne">
+                      <label class="question" for="model">Modèle</label>
+                      <div class="answer">
+                        <select data-device-field="model" name="model" id="model"></select>
+                      </div>
+                    </div>
+                    <div class="qTwo">
+                      <label class="question" for="lifetime">Durée d'utilisation (années)</label>
+                      <div class="answer">
+                        <select data-device-field="lifetime" id="lifetime" name="lifetime">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3" selected=selected>3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="add-device" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="40%" style="margin-right: 1rem;" fill="currentColor"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
+                  Ajouter un équipement
+                </button>
+              </div>
+              <div class="boxes">
+                <div class="box">
+                  <h3>PRODUCTION</h3>
+                  <div id="device_production_1">0</div>
+                </div>
+                <div class="box">
+                  <h3>USAGE</h3>
+                  <div id="device_use_1">0</div>
+                </div>
+                <div class="box -total">
+                  <h3>TOTAL</h3>
+                  <div id="device_total_1">0</div>
+                </div>
+                <div class="box">
+                  <h3>ANNUEL</h3>
+                  <div id="device_impact_annuel_1">0</div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="online" class="section">
+            <header class="section__header">
+              <h2 class="section__title">Usages web</h2>
+              <div class="section__intro">
+                <p>Aujourd'hui, la consommation de vidéo représente plus de 60% de la bande passante mondiale<br />(<a href="#"  title=" Lien vers la source - Nouvel Onglet" target="_blank">Source : The Shift Project</a>).</p>
+              </div>
+            </header>
+            <div class="section__main">
+              <div class="input_part">
+                <div class="groupe">
+                  <div class="groupe__inner">
+                    <div>
+                      <label class="question" for="visio_tool">Outil le plus utilisé en visio</label>
+                      <div class="answer">
+                        <select id="visio_tool">
+                          <option value="placeholder naem="visio_tool>Choisissez...</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="visio-hours-wrapper">
+                      <label class="question" for="visio_hours">Heures par semaine</label>
+                      <div class="answer">
+                        <input type="number" id="visio_hours" name="visio_hours" min="0">
+                      </div>
+                    </div>
+                    <div>
+                      <label class="question" for="visio_camera">Caméra le plus souvent...</label>
+                      <div class="answer">
+                        <select id="visio_camera" name="visio_camera">
+                          <option value="on">Allumée</option>
+                          <option value="off">Éteinte</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <label class="question" for="surf_hours">Heures de navigation web par semaine (veille, édition de fichiers collaboratifs en ligne & recherches Internet, etc.)</label>
+                <div class="answer">
+                  <input type="number" id="surf_hours" name="surf_hours" min="0">
+                </div>
+              </div>
+              <div class="boxes">
+                <div class="box">
+                  <h3>HEBDO</h3>
+                  <div id="impact_visio_weekly">0</div>
+                  <div id="impact_surf_weekly">0</div>
+                </div>
+                <div class="box">
+                  <h3>ANNUEL</h3>
+                  <div id="impact_visio_annuel">0</div>
+                  <div id="impact_surf_annuel">0</div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="cloud" class="section">
+            <header class="section__header">
+              <h2 class="section__title">Stockage Cloud</h2>
+              <div class="section__intro">
+                <p>L’empreinte que nous pouvons estimer concernant la manipulation de données dans le cloud reste conditionnée aux études existantes et dont les résultats sont disparates.</p>
+                <p>Nous avons choisi de retenir les chiffres de l’étude <a href="https://www.umweltbundesamt.de/sites/default/files/medien/5750/publikationen/2021-06-17_texte_94-2021_green-cloud-computing.pdf" title=" Lien vers la source - Nouvel Onglet" target="_blank">Green Cloud Computing (2021) - PDF, 4.4Mo</a> basée sur les travaux de Umweltbundesamt (l’agence fédérale pour l’environnement d’Allemagne) qui permet une approche rationnelle du sujet, utilisée comme référence par la DINUM (209,5 g CO<sub>2</sub> / Go / an).</p>
+              </div>
+            </header>
+            <div class="section__main">
+              <div class="input_part">
+                <label class="question" for="storage_google">Mon stockage Cloud en Go</label>
+                <div class="answer"><input type="number" name="storage_google" id="storage_google" min="0"></div>
+              </div>
+              <div class="boxes">
+                <div class="box">
+                  <h3>ANNUEL</h3>
+                  <div id="storage_google_annuel"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="emails" class="section">
+            <header class="section__header">
+              <h2 class="section__title">Envoi d'emails</h2>
+              <div class="section__intro">
+                <p>La part d'empreinte environnementale liée à l'e-mail reste très minime. Mais il faut savoir que plus le poids de l’e-mail est lourd plus son impact est important et démultiplié par le nombre de destinataires auxquels il est envoyé.</p>
+                <p>L’enjeu est avant tout d’être en capacité de prendre conscience de l’immense quantité de données que l'on manipule sans toujours se soucier de la taille de chaque fichier transféré, mais aussi de questionner l'impact que peut avoir cette grande quantité d'e-mails envoyés et reçus quotidiennement sur notre bien-être.</p>
+              </div>
+            </header>
+            <div class="section__main">
+              <div class="input_part">
+                <label class="question" for="num_emails_without_attachments">Nombre d'emails envoyés par jour (SANS pièce-jointe)</label>
+                <div class="answer">
+                  <input type="number" id="num_emails_without_attachments" name="num_emails_without_attachments" min="0">
+                </div>
+                <label class="question" for="num_emails_with_attachments">Nombre d'emails envoyés par jour (AVEC pièce-jointe)</label>
+                <div class="answer">
+                  <input type="number" id="num_emails_with_attachments" name="num_emails_with_attachments" min="0">
+                </div>
+              </div>
+              <div class="boxes">
+                <div class="box">
+                  <h3>QUOTIDIEN</h3>
+                  <div id="impact_emails_without_attachments_quotidien">0</div>
+                  <div id="impact_emails_with_attachments_quotidien">0</div>
+                </div>
+                <div class="box">
+                  <h3>ANNUEL</h3>
+                  <div id="impact_emails_without_attachments_annuel">0</div>
+                  <div id="impact_emails_with_attachments_annuel">0</div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="business-trips" class="section">
+            <header class="section__header">
+              <h2 class="section__title">Déplacements Pro</h2>
+              <div class="section__intro">
+                <p>Évidemment, dans le monde professionnel il n'y a pas que le numérique qui a un impact négatif sur l'environnement. Les déplacements jouent également une part importante ! Nous vous invitons à comparer votre impact lié à votre mobilité lors de vos déplacements professionnels, dont les déplacements domicile-travail, à celui du numérique.</p>
+                <p class="u-color-meta">Outil pour calculer les distances : <a href="https://fr.distance.to/" title=" Lien vers l'outil - Nouvel Onglet" target="_blank">https://fr.distance.to/</a></p>
+              </div>    
+            </header>
+            <div class="section__main">
+              <div class="input_part">
+                <label class="question" for="deplacement_plane">Nombre de kilomètres parcourus en avion / an</label>
+                <div class="answer">
+                  <input type="number" id="deplacement_plane" min="0" name="deplacement_plane">
+                </div>
+                <label class="question" for="deplacement_train">Nombre de kilomètres parcourus en train / an</label>
+                <div class="answer">
+                  <input type="number" id="deplacement_train" min="0" name="deplacement_train">
+                </div>
+                <label class="question" for="deplacement_car">Nombre de kilomètres parcourus en voiture / an</label>
+                <div class="answer">
+                  <input type="number" id="deplacement_car" middn="0" name="deplacement_car">
+                </div>
+                <label class="question" for="number_trajet">Nombre de kilomètres parcourus en vélo ou à pied / an</label>
+                <div class="answer">
+                  <input type="number" min="0" name="number_trajet" id="number_trajet">
+                </div>
+              </div>
+              <div class="boxes">
+                <div class="box">
+                  <h3>ANNUEL</h3>
+                  <div id="impact_plane_annuel"></div>
+                  <div id="impact_train_annuel"></div>
+                  <div id="impact_car_annuel"></div>
+                  <div>0</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__inner" id="total_impact_section">
+        <div class="results">
+          <h2 class="results__title">Mon impact <span class="results__title__meta">en kg eq. CO<sub>2</sub></span></h2>
+          <div class="results__grid">
+            <div class="results__grid__item -width-40">
+              <div class="results__sum">
+                <div class="results__sum__item">
+                  <div class="results__variable">
+                    <div class="results__variable__content">
+                      <div class="results__variable__value" id="total_impact_numerique"></div>
+                      <div class="results__variable__name">Numérique</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="results__sum__item">
+                  <div class="results__variable">
+                    <div class="results__variable__content">
+                      <div class="results__variable__value" id="total_impact_deplacement"></div>
+                      <div class="results__variable__name">Déplacements</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="results__total">
+                <div class="results__variable -theme-white">
+                  <div class="results__variable__content">
+                    <div class="results__variable__value" id="total_impact"></div>
+                    <div class="results__variable__name">Mon impact total par an</div>
+                  </div>
+                  <div class="results__variable__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" width="50%"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M304 16.58C304 7.555 310.1 0 320 0C443.7 0 544 100.3 544 224C544 233 536.4 240 527.4 240H304V16.58zM32 272C32 150.7 122.1 50.34 238.1 34.25C248.2 32.99 256 40.36 256 49.61V288L412.5 444.5C419.2 451.2 418.7 462.2 411 467.7C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zM558.4 288C567.6 288 575 295.8 573.8 305C566.1 360.9 539.1 410.6 499.9 447.3C493.9 452.1 484.5 452.5 478.7 446.7L320 288H558.4z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="results__grid__item -width-60">
+              <div class="results__charts">
+                <div class="results__charts__item">
+                  <div class="results__chart">
+                    <div class="pie">
+                      <div class="pie__value" id="p_carbon_footprint_per_resident"></div>
+                      <div class="pie__segment" style="--bg: #fff; --offset: 0;"></div>
+                      <div class="pie__segment" style="--bg: #0d3146;"></div>
+                    </div>
+                    <div class="results__chart__legend">
+                      <div class="results__chart__legend__title">De la moyenne de l'empreinte<br />carbone d’un Français</div>
+                      <div class="results__chart__legend__info">Moy. estimée à 9,9 tonnes de CO<sub>2</sub> eq. / habitant / an<br />(Source SDES &amp; Carbone4)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="results__charts__item">
+                  <div class="results__chart">
+                    <div class="pie">
+                      <div class="pie__value" id="p_target_2050"></div>
+                      <div class="pie__segment" style="--bg: #fff; --offset: 0;"></div>
+                      <div class="pie__segment" style="--bg: #0d3146;"></div>
+                    </div>
+                    <div class="results__chart__legend">
+                      <div class="results__chart__legend__title">Du quota à respecter en 2050<br />pour être conforme à l'<a href="https://unfccc.int/fr/processus-et-reunions/l-accord-de-paris/l-accord-de-paris" title=" Lien vers la source - Nouvel Onglet" target="_blank">Accord de Paris</a></div>
+                      <div class="results__chart__legend__info">Fixé à 2 tonnes de CO<sub>2</sub> eq. / an<br />par habitant en France</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="results__grid__item -width-100">
+              <div class="results__equivalents">
+                <div class="results__equivalents__item">
+                  <h3 class="results__equivalents__title">À quoi puis-je comparer mon impact total*&nbsp;?</h3>
+                  <div class="results__equivalents__intro">On vous donne quelques exemples...<br />Source : <a href="https://monconvertisseurco2.fr/" title=" Lien vers la source - Nouvel Onglet" target="_blank">Mon Convertisseur CO<sub>2</sub></a><br /> *Impact total = numérique + déplacements</div>
+                </div>
+                <div class="results__equivalents__item">
+                  <div class="results__variable -theme-rose">
+                    <div class="results__variable__content">
+                      <div class="results__variable__value" id="impact_eq_beef_meal"></div>
+                      <div class="results__variable__name">repas contenant de la viande bovine</div>
+                    </div>
+                    <div class="results__variable__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="50%"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M481.9 270.1C490.9 279.1 496 291.3 496 304C496 316.7 490.9 328.9 481.9 337.9C472.9 346.9 460.7 352 448 352H64C51.27 352 39.06 346.9 30.06 337.9C21.06 328.9 16 316.7 16 304C16 291.3 21.06 279.1 30.06 270.1C39.06 261.1 51.27 256 64 256H448C460.7 256 472.9 261.1 481.9 270.1zM475.3 388.7C478.3 391.7 480 395.8 480 400V416C480 432.1 473.3 449.3 461.3 461.3C449.3 473.3 432.1 480 416 480H96C79.03 480 62.75 473.3 50.75 461.3C38.74 449.3 32 432.1 32 416V400C32 395.8 33.69 391.7 36.69 388.7C39.69 385.7 43.76 384 48 384H464C468.2 384 472.3 385.7 475.3 388.7zM50.39 220.8C45.93 218.6 42.03 215.5 38.97 211.6C35.91 207.7 33.79 203.2 32.75 198.4C31.71 193.5 31.8 188.5 32.99 183.7C54.98 97.02 146.5 32 256 32C365.5 32 457 97.02 479 183.7C480.2 188.5 480.3 193.5 479.2 198.4C478.2 203.2 476.1 207.7 473 211.6C469.1 215.5 466.1 218.6 461.6 220.8C457.2 222.9 452.3 224 447.3 224H64.67C59.73 224 54.84 222.9 50.39 220.8zM372.7 116.7C369.7 119.7 368 123.8 368 128C368 131.2 368.9 134.3 370.7 136.9C372.5 139.5 374.1 141.6 377.9 142.8C380.8 143.1 384 144.3 387.1 143.7C390.2 143.1 393.1 141.6 395.3 139.3C397.6 137.1 399.1 134.2 399.7 131.1C400.3 128 399.1 124.8 398.8 121.9C397.6 118.1 395.5 116.5 392.9 114.7C390.3 112.9 387.2 111.1 384 111.1C379.8 111.1 375.7 113.7 372.7 116.7V116.7zM244.7 84.69C241.7 87.69 240 91.76 240 96C240 99.16 240.9 102.3 242.7 104.9C244.5 107.5 246.1 109.6 249.9 110.8C252.8 111.1 256 112.3 259.1 111.7C262.2 111.1 265.1 109.6 267.3 107.3C269.6 105.1 271.1 102.2 271.7 99.12C272.3 96.02 271.1 92.8 270.8 89.88C269.6 86.95 267.5 84.45 264.9 82.7C262.3 80.94 259.2 79.1 256 79.1C251.8 79.1 247.7 81.69 244.7 84.69V84.69zM116.7 116.7C113.7 119.7 112 123.8 112 128C112 131.2 112.9 134.3 114.7 136.9C116.5 139.5 118.1 141.6 121.9 142.8C124.8 143.1 128 144.3 131.1 143.7C134.2 143.1 137.1 141.6 139.3 139.3C141.6 137.1 143.1 134.2 143.7 131.1C144.3 128 143.1 124.8 142.8 121.9C141.6 118.1 139.5 116.5 136.9 114.7C134.3 112.9 131.2 111.1 128 111.1C123.8 111.1 119.7 113.7 116.7 116.7L116.7 116.7z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="results__equivalents__item">
+                  <div class="results__variable -theme-indigo">
+                    <div class="results__variable__content">
+                      <div class="results__variable__value" id="impact_eq_car_km"></div>
+                      <div class="results__variable__name">km de voiture parcourus <br /><span id="impact_eq_lille_marseille"></span> trajets Lille / Marseille</div>
+                    </div>
+                    <div class="results__variable__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" width="50%"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M640 320V368C640 385.7 625.7 400 608 400H574.7C567.1 445.4 527.6 480 480 480C432.4 480 392.9 445.4 385.3 400H254.7C247.1 445.4 207.6 480 160 480C112.4 480 72.94 445.4 65.33 400H32C14.33 400 0 385.7 0 368V256C0 228.9 16.81 205.8 40.56 196.4L82.2 92.35C96.78 55.9 132.1 32 171.3 32H353.2C382.4 32 409.1 45.26 428.2 68.03L528.2 193C591.2 200.1 640 254.8 640 319.1V320zM171.3 96C158.2 96 146.5 103.1 141.6 116.1L111.3 192H224V96H171.3zM272 192H445.4L378.2 108C372.2 100.4 362.1 96 353.2 96H272V192zM525.3 400C527 394.1 528 389.6 528 384C528 357.5 506.5 336 480 336C453.5 336 432 357.5 432 384C432 389.6 432.1 394.1 434.7 400C441.3 418.6 459.1 432 480 432C500.9 432 518.7 418.6 525.3 400zM205.3 400C207 394.1 208 389.6 208 384C208 357.5 186.5 336 160 336C133.5 336 112 357.5 112 384C112 389.6 112.1 394.1 114.7 400C121.3 418.6 139.1 432 160 432C180.9 432 198.7 418.6 205.3 400z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="results__equivalents__item">
+                  <div class="results__variable -theme-blue">
+                    <div class="results__variable__content">
+                      <div class="results__variable__value" id="impact_eq_plane_km"></div>
+                      <div class="results__variable__name">km en avion parcourus <br /><span id="impact_eq_ar_paris_nyc"></span> AR Paris / New-York</div>
+                    </div>
+                    <div class="results__variable__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" width="50%"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M484.6 62C502.6 52.8 522.6 48 542.8 48H600.2C627.2 48 645.9 74.95 636.4 100.2C618.2 148.9 582.1 188.9 535.6 212.2L262.8 348.6C258.3 350.8 253.4 352 248.4 352H110.7C101.4 352 92.5 347.9 86.42 340.8L13.34 255.6C6.562 247.7 9.019 235.5 18.33 230.8L50.49 214.8C59.05 210.5 69.06 210.2 77.8 214.1L135.1 239.1L234.6 189.7L87.64 95.2C77.21 88.49 78.05 72.98 89.14 67.43L135 44.48C150.1 36.52 169.5 35.55 186.1 41.8L381 114.9L484.6 62zM0 480C0 462.3 14.33 448 32 448H608C625.7 448 640 462.3 640 480C640 497.7 625.7 512 608 512H32C14.33 512 0 497.7 0 480z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="results__equivalents__item">
+                  <div class="results__variable -theme-emerald">
+                    <div class="results__variable__content">
+                      <div class="results__variable__value" id="impact_eq_laptop"></div>
+                      <div class="results__variable__name">ordinateurs portables fabriqués</div>
+                    </div>
+                    <div class="results__variable__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" width="50%"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M128 96h384v256h64v-272c0-26.38-21.62-48-48-48h-416c-26.38 0-48 21.62-48 48V352h64V96zM624 383.1h-608c-8.75 0-16 7.25-16 16v16c0 35.25 28.75 64 64 64h512c35.25 0 64-28.75 64-64v-16C640 391.2 632.8 383.1 624 383.1z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="results__equivalents__item">
+                  <div class="results__variable -theme-yellow">
+                    <div class="results__variable__content">
+                      <div class="results__variable__value" id="impact_eq_smartphone"></div>
+                      <div class="results__variable__name">smartphones fabriqués</div>
+                    </div>
+                    <div class="results__variable__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" height="50%"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M320 0H64C37.5 0 16 21.5 16 48v416C16 490.5 37.5 512 64 512h256c26.5 0 48-21.5 48-48v-416C368 21.5 346.5 0 320 0zM240 447.1C240 456.8 232.8 464 224 464H159.1C151.2 464 144 456.8 144 448S151.2 432 160 432h64C232.8 432 240 439.2 240 447.1zM304 384h-224V64h224V384z"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="credits">
+          <h2 class="credits__title">À propos</h2>
+          <p>L'INR (<a href="https://institutnr.org" title=" Lien vers le site de l'INR - Nouvel Onglet" target="_blank">Institut du Numérique Responsable</a>) est un think &amp; do tank dont la mission se déploie sur les trois enjeux clés du numérique responsable : la réduction de l'empreinte (économique, sociale et environnementale) du numérique, la capacité du numérique à réduire l'empreinte (économique, sociale et environnementale) de l'humanité, et la création de valeur durable / innovation responsable via le numérique pour réussir l'e-inclusion de toutes et tous.</p>
+          <p>L'<a href="https://institutnr.org/inr-numerique-responsable" title=" Lien vers le site de l'INR - Nouvel Onglet" target="_blank">INR</a>, Institut du Numérique Responsable, travaille sur les enjeux de formation autour du numérique responsable, de mesure de l’empreinte du numérique et la mise à disposition de guides et référentiels de bonnes pratiques. L’INR est présent dans trois pays (INR France, <a href="https://isit-be.org" title="Lien vers le site de l'ISIT BE - Nouvel Onglet" target="_blank">ISIT Belgium</a> &amp; <a href="https://institutnr-ch.org" title="Lien vers le site de l'INR Suisse - Nouvel Onglet" target="_blank">INR Suisse</a>) et compte près de 200 organisations membres (Juillet 2022).</p>
+          <p>Cette calculatrice a été créée en 2020 et mise à jour en juillet 2022.</p>
+
+          <p class="opacity-light">Actualisation juillet 2022 par <a href="https://athom.co/" title=" Lien vers le site d'athom - Nouvel Onglet" target="_blank">athom</a><br />Contribution initiale 2020 par <a href="https://www.linkedin.com/in/gontier-julien-06653312" title=" Lien vers LinkedIn - Nouvel Onglet" target="_blank">Julien Gontier</a> (Décathlon)</p>
+          
+          <p class="opacity-light"><a href="a-propos-numerique-responsable.html" title="lien vers les sources"> Consulter le détail des sources pour les calculs</a> | <a href="mentions-legales.html" title="accéder aux mentions légales">mentions légales</a></p>          
+        </div>
+      </div>
+    </footer>
+    <script>var acc = document.getElementsByClassName("collapsible"); var i; for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); } $(document).ready(function () { $('.info').stop().mouseout(function () { $(this).parents('.question').next('.encart').hide('slow'); return false; }); $('.encart').stop().click(function () { $('.encart').hide('fast'); return false; }); $('.info').stop().mouseover(function () { $(this).parents('.question').next('.encart').show('fast'); return false; }); });</script>
+  </body>
+</html>

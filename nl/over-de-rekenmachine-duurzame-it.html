@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>ISIT | Rekenmachine milieuvoetafdruk van professionele digitale technologie</title>
+    <meta name="description" content="Het ISIT een rekenmachine gemaakt waarmee we eenvoudig onze professionele digitale impact kunnen berekenen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../stylesheet-inr.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="../jquery-3.3.1.min.js"></script>
+    <script src="scripts.js"></script>
+     
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="img/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+    <script>
+        tarteaucitron.user.matomoId = 8;
+        (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
+
+        tarteaucitron.user.matomoHost = 'https://analytics.academie-nr.org';
+
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.academie-nr.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '8']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div id="head">
+        <div id="head_container">
+          <div id="logo">
+            <a href="./" title="terug naar de rekenmachine">
+              <img src="../img/isit.png" alt="ISIT, Institute for Sustainable IT" />
+            </a>
+          </div>          
+          <div class="div-switch-language">
+            <a class="switch-language" href="/" title="Link to access english version">EN</a>
+            <a class="switch-language" href="/fr" title="Lien pour accéder à la version française">FR</a>
+            <a class="switch-language" href="./" title="Link naar de Nederlandse versie">NL</a>
+          </div>
+        </div>
+        <div id="title">
+          <h1>Notities en details van bronnen gebruikt in de duurzame IT rekenmachine </h1>
+          <div class="version">Versie 1.1 uitgebracht op 1 juli 2022</div>
+        </div>
+        <div class="head-wrapper">
+            <div id="header_text">
+              <p>
+                  De duurzame IT rekenmachine is gebaseerd op gratis en open gegevens. Het doel is iedereen de mogelijkheid te bieden zijn digitale milieuvoetafdruk in het kader van zijn beroepsactiviteit te berekenen.
+              </p>
+              <p>  
+                De gegevens zijn hoofdzakelijk afkomstig van de Impact database van het ADEME, het ENERGY STAR-programma en de online NUTS-tool, een datalijst met gegevens van de fabrikanten over hun broeikasgasemissies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="page">
+      <div id="content">
+        <div class="background-image"></div>
+        <div id="data">
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">Over de apparatuur</h2>
+              <div class="section__intro">
+                <p>De lijst van apparatuur zal in de loop van de tijd worden aangevuld naarmate nieuwe betrouwbare gegevens beschikbaar komen.</p>
+                <p>Het effect van generieke apparatuur (Laptop andere, Desktop andere, enz.) is een gemiddelde dat wordt verkregen door aggregatie van gegevens van verschillende apparatuur of rechtstreeks van bestaande gemiddelden in de bovengenoemde bronnen.</p>
+                <p>Binnenkort zal rekening worden gehouden met de vermindering van het effect dat samenhangt met de aankoop van refurbished apparatuur.</p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">Over e-mailgebruik </h2>
+              <div class="section__intro">
+                <p>
+                  Deze gegevens zijn bijzonder gevoelig omdat het zeer moeilijk is exacte metingen van het energieverbruik van e-mail te verkrijgen. Er zouden veel levenscycli moeten worden geobserveerd om zeker te zijn van de meting (b.v. een e-mail met een bijlage van 1,5 MB die naar 3 ontvangers wordt gestuurd, 1 e-mail zonder bijlage die naar 10 ontvangers wordt gestuurd, een e-mail met 2 bijlagen van 300 KB die naar 1 ontvanger wordt gestuurd, enz.).
+                </p>
+                <p>De maatregel blijft dus een benadering van het potentiële verbruik, maar kan niet op een zekere manier rekening houden met de complexiteit van situaties.</p>
+                <p>
+                 De gebruikte bron is de ADEME Impact database, waarvan de cijfers hier worden gepresenteerd: 
+                  <a href="https://librairie.ademe.fr/cadic/6555/guide-en-route-vers-sobriete-numerique.pdf" title="Lien vers la source - Nouvel Onglet" target="_blank">https://librairie.ademe.fr/cadic/6555/guide-en-route-vers-sobriete-numerique.pdf</a>
+                </p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">Over videoconferencing</h2>
+              <div class="section__intro">
+                <p>
+                  Vrije en open gegevens zijn nog relatief onbeschikbaar. De rekenmachine is gebaseerd op de hier gepubliceerde gegevens:
+                </p>
+                <ul>
+                  <li><a href="https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/" title="Lien vers la source - Nouvel Onglet" target="_blank">https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/</a></li>
+                 <li><a href="http://www2.eet.unsw.edu.au/~vijay/pubs/jrnl/14comcomVC.pdf" title="Lien vers la source - Nouvel Onglet" target="_blank">http://www2.eet.unsw.edu.au/~vijay/pubs/jrnl/14comcomVC.pdf</a></li>
+                </ul>
+               <p>Het gebruikte cijfer blijft dus een benadering die mettertijd zal moeten worden verfijnd.</p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">Over cloud-opslag </h2>
+              <div class="section__intro">
+                <p>
+                  De voetafdruk die we kunnen schatten voor gegevensverwerking in de cloud is nog onderwerp van bestaande studies met uiteenlopende resultaten.
+                </p>
+                <p>
+                  Wij hebben ervoor gekozen de cijfers te gebruiken van de Green Cloud Computing-studie (2021), die gebaseerd is op het werk van het Umweltbundesamt (het Duitse federale milieuagentschap), dat een rationele benadering van het onderwerp mogelijk maakt en door DINUM als referentie wordt gebruikt (209,5 g CO2 / GB / jaar).
+                </p>
+                <p>Het is dus een enkele indicator, ongeacht de gebruikte cloud-oplossing.</p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">Over andere online uitgevoerde taken</h2>
+              <div class="section__intro">
+                <p>
+                  Aan de hand van de gegevens van ADEME kunnen we een schatting maken van de energiekosten van surfen op het internet. Dankzij dit cijfer, dat in de tweede helft van 2022 door ADEME is bijgewerkt, hebben wij de door onze calculator voorgestelde berekening kunnen aanpassen om de koolstofkosten van een uur internetten beter te kunnen schatten. Bronnen:
+                </p>
+                <ul>
+                  <li><a href="https://nosgestesclimat.fr/documentation/numérique/internet" title="Lien vers la source - Nouvel Onglet" target="_blank">https://nosgestesclimat.fr/documentation/numérique/internet (FR)</a></li>
+                </ul>
+              </div>
+            </header>
+          </section>
+         <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">Over aanvullende informatie</h2>
+              <div class="section__intro">
+                <p>
+                  Aanvullende informatie, zoals uw land van verblijf, die als onderdeel van uw antwoorden wordt gevraagd, is bedoeld om de geconsolideerde en anonieme cijfers te verfijnen, maar is geen middel om persoonlijke gegevens over respondenten te verzamelen.
+                </p>
+              </div>
+            </header>
+          </section>        
+         <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">Principe van voortdurende verbetering</h2>
+              <div class="section__intro">
+                <p>
+                  Het ISIT verbindt zich ertoe de duurzame IT rekenmachine voortdurend te verbeteren en de indicatoren regelmatig bij te werken aan de hand van de resultaten van openbare, gratis en open studies die de nauwkeurigheid van de verstrekte resultaten verbeteren. 
+                </p>
+                <p>ISIT verwelkomt uw feedback en suggesties om de tool te verbeteren en onder meer bepaalde gegevens te corrigeren die na de publicatie van nieuwe studies onnauwkeurig of verouderd kunnen zijn. U kunt ons bereiken op:<em>myimpact [@] isit-europe.org</em> met uw opmerkingen en suggesties.
+                </p>
+              </div>
+            </header>
+          </section>   
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="credits">
+        <h2 class="credits__title">Over het</h2>
+        <p>Het ISIT (<a href="https://isit-europe.org" title="Link naar de ISIT website - New tab" target="_blank">Instituut voor Sustainable IT</a>) is een denk & doe tank met als missie het aanpakken van de drie belangrijkste kwesties van Duurzame IT: het verkleinen van de digitale voetafdruk (economisch, sociaal en ecologisch), de capaciteit van digitale technologie om de voetafdruk (economisch, sociaal en ecologisch) van de mensheid te verkleinen, en het creëren van duurzame waarde / verantwoorde innovatie via digitale technologie om e-inclusie voor iedereen te bereiken.</p>
+        <p>Het<a href="https://isit-be.org/nl/het-institute" title="Link naar de ISIT website - New tab" target="_blank">ISIT</a>, Instituut voor Sustainable IT, bezig met opleidingen in duurzame IT, het meten van de digitale voetafdruk en het beschikbaar stellen van gidsen en richtsnoeren voor beste praktijken. ISIT is aanwezig in drie landen (Frankrijk, België en Zwitserland) en heeft bijna 200 leden (juli 2022). </p>
+        <p>Deze rekenmachine is gemaakt in 2020 en bijgewerkt in juli 2022.</p>
+
+        <p class="opacity-light">Juli 2022 update door <a href="https://athom.co/" title="Link naar de athom website - New tab" target="_blank">athom</a><br />Aanvankelijke bijdrage voor 2020 door <a href="https://www.linkedin.com/in/gontier-julien-06653312" title=" Lien vers LinkedIn - Nouvel Onglet" target="_blank">Julien Gontier</a> (Decathlon)</p>
+        
+        <p class="opacity-light"><a href="over-de-rekenmachine-duurzame-it.html" title="link naar bron"> Zie de details van de bronnen voor de berekeningen</a> | <a href="wettelijke-vermeldingen.html" title="link naar wettelijke vermeldingen">wettelijke vermeldingen</a></p>          
+      </div>
+    </footer>
+  </body>
+</html>

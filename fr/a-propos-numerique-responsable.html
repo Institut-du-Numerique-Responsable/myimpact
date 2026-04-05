@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>INR | Calculatrice empreinte environnementale du numérique pro.</title>
+    <meta name="description" content="L’INR propose une calculatrice permettant aux collaboratrices et collaborateurs d’organisations d’évaluer leur empreinte environnementale liée au numérique" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../stylesheet-inr.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="../jquery-3.3.1.min.js"></script>
+    <script src="scripts.js"></script>
+     
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="img/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+    <script>
+        tarteaucitron.user.matomoId = 8;
+        (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
+
+        tarteaucitron.user.matomoHost = 'https://analytics.academie-nr.org';
+
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.academie-nr.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '8']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div id="head">
+        <div id="head_container">
+          <div id="logo">
+            <a href="./" title="retour à la calculatrice">
+              <img src="../img/inr.png" alt="INR, Institut du Numérique Responsable" />
+            </a>
+          </div>          
+          <div class="div-switch-language">
+            <a class="switch-language" href="/" title="Link to access english version">EN</a>
+            <a class="switch-language" href="./" title="Lien pour accéder à la version française">FR</a>
+            <a class="switch-language" href="/nl" title="Link naar de Nederlandse versie">NL</a>
+          </div>
+        </div>
+        <div id="title">
+          <h1>Notes &amp; détails des sources utilisées dans le moteur de la Calculatrice NR</h1>
+          <div class="version">Version 1.1 publiée le 1<sup>er</sup> Juillet 2022</div>
+        </div>
+        <div class="head-wrapper">
+            <div id="header_text">
+              <p>
+                  La calculatrice NR s'appuie sur des données libres et ouvertes. L'objectif est de donner à chacune et chacun la possibilité de calculer son empreinte environnementale numérique dans le cadre de son activité professionnelle.
+              </p>
+              <p>  
+                Les données sont principalement issues de la base impact de l'ADEME, du programme ENERGY STAR et l'outil en ligne NUTS,   datalake regroupant les données des fabricants autour des émissions de GES.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="page">
+      <div id="content">
+        <div class="background-image"></div>
+        <div id="data">
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">A propos des équipements</h2>
+              <div class="section__intro">
+                <p>La liste des équipements sera complétée au fil du temps lorsque de nouvelles données fiables seront disponibles.</p>
+                <p>L'impact des équipements génériques (Laptop autre, Desktop autre, etc.) est une moyenne réalisée à partir de l'agrégation de données de divers équipements ou directement de moyennes existantes dans les sources pré-citées.</p>
+                <p>La réduction d'impact liée à l'achat de matériel reconditionné sera bientôt pris en compte.</p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">A propos de l'utilisation des emails</h2>
+              <div class="section__intro">
+                <p>
+                  Cette donnée est particulièrement sensible car il est très difficile d'avoir des mesures exactes de la consommation énergétique des emails. De nombreux cycles de vie devraient être observés pour être certains de la mesure (ex : un email avec une pièce jointe d'1,5 Mo envoyé à 3 destinataires, 1 email sans pièce jointe envoyé à 10 destinataires, un email avec 2 pièces jointes de 300Ko envoyé à 1 destinataires, etc.).
+                </p>
+                <p>Ainsi la mesure reste une approche de la consommation potentielle mais ne peut pas tenir compte de manière certaine de la complexité des situations.</p>
+                <p>
+                  La source utilisée est la base Impact de l’ADEME, dont les chiffres sont exposés ici : 
+                  <a href="https://librairie.ademe.fr/cadic/6555/guide-en-route-vers-sobriete-numerique.pdf" title="Lien vers la source - Nouvel Onglet" target="_blank">https://librairie.ademe.fr/cadic/6555/guide-en-route-vers-sobriete-numerique.pdf</a>
+                </p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">A propos de la visioconférence</h2>
+              <div class="section__intro">
+                <p>
+                  Les données libres et ouvertes sont encore relativement peu disponibles. La calculatrice se base sur les données publiées ici :
+                </p>
+                <ul>
+                  <li><a href="https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/" title="Lien vers la source - Nouvel Onglet" target="_blank">https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/</a></li>
+                 <li><a href="http://www2.eet.unsw.edu.au/~vijay/pubs/jrnl/14comcomVC.pdf" title="Lien vers la source - Nouvel Onglet" target="_blank">http://www2.eet.unsw.edu.au/~vijay/pubs/jrnl/14comcomVC.pdf</a></li>
+                </ul>
+               <p>Ainsi, le chiffre utilisé reste une approche qu’il conviendra d’affiner au fil du temps.</p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">A propos du stockage cloud</h2>
+              <div class="section__intro">
+                <p>
+                  L’empreinte que nous pouvons estimer concernant la manipulation de données dans le cloud reste conditionnée aux études existantes et dont les résultats sont disparates.
+                </p>
+                <p>
+                  Nous avons choisi de retenir les chiffres de l’étude Green Cloud Computing (2021) basée sur les travaux de Umweltbundesamt (l’agence fédérale pour l’environnement d’Allemagne) qui permet une approche rationnelle du sujet, utilisée comme référence par la DINUM (209,5 g CO2 / Go / an).
+                </p>
+                <p>Ainsi, il s'agit d'un indicateur unique quelle que soit la solution Cloud utilisée.</p>
+              </div>
+            </header>
+          </section>
+          <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">A propos des autres tâches effectuées en ligne</h2>
+              <div class="section__intro">
+                <p>
+                  Les données ADEME permettent d'estimer le coût énergétique de navigation sur l'Internet. Ce chiffre mis à jour au 2ème semestre 2022 par l'ADEME a permis de réajuster le calcul proposé via notre calculatrice pour mieux estimer le coût carbone d'une heure de navigation sur internet. Sources :
+                </p>
+                <ul>
+                  <li><a href="https://nosgestesclimat.fr/documentation/numérique/internet" title="Lien vers la source - Nouvel Onglet" target="_blank">https://nosgestesclimat.fr/documentation/numérique/internet</a></li>
+                </ul>
+              </div>
+            </header>
+          </section>
+         <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">A propos des informations complémentaires</h2>
+              <div class="section__intro">
+                <p>
+                  Les informations complémentaires, comme votre pays de résidence, demandées dans le cadre de vos réponses ont pour objectif d'affiner les chiffres consolidés et anonymes mais ne constituent en aucun cas un moyen de collecter des données personnelles sur les répondants.
+                </p>
+              </div>
+            </header>
+          </section>        
+         <section class="section">
+            <header class="section__header">
+              <h2 class="section__title">Principe d'amélioration continue</h2>
+              <div class="section__intro">
+                <p>
+                  L'INR s'engage à améliorer de manière continue la calculatrice NR et mettre à jour régulièrement les indicateurs en fonction des sorties d'études publiques, libres et ouvertes permettant d'améliorer la précision des résultats fournis. 
+                </p>
+                <p>L'INR est preneur de vos retours et suggestions pour améliorer l'outil et corriger, entre autres, certaines données qui pourraient s'avérer inexactes ou plus à jour suite à la publication de nouvelles études. Vous pouvez nous contacter à l'adresse : <em>myimpact [@] isit-europe.org</em> pour nous faire part de vos remarques et suggestions.
+                </p>
+              </div>
+            </header>
+          </section>   
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="credits">
+        <h2 class="credits__title">À propos</h2>
+        <p>L'INR (<a href="https://institutnr.org" title=" Lien vers le site de l'INR - Nouvel Onglet" target="_blank">Institut du Numérique Responsable</a>) est un think &amp; do tank dont la mission se déploie sur les trois enjeux clés du numérique responsable : la réduction de l'empreinte (économique, sociale et environnementale) du numérique, la capacité du numérique à réduire l'empreinte (économique, sociale et environnementale) de l'humanité, et la création de valeur durable / innovation responsable via le numérique pour réussir l'e-inclusion de toutes et tous.</p>
+        <p>L'<a href="https://institutnr.org/inr-numerique-responsable" title=" Lien vers le site de l'INR - Nouvel Onglet" target="_blank">INR</a>, Institut du Numérique Responsable, travaille sur les enjeux de formation autour du numérique responsable, de mesure de l’empreinte du numérique et la mise à disposition de guides et référentiels de bonnes pratiques. L’INR est présent dans trois pays (France, Belgique &amp; Suisse) et compte près de 200 organisations membres (Juillet 2022).</p>
+        <p>Cette calculatrice a été créée en 2020 et mise à jour en juillet 2022.</p>
+
+        <p class="opacity-light">Actualisation juillet 2022 par <a href="https://athom.co/" title=" Lien vers le site d'athom - Nouvel Onglet" target="_blank">athom</a><br />Contribution initiale 2020 par <a href="https://www.linkedin.com/in/gontier-julien-06653312" title=" Lien vers LinkedIn - Nouvel Onglet" target="_blank">Julien Gontier</a> (Décathlon)</p>
+        
+        <p class="opacity-light"><a href="a-propos-numerique-responsable.html" title="lien vers les sources"> Consulter le détail des sources pour les calculs</a> | <a href="mentions-legales.html" title="accéder aux mentions légales">mentions légales</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
