@@ -3,12 +3,45 @@
   <head>
     <title>INR | Calculatrice empreinte environnementale du numérique pro.</title>
     <meta name="description" content="L’INR propose une calculatrice permettant aux collaboratrices et collaborateurs d’organisations d’évaluer leur empreinte environnementale liée au numérique" />
+    <!-- SEO -->
+    <link rel="canonical" href="https://myimpact.isit-europe.org/fr/" />
+    <link rel="alternate" hreflang="en" href="https://myimpact.isit-europe.org/" />
+    <link rel="alternate" hreflang="fr" href="https://myimpact.isit-europe.org/fr/" />
+    <link rel="alternate" hreflang="nl" href="https://myimpact.isit-europe.org/nl/" />
+    <link rel="alternate" hreflang="de" href="https://myimpact.isit-europe.org/de/" />
+    <link rel="alternate" hreflang="es" href="https://myimpact.isit-europe.org/es/" />
+    <link rel="alternate" hreflang="it" href="https://myimpact.isit-europe.org/it/" />
+    <link rel="alternate" hreflang="x-default" href="https://myimpact.isit-europe.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myimpact.isit-europe.org/fr/" />
+    <meta property="og:title" content="MyImpact | Calculatrice empreinte carbone numérique" />
+    <meta property="og:description" content="Calculez votre empreinte environnementale numérique individuelle et professionnelle en kg CO2 éq. Outil gratuit par l’INR." />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content="https://myimpact.isit-europe.org/img/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MyImpact | Calculatrice empreinte carbone numérique" />
+    <meta name="twitter:description" content="Calculez votre empreinte environnementale numérique individuelle et professionnelle en kg CO2 éq. Outil gratuit par l’INR." />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MyImpact",
+      "url": "https://myimpact.isit-europe.org/fr/",
+      "description": "Calculatrice d’empreinte carbone numérique et professionnelle",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "fr",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+      "author": [
+        {"@type": "Organization", "name": "Institut du Numérique Responsable (INR)", "url": "https://institutnr.org"},
+        {"@type": "Organization", "name": "ISIT Belgique", "url": "https://isit-be.org"},
+        {"@type": "Organization", "name": "ISIT Suisse", "url": "https://isit-europe.org"}
+      ]
+    }
+    </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="../stylesheet-inr.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="../jquery-3.3.1.min.js"></script>
+    <script src="../jquery-3.7.1.min.js"></script>
     <script src="scripts.js"></script>
      
     <link rel="shortcut icon" href="img/favicon.ico" />
@@ -44,9 +77,12 @@
               <img src="../img/inr.png" alt="INR, Institut du Numérique Responsable" />
           </div>
           <div class="div-switch-language">
-            <a class="switch-language" href="/" title="Link to access english version">EN</a>
-            <a class="switch-language" href="./" title="Lien pour accéder à la version française">FR</a>
-            <a class="switch-language" href="/nl" title="Link naar de Nederlandse versie">NL</a>
+            <a class="switch-language" href="/" title="English">EN</a>
+            <a class="switch-language" href="/fr/" title="Français">FR</a>
+            <a class="switch-language" href="/nl/" title="Nederlands">NL</a>
+            <a class="switch-language" href="/de/" title="Deutsch">DE</a>
+            <a class="switch-language" href="/es/" title="Español">ES</a>
+            <a class="switch-language" href="/it/" title="Italiano">IT</a>
           </div>
 
         </div>
@@ -97,6 +133,12 @@
                     <option value="fr" selected="selected">France</option>
                     <option value="be">Belgique</option>
                     <option value="ch">Suisse</option>
+                    <option value="de">Allemagne</option>
+                    <option value="at">Autriche</option>
+                    <option value="es">Espagne</option>
+                    <option value="it">Italie</option>
+                    <option value="nl">Pays-Bas</option>
+                    <option value="lu">Luxembourg</option>
                   </select>
                 </div>
                 <div class="groupe" data-device-id="1">
@@ -163,7 +205,7 @@
                       <label class="question" for="visio_tool">Outil le plus utilisé en visio</label>
                       <div class="answer">
                         <select id="visio_tool">
-                          <option value="placeholder naem="visio_tool>Choisissez...</option>
+                          <option value="placeholder">Choisissez...</option>
                         </select>
                       </div>
                     </div>
