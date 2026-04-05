@@ -1,17 +1,50 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="nl">
   <head>
     <title>ISIT | Rekenmachine milieuvoetafdruk van professionele digitale technologie</title>
     <meta name="description" content="Het ISIT een rekenmachine gemaakt waarmee we eenvoudig onze professionele digitale impact kunnen berekenen" />
+    <!-- SEO -->
+    <link rel="canonical" href="https://myimpact.isit-europe.org/nl/" />
+    <link rel="alternate" hreflang="en" href="https://myimpact.isit-europe.org/" />
+    <link rel="alternate" hreflang="fr" href="https://myimpact.isit-europe.org/fr/" />
+    <link rel="alternate" hreflang="nl" href="https://myimpact.isit-europe.org/nl/" />
+    <link rel="alternate" hreflang="de" href="https://myimpact.isit-europe.org/de/" />
+    <link rel="alternate" hreflang="es" href="https://myimpact.isit-europe.org/es/" />
+    <link rel="alternate" hreflang="it" href="https://myimpact.isit-europe.org/it/" />
+    <link rel="alternate" hreflang="x-default" href="https://myimpact.isit-europe.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myimpact.isit-europe.org/nl/" />
+    <meta property="og:title" content="MyImpact | Rekenmachine digitale CO2-voetafdruk" />
+    <meta property="og:description" content="Bereken uw individuele en professionele digitale ecologische voetafdruk in kg CO2-equivalent. Gratis tool van ISIT." />
+    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:image" content="https://myimpact.isit-europe.org/img/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MyImpact | Rekenmachine digitale CO2-voetafdruk" />
+    <meta name="twitter:description" content="Bereken uw individuele en professionele digitale ecologische voetafdruk in kg CO2-equivalent. Gratis tool van ISIT." />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MyImpact",
+      "url": "https://myimpact.isit-europe.org/nl/",
+      "description": "Rekenmachine voor digitale en professionele CO2-voetafdruk",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "nl",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+      "author": [
+        {"@type": "Organization", "name": "Institut du Numérique Responsable (INR)", "url": "https://institutnr.org"},
+        {"@type": "Organization", "name": "ISIT Belgique", "url": "https://isit-be.org"},
+        {"@type": "Organization", "name": "ISIT Suisse", "url": "https://isit-europe.org"}
+      ]
+    }
+    </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="../stylesheet-inr.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="../jquery-3.3.1.min.js"></script>
+    <script src="../jquery-3.7.1.min.js"></script>
     <script src="scripts.js"></script>
      
-    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="shortcut icon" href="../img/favicon.ico" />
     <link rel="icon" href="../img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" href="../img/android-chrome-192x192.png" sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" href="../img/apple-touch-icon.png" />
@@ -42,9 +75,12 @@
         <div id="head_container">
           <div id="logo"> <img src="../img/isit.png" alt="ISIT, Institute for Sustainable IT" /></div>
           <div class="div-switch-language">
-            <a class="switch-language" href="/" title="Link to access english version">EN</a>
-            <a class="switch-language" href="/fr" title="Lien pour accéder à la version française">FR</a>
-            <a class="switch-language" href="./" title="Link naar de Nederlandse versie">NL</a>
+            <a class="switch-language" href="/" title="English">EN</a>
+            <a class="switch-language" href="/fr/" title="Français">FR</a>
+            <a class="switch-language" href="/nl/" title="Nederlands">NL</a>
+            <a class="switch-language" href="/de/" title="Deutsch">DE</a>
+            <a class="switch-language" href="/es/" title="Español">ES</a>
+            <a class="switch-language" href="/it/" title="Italiano">IT</a>
           </div>
 
         </div>
@@ -92,9 +128,15 @@
                 <label class="question" for="select_country">Mijn locatie</label>
                 <div class="answer">
                   <select name="select_country" id="select_country">
-                    <option value="fr" selected="selected">Frankrijk</option>
-                    <option value="be">België</option>
+                    <option value="be" selected="selected">België</option>
+                    <option value="nl">Nederland</option>
+                    <option value="fr">Frankrijk</option>
                     <option value="ch">Zwitserland</option>
+                    <option value="de">Duitsland</option>
+                    <option value="at">Oostenrijk</option>
+                    <option value="es">Spanje</option>
+                    <option value="it">Italië</option>
+                    <option value="lu">Luxemburg</option>
                   </select>
                 </div>
                 <div class="groupe" data-device-id="1">

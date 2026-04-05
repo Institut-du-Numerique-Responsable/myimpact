@@ -1,34 +1,4 @@
-francais = "https://myimpact.isit-europe.org/fr"; 
-neerlandais = "https://myimpact.isit-europe.org/nl";
-
-le_referer = document.referrer;
-
-
-var index = le_referer.indexOf("myimpact.isit-europe.org");    
-//alert (index);
-/* if(index == -1) { // si la sous-chaîne n'existe pas alors on fait la redirection, sinon non.
-  nom = navigator.appName;
-  langue = navigator.language;
-  langue1 = navigator.browserLanguage;
-
-  if (nom == "Microsoft Internet Explorer") {
-    if (langue1 == "fr") {
-      self.location.href = francais;
-    }
-    else if (langue1 == "nl") {
-      self.location.href = neerlandais;
-    }
-  }
-  else {
-    if (langue == "fr" || langue == "fr-FR" || langue == "fr-BE") {
-      self.location.href = francais;
-    }
-    else if (langue1 == "nl" || langue == "nl-NL") { 
-      self.location.href = neerlandais;
-    }
-  }
-}  */
-
+/* globals $ */
 
 var deviceTypes = [
   {
@@ -115,12 +85,12 @@ var deviceTypes = [
     "name": "PC portable",
     "devices": [
       {
-        "name": "Apple Mackbook Air 2010/2011",
+        "name": "Apple MacBook Air 2010/2011",
         "production": 202.53,
         "usage": 48
       },
       {
-        "name": "Apple Mackbook Air 2013/2016",
+        "name": "Apple MacBook Air 2013/2016",
         "production": 363.41,
         "usage": 48
       },
@@ -315,18 +285,15 @@ visioTools = [
   }
 ],
 countries = [
-  {
-    "indicator": "fr",
-    "energyMix": 0.052
-  },
-  {
-    "indicator": "be",
-    "energyMix": 0.22
-  },
-  {
-    "indicator": "ch",
-    "energyMix": 0.027
-  }
+  {"indicator": "be", "energyMix": 0.22},
+  {"indicator": "nl", "energyMix": 0.284},
+  {"indicator": "fr", "energyMix": 0.052},
+  {"indicator": "ch", "energyMix": 0.027},
+  {"indicator": "de", "energyMix": 0.420},
+  {"indicator": "at", "energyMix": 0.158},
+  {"indicator": "es", "energyMix": 0.207},
+  {"indicator": "it", "energyMix": 0.233},
+  {"indicator": "lu", "energyMix": 0.089}
 ],
 nb_jours_travailles = 215,
 numWeeks = 46,
