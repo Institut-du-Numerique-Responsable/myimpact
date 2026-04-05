@@ -52,18 +52,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
     <script>
-        tarteaucitron.user.matomoId = 8;
-        (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
-
-        tarteaucitron.user.matomoHost = 'https://analytics.academie-nr.org';
-
+      tarteaucitron.user.matomoId = 6;
+      (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
+      tarteaucitron.user.matomoHost = 'https://analytic.institutnr.org:8443';
       var _paq = window._paq = window._paq || [];
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
       (function() {
-        var u="//analytics.academie-nr.org/";
+        var u="//analytic.institutnr.org:8443/";
         _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '8']);
+        _paq.push(['setSiteId', '6']);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
       })();

@@ -1,3 +1,5 @@
 User-Agent: *
-Allow: *
+Allow: /
 Disallow: /tarteaucitron/
+
+Sitemap: https://myimpact.isit-europe.org/sitemap.xml

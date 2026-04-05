@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>ISIT | Valutazione della mia impronta ambientale digitale individuale/professionale</title>
+    <meta name="description" content="L'ISIT ha creato una calcolatrice che permette di calcolare semplicemente il nostro impatto digitale professionale in kg CO2 eq." />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../stylesheet-inr.css" />
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="scripts.js"></script>
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+    <link rel="icon" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="../img/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="../img/apple-touch-icon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- SEO -->
+    <link rel="canonical" href="https://myimpact.isit-europe.org/it/" />
+    <link rel="alternate" hreflang="en" href="https://myimpact.isit-europe.org/" />
+    <link rel="alternate" hreflang="fr" href="https://myimpact.isit-europe.org/fr/" />
+    <link rel="alternate" hreflang="nl" href="https://myimpact.isit-europe.org/nl/" />
+    <link rel="alternate" hreflang="de" href="https://myimpact.isit-europe.org/de/" />
+    <link rel="alternate" hreflang="es" href="https://myimpact.isit-europe.org/es/" />
+    <link rel="alternate" hreflang="it" href="https://myimpact.isit-europe.org/it/" />
+    <link rel="alternate" hreflang="x-default" href="https://myimpact.isit-europe.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myimpact.isit-europe.org/it/" />
+    <meta property="og:title" content="MyImpact | Calcolatrice impronta carbonio digitale" />
+    <meta property="og:description" content="Calcola la tua impronta ambientale digitale individuale e professionale in kg CO2 eq. Strumento gratuito dell'ISIT." />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:image" content="https://myimpact.isit-europe.org/img/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MyImpact | Calcolatrice impronta carbonio digitale" />
+    <meta name="twitter:description" content="Calcola la tua impronta ambientale digitale individuale e professionale in kg CO2 eq. Strumento gratuito dell'ISIT." />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MyImpact",
+      "url": "https://myimpact.isit-europe.org/it/",
+      "description": "Calcolatrice dell'impronta carbonio digitale e professionale",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "it",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+      "author": [
+        {"@type": "Organization", "name": "Institut du Numérique Responsable (INR)", "url": "https://institutnr.org"},
+        {"@type": "Organization", "name": "ISIT Belgique", "url": "https://isit-be.org"},
+        {"@type": "Organization", "name": "ISIT Suisse", "url": "https://isit-europe.org"}
+      ]
+    }
+    </script>
+    <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
+    <script>
+      tarteaucitron.user.matomoId = 6;
+      (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
+      tarteaucitron.user.matomoHost = 'https://analytic.institutnr.org:8443';
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytic.institutnr.org:8443/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '6']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div id="head">
+        <div id="head_container">
+          <div id="logo"><img src="../img/isit.png" alt="ISIT, Institute for Sustainable IT" /></div>
+          <div class="div-switch-language">
+            <a class="switch-language" href="/" title="English">EN</a>
+            <a class="switch-language" href="/fr/" title="Français">FR</a>
+            <a class="switch-language" href="/nl/" title="Nederlands">NL</a>
+            <a class="switch-language" href="/de/" title="Deutsch">DE</a>
+            <a class="switch-language" href="/es/" title="Español">ES</a>
+            <a class="switch-language" href="/it/" title="Italiano">IT</a>
+          </div>
+        </div>
+        <div id="title">
+          <h1>Valutazione della mia impronta ambientale digitale individuale/professionale in kg CO<sub>2</sub> eq.</h1>
+          <div class="version">Versione 1.1 rilasciata il 4 luglio 2022</div>
+        </div>
+        <div class="head-wrapper">
+          <div id="header_text">
+            <p>Il nostro utilizzo della tecnologia digitale è in costante aumento, sia nella sfera personale che professionale. I nostri impatti sono difficili da quantificare perché sono dematerializzati. Tuttavia, esistono ora molti strumenti di misurazione per facilitare questo processo contabile.</p>
+            <div class="panel">
+              <p>Per fare luce sugli impatti legati al nostro consumo eccessivo di tecnologia digitale, l'ISIT ha creato una calcolatrice che ci permette di calcolare semplicemente il nostro impatto digitale professionale. L'architettura della calcolatrice v1.0 è stata messa a disposizione dell'INR da Decathlon. La versione 1.1 è stata distribuita nel luglio 2022 con indicatori aggiornati e l'aggiunta di nuove sezioni per affinare il calcolo.</p>
+              <p>I dati provengono principalmente dal centro risorse sui gas serra dell'ADEME, dal programma ENERGY STAR e dallo strumento online NUTS, un datalake con dati dei produttori sulle emissioni di GES.</p>
+            </div>
+            <button type="button" class="collapsible">Per saperne di più</button>
+          </div>
+          <nav class="direct-access">
+            <h2 class="direct-access__title">Sommario</h2>
+            <ul class="direct-access__list">
+              <li><a class="direct-access__link" href="#device">Apparecchiature</a></li>
+              <li><a class="direct-access__link" href="#online">Utilizzo online</a></li>
+              <li><a class="direct-access__link" href="#cloud">Archiviazione cloud</a></li>
+              <li><a class="direct-access__link" href="#emails">Invio di email</a></li>
+              <li><a class="direct-access__link" href="#business-trips">Viaggi di lavoro</a></li>
+              <li><a class="direct-access__link" href="#total_impact_section">Il mio impatto in kg CO<sub>2</sub> eq. / anno</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div id="page">
+      <div id="content">
+        <div class="background-image"></div>
+        <div id="data">
+          <section id="device" class="section">
+            <header class="section__header">
+              <h2 class="section__title">Apparecchiature</h2>
+              <div class="section__intro">
+                <p>La produzione di apparecchiature rappresenta la grande maggioranza dell'impronta digitale. I requisiti medi di materiali e risorse per la produzione di attrezzature per ufficio rappresentano più del 70% del bilancio ambientale del loro ciclo di vita, durante un periodo di utilizzo medio di 5 anni (<a href="https://librairie.ademe.fr/cadic/6555/guide-en-route-vers-sobriete-numerique.pdf" title="Collegamento alla fonte - Nuova scheda" target="_blank">Fonte ADEME - PDF, 2,5 MB</a>).</p>
+                <p>L'impatto legato alla produzione è un equivalente in kgCO2 fornito dal produttore secondo il modello. La durata di utilizzo consente di tenere conto dell'impatto totale dell'utilizzo di questa apparecchiatura e di calcolare una media annua, incluso l'impatto legato alla produzione.</p>
+              </div>
+            </header>
+            <div class="section__main">
+              <div class="input_part">
+                <label class="question" for="select_country">La mia posizione</label>
+                <div class="answer">
+                  <select id="select_country">
+                    <option value="it" selected="selected">Italia</option>
+                    <option value="fr">Francia</option>
+                    <option value="be">Belgio</option>
+                    <option value="ch">Svizzera</option>
+                    <option value="de">Germania</option>
+                    <option value="at">Austria</option>
+                    <option value="es">Spagna</option>
+                    <option value="nl">Paesi Bassi</option>
+                    <option value="lu">Lussemburgo</option>
+                  </select>
+                </div>
+                <div class="groupe" data-device-id="1">
+                  <div class="device-title">La mia apparecchiatura n°1</div>
+                  <div class="groupe__inner">
+                    <div class="qOne">
+                      <label class="question" for="model">Modello</label>
+                      <div class="answer"><select data-device-field="model" id="model"></select></div>
+                    </div>
+                    <div class="qTwo">
+                      <label class="question" for="lifetime">Durata d'uso (anni)</label>
+                      <div class="answer">
+                        <select data-device-field="lifetime" id="lifetime">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3" selected="selected">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="add-device" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="40%" style="margin-right: 1rem;" fill="currentColor"><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
+                  Aggiungi un'apparecchiatura
+                </button>
+              </div>
+              <div class="boxes">
+                <div class="box"><h3>PRODUZIONE</h3><div id="device_production_1">0</div></div>
+                <div class="box"><h3>USO</h3><div id="device_use_1">0</div></div>
+                <div class="box -total"><h3>TOTALE</h3><div id="device_total_1">0</div></div>
+                <div class="box"><h3>ANNUALE</h3><div id="device_impact_annuel_1">0</div></div>
+              </div>
+            </div>
+          </section>
+          <section id="online" class="section">
+            <header class="section__header">
+              <h2 class="section__title">Utilizzo online</h2>
+              <div class="section__intro">
+                <p>Oggi, il consumo di video rappresenta più del 60% della larghezza di banda mondiale (<a href="https://theshiftproject.org/article/lean-ict-notre-nouveau-rapport/" title="Collegamento alla fonte - Nuova scheda" target="_blank">Fonte: The Shift Project</a>).</p>
+              </div>
+            </header>
+            <div class="section__main">
+              <div class="input_part">
+                <div class="groupe">
+                  <div class="groupe__inner">
+                    <div>
+                      <label for="visio_tool" class="question">Strumento di videoconferenza più utilizzato</label>
+                      <div class="answer"><select id="visio_tool"><option value="placeholder">Scegliere...</option></select></div>
+                    </div>
+                    <div class="visio-hours-wrapper">
+                      <label for="visio_hours" class="question">Ore a settimana</label>
+                      <div class="answer"><input type="number" id="visio_hours" min="0"></div>
+                    </div>
+                    <div>
+                      <label for="visio_camera" class="question">Fotocamera più spesso...</label>
+                      <div class="answer">
+                        <select id="visio_camera">
+                          <option value="on">Accesa</option>
+                          <option value="off">Spenta</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <label for="surf_hours" class="question">Ore di navigazione web a settimana</label>
+                <div class="answer"><input type="number" id="surf_hours" min="0"></div>
+              </div>
+              <div class="boxes">
+                <div class="box"><h3>SETTIMANALE</h3><div id="impact_visio_weekly">0</div><div id="impact_surf_weekly">0</div></div>
+                <div class="box"><h3>ANNUALE</h3><div id="impact_visio_annuel">0</div><div id="impact_surf_annuel">0</div></div>
+              </div>
+            </div>
+          </section>
+          <section id="cloud" class="section">
+            <header class="section__header">
+              <h2 class="section__title">Archiviazione cloud</h2>
+              <div class="section__intro">
+                <p>L'impronta che possiamo stimare per la gestione dei dati nel cloud rimane soggetta a studi esistenti con risultati disparati.</p>
+                <p>Abbiamo scelto di utilizzare le cifre dello <a href="https://www.umweltbundesamt.de/sites/default/files/medien/5750/publikationen/2021-06-17_texte_94-2021_green-cloud-computing.pdf" title="Collegamento alla fonte - Nuova scheda" target="_blank">studio Green Cloud Computing (2021) - PDF, 4,4 MB</a> basato sui lavori di Umweltbundesamt (l'Agenzia Federale per l'Ambiente tedesca) che consente un approccio razionale al soggetto, utilizzato come riferimento dalla DINUM (209,5 g CO<sub>2</sub> / GB / anno).</p>
+              </div>
+            </header>
+            <div class="section__main">
+              <div class="input_part">
+                <label for="storage_google" class="question">Il mio spazio cloud in Gb</label>
+                <div class="answer"><input type="number" id="storage_google" min="0"></div>
+              </div>
+              <div class="boxes"><div class="box"><h3>ANNUALE</h3><div id="storage_google_annuel"></div></div></div>
+            </div>
+          </section>
+          <section id="emails" class="section">
+            <header class="section__header">
+              <h2 class="section__title">Invio di email</h2>
+              <div class="section__intro">
+                <p>La quota dell'impronta ambientale legata all'e-mail rimane molto piccola. Ma è importante sapere che più pesante è l'e-mail, maggiore è il suo impatto, moltiplicato per il numero di destinatari a cui viene inviata.</p>
+                <p>La sfida è soprattutto essere consapevoli dell'immensa quantità di dati che manipoliamo senza preoccuparci sempre della dimensione di ogni file trasferito.</p>
+              </div>
+            </header>
+            <div class="section__main">
+              <div class="input_part">
+                <label for="num_emails_without_attachments" class="question">Numero di email inviate al giorno (SENZA allegati)</label>
+                <div class="answer"><input type="number" id="num_emails_without_attachments" min="0"></div>
+                <label for="num_emails_with_attachments" class="question">Numero di email inviate al giorno (CON allegati)</label>
+                <div class="answer"><input type="number" id="num_emails_with_attachments" min="0"></div>
+              </div>
+              <div class="boxes">
+                <div class="box"><h3>GIORNALIERO</h3><div id="impact_emails_without_attachments_quotidien">0</div><div id="impact_emails_with_attachments_quotidien">0</div></div>
+                <div class="box"><h3>ANNUALE</h3><div id="impact_emails_without_attachments_annuel">0</div><div id="impact_emails_with_attachments_annuel">0</div></div>
+              </div>
+            </div>
+          </section>
+          <section id="business-trips" class="section">
+            <header class="section__header">
+              <h2 class="section__title">Viaggi di lavoro</h2>
+              <div class="section__intro">
+                <p>Nel mondo professionale, non è solo la tecnologia digitale ad avere un impatto negativo sull'ambiente. Anche i viaggi giocano un ruolo importante! Vi invitiamo a confrontare l'impatto dei vostri viaggi di lavoro, inclusi gli spostamenti casa-lavoro, con quello della tecnologia digitale.</p>
+                <p class="u-color-meta">Strumento per calcolare le distanze: <a href="https://www.distance.to/" title="Collegamento allo strumento - Nuova scheda" target="_blank">https://www.distance.to</a></p>
+              </div>
+            </header>
+            <div class="section__main">
+              <div class="input_part">
+                <label for="deplacement_plane" class="question">Km percorsi in aereo / anno</label>
+                <div class="answer"><input type="number" id="deplacement_plane" min="0"></div>
+                <label for="deplacement_train" class="question">Km percorsi in treno / anno</label>
+                <div class="answer"><input type="number" id="deplacement_train" min="0"></div>
+                <label for="deplacement_car" class="question">Km percorsi in auto / anno</label>
+                <div class="answer"><input type="number" id="deplacement_car" min="0"></div>
+                <label for="deplacement_velo" class="question">Km percorsi in bicicletta o a piedi / anno</label>
+                <div class="answer"><input type="number" id="deplacement_velo" min="0"></div>
+              </div>
+              <div class="boxes">
+                <div class="box"><h3>ANNUALE</h3><div id="impact_plane_annuel"></div><div id="impact_train_annuel"></div><div id="impact_car_annuel"></div><div>0</div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="results" id="total_impact_section">
+          <h2 class="results__title">Il mio impatto <span class="results__title__meta">in kg CO<sub>2</sub> eq.</span></h2>
+          <div class="results__grid">
+            <div class="results__grid__item -width-40">
+              <div class="results__sum">
+                <div class="results__sum__item">
+                  <div class="results__variable"><div class="results__variable__content"><div class="results__variable__value" id="total_impact_numerique"></div><div class="results__variable__name">Digitale</div></div></div>
+                </div>
+                <div class="results__sum__item">
+                  <div class="results__variable"><div class="results__variable__content"><div class="results__variable__value" id="total_impact_deplacement"></div><div class="results__variable__name">Viaggi</div></div></div>
+                </div>
+              </div>
+              <div class="results__total">
+                <div class="results__variable -theme-white">
+                  <div class="results__variable__content"><div class="results__variable__value" id="total_impact"></div><div class="results__variable__name">Il mio impatto totale per anno</div></div>
+                  <div class="results__variable__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" width="50%"><path d="M304 16.58C304 7.555 310.1 0 320 0C443.7 0 544 100.3 544 224C544 233 536.4 240 527.4 240H304V16.58zM32 272C32 150.7 122.1 50.34 238.1 34.25C248.2 32.99 256 40.36 256 49.61V288L412.5 444.5C419.2 451.2 418.7 462.2 411 467.7C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zM558.4 288C567.6 288 575 295.8 573.8 305C566.1 360.9 539.1 410.6 499.9 447.3C493.9 452.1 484.5 452.5 478.7 446.7L320 288H558.4z"/></svg></div>
+                </div>
+              </div>
+            </div>
+            <div class="results__grid__item -width-60">
+              <div class="results__charts">
+                <div class="results__charts__item">
+                  <div class="results__chart">
+                    <div class="pie"><div class="pie__value" id="p_carbon_footprint_per_resident"></div><div class="pie__segment" style="--bg: #fff; --offset: 0;"></div><div class="pie__segment" style="--bg: #0d3146;"></div></div>
+                    <div class="results__chart__legend">
+                      <div class="results__chart__legend__title">Dell'impronta carbonica media di un cittadino europeo</div>
+                      <div class="results__chart__legend__info">Media stimata di 9,9 tonnellate di CO<sub>2</sub> eq. / abitante / anno<br />(Fonte: SDES &amp; Carbone4)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="results__charts__item">
+                  <div class="results__chart">
+                    <div class="pie"><div class="pie__value" id="p_target_2050"></div><div class="pie__segment" style="--bg: #fff; --offset: 0;"></div><div class="pie__segment" style="--bg: #0d3146;"></div></div>
+                    <div class="results__chart__legend">
+                      <div class="results__chart__legend__title">% Della quota da rispettare nel 2050 per conformarsi all'<a href="https://unfccc.int/fr/processus-et-reunions/l-accord-de-paris/l-accord-de-paris" title="Collegamento alla fonte - Nuova scheda" target="_blank">Accordo di Parigi</a></div>
+                      <div class="results__chart__legend__info">Fissato a 2 tonnellate di CO<sub>2</sub> eq. / anno per abitante</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="results__grid__item -width-100">
+              <div class="results__equivalents">
+                <div class="results__equivalents__item">
+                  <h3 class="results__equivalents__title">A cosa posso paragonare il mio impatto totale?*</h3>
+                  <div class="results__equivalents__intro">Alcuni esempi...<br />Fonte: <a href="https://monconvertisseurco2.fr/" title="Collegamento alla fonte - Nuova scheda" target="_blank">My CO<sub>2</sub> Converter</a><br />*Impatto totale = digitale + viaggi</div>
+                </div>
+                <div class="results__equivalents__item">
+                  <div class="results__variable -theme-rose"><div class="results__variable__content"><div class="results__variable__value" id="impact_eq_beef_meal"></div><div class="results__variable__name">pasti con carne bovina</div></div><div class="results__variable__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="50%"><path d="M481.9 270.1C490.9 279.1 496 291.3 496 304C496 316.7 490.9 328.9 481.9 337.9C472.9 346.9 460.7 352 448 352H64C51.27 352 39.06 346.9 30.06 337.9C21.06 328.9 16 316.7 16 304C16 291.3 21.06 279.1 30.06 270.1C39.06 261.1 51.27 256 64 256H448C460.7 256 472.9 261.1 481.9 270.1zM475.3 388.7C478.3 391.7 480 395.8 480 400V416C480 432.1 473.3 449.3 461.3 461.3C449.3 473.3 432.1 480 416 480H96C79.03 480 62.75 473.3 50.75 461.3C38.74 449.3 32 432.1 32 416V400C32 395.8 33.69 391.7 36.69 388.7C39.69 385.7 43.76 384 48 384H464C468.2 384 472.3 385.7 475.3 388.7zM50.39 220.8C45.93 218.6 42.03 215.5 38.97 211.6C35.91 207.7 33.79 203.2 32.75 198.4C31.71 193.5 31.8 188.5 32.99 183.7C54.98 97.02 146.5 32 256 32C365.5 32 457 97.02 479 183.7C480.2 188.5 480.3 193.5 479.2 198.4C478.2 203.2 476.1 207.7 473 211.6C469.1 215.5 466.1 218.6 461.6 220.8C457.2 222.9 452.3 224 447.3 224H64.67C59.73 224 54.84 222.9 50.39 220.8z"/></svg></div></div>
+                </div>
+                <div class="results__equivalents__item">
+                  <div class="results__variable -theme-indigo"><div class="results__variable__content"><div class="results__variable__value" id="impact_eq_car_km"></div><div class="results__variable__name">km in auto<br /><span id="impact_eq_paris_brussels"></span> tragitti Parigi / Bruxelles</div></div><div class="results__variable__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" width="50%"><path d="M640 320V368C640 385.7 625.7 400 608 400H574.7C567.1 445.4 527.6 480 480 480C432.4 480 392.9 445.4 385.3 400H254.7C247.1 445.4 207.6 480 160 480C112.4 480 72.94 445.4 65.33 400H32C14.33 400 0 385.7 0 368V256C0 228.9 16.81 205.8 40.56 196.4L82.2 92.35C96.78 55.9 132.1 32 171.3 32H353.2C382.4 32 409.1 45.26 428.2 68.03L528.2 193C591.2 200.1 640 254.8 640 319.1V320z"/></svg></div></div>
+                </div>
+                <div class="results__equivalents__item">
+                  <div class="results__variable -theme-blue"><div class="results__variable__content"><div class="results__variable__value" id="impact_eq_plane_km"></div><div class="results__variable__name">km in aereo<br /><span id="impact_eq_ar_paris_nyc"></span> andata e ritorno Parigi / New York</div></div><div class="results__variable__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" width="50%"><path d="M484.6 62C502.6 52.8 522.6 48 542.8 48H600.2C627.2 48 645.9 74.95 636.4 100.2C618.2 148.9 582.1 188.9 535.6 212.2L262.8 348.6C258.3 350.8 253.4 352 248.4 352H110.7C101.4 352 92.5 347.9 86.42 340.8L13.34 255.6C6.562 247.7 9.019 235.5 18.33 230.8L50.49 214.8C59.05 210.5 69.06 210.2 77.8 214.1L135.1 239.1L234.6 189.7L87.64 95.2C77.21 88.49 78.05 72.98 89.14 67.43L135 44.48C150.1 36.52 169.5 35.55 186.1 41.8L381 114.9L484.6 62z"/></svg></div></div>
+                </div>
+                <div class="results__equivalents__item">
+                  <div class="results__variable -theme-emerald"><div class="results__variable__content"><div class="results__variable__value" id="impact_eq_laptop"></div><div class="results__variable__name">laptop prodotti</div></div><div class="results__variable__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" width="50%"><path d="M128 96h384v256h64v-272c0-26.38-21.62-48-48-48h-416c-26.38 0-48 21.62-48 48V352h64V96zM624 383.1h-608c-8.75 0-16 7.25-16 16v16c0 35.25 28.75 64 64 64h512c35.25 0 64-28.75 64-64v-16C640 391.2 632.8 383.1 624 383.1z"/></svg></div></div>
+                </div>
+                <div class="results__equivalents__item">
+                  <div class="results__variable -theme-yellow"><div class="results__variable__content"><div class="results__variable__value" id="impact_eq_smartphone"></div><div class="results__variable__name">smartphone prodotti</div></div><div class="results__variable__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" height="50%"><path d="M320 0H64C37.5 0 16 21.5 16 48v416C16 490.5 37.5 512 64 512h256c26.5 0 48-21.5 48-48v-416C368 21.5 346.5 0 320 0zM240 447.1C240 456.8 232.8 464 224 464H159.1C151.2 464 144 456.8 144 448S151.2 432 160 432h64C232.8 432 240 439.2 240 447.1zM304 384h-224V64h224V384z"/></svg></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="credits">
+          <h2 class="credits__title">Informazioni sull'ISIT</h2>
+          <p>L'ISIT (<a href="https://isit-europe.org" title="Collegamento al sito web dell'ISIT - Nuova scheda" target="_blank">Institute for Sustainable IT</a>) è un think &amp; do tank la cui missione è affrontare le tre questioni chiave dell'IT Sostenibile: ridurre l'impronta digitale (economica, sociale e ambientale), la capacità della tecnologia digitale di ridurre l'impronta dell'umanità, e la creazione di valore sostenibile / innovazione responsabile attraverso la tecnologia digitale per raggiungere l'e-inclusione per tutti.</p>
+          <p>L'<a href="https://isit-be.org/the-institute" title="Collegamento al sito web dell'ISIT - Nuova scheda" target="_blank">ISIT</a> è presente in tre paesi (Francia, Belgio e Svizzera) e conta quasi 200 organizzazioni membri (luglio 2022).</p>
+          <p>Questa calcolatrice è stata creata nel 2020 e aggiornata nel luglio 2022.</p>
+          <p class="opacity-light">Aggiornamento luglio 2022 da <a href="https://athom.co/" target="_blank">athom</a><br />Contribuzione iniziale 2020 di <a href="https://www.linkedin.com/in/gontier-julien-06653312" target="_blank">Julien Gontier</a> (Decathlon)</p>
+          <p class="opacity-light"><a href="../about-sustainable-it.html" title="Vedere le fonti">Vedere il dettaglio delle fonti per i calcoli</a> | <a href="../legal-notice.html" title="Note legali">Note legali</a></p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      var acc = document.getElementsByClassName("collapsible"); var i;
+      for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); }
+      $(document).ready(function () { $('.info').stop().mouseout(function () { $(this).parents('.question').next('.encart').hide('slow'); return false; }); $('.encart').stop().click(function () { $('.encart').hide('fast'); return false; }); $('.info').stop().mouseover(function () { $(this).parents('.question').next('.encart').show('fast'); return false; }); });
+    </script>
+  </body>
+</html>
