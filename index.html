@@ -3,12 +3,45 @@
   <head>
     <title>ISIT | Assessment of my individual / professional digital environmental footprint</title>
     <meta name="description" content="The ISIT has created a calculator that allows us to simply calculate our professional digital impact." />
+    <!-- SEO -->
+    <link rel="canonical" href="https://myimpact.isit-europe.org/" />
+    <link rel="alternate" hreflang="en" href="https://myimpact.isit-europe.org/" />
+    <link rel="alternate" hreflang="fr" href="https://myimpact.isit-europe.org/fr/" />
+    <link rel="alternate" hreflang="nl" href="https://myimpact.isit-europe.org/nl/" />
+    <link rel="alternate" hreflang="de" href="https://myimpact.isit-europe.org/de/" />
+    <link rel="alternate" hreflang="es" href="https://myimpact.isit-europe.org/es/" />
+    <link rel="alternate" hreflang="it" href="https://myimpact.isit-europe.org/it/" />
+    <link rel="alternate" hreflang="x-default" href="https://myimpact.isit-europe.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myimpact.isit-europe.org/" />
+    <meta property="og:title" content="MyImpact | Digital Carbon Footprint Calculator" />
+    <meta property="og:description" content="Calculate your individual and professional digital environmental footprint in kg CO2 eq. Free tool by ISIT." />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content="https://myimpact.isit-europe.org/img/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MyImpact | Digital Carbon Footprint Calculator" />
+    <meta name="twitter:description" content="Calculate your individual and professional digital environmental footprint in kg CO2 eq. Free tool by ISIT." />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MyImpact",
+      "url": "https://myimpact.isit-europe.org/",
+      "description": "Carbon footprint calculator for digital and professional usage",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "en",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+      "author": [
+        {"@type": "Organization", "name": "Institut du Numérique Responsable (INR)", "url": "https://institutnr.org"},
+        {"@type": "Organization", "name": "ISIT Belgique", "url": "https://isit-be.org"},
+        {"@type": "Organization", "name": "ISIT Suisse", "url": "https://isit-europe.org"}
+      ]
+    }
+    </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="stylesheet-inr.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
     <script src="scripts-en.js"></script>
      
     <link rel="shortcut icon" href="img/favicon.ico" />
@@ -42,9 +75,12 @@
         <div id="head_container">
           <div id="logo"> <img src="img/isit.png" alt="ISIT, Institute for Sustainable IT" /></div>
           <div class="div-switch-language">
-            <a class="switch-language" href="/" title="Link to access english version">EN</a>
-            <a class="switch-language" href="/fr" title="Lien pour accéder à la version française">FR</a>
-            <a class="switch-language" href="/nl" title="Link naar de Nederlandse versie">NL</a>
+            <a class="switch-language" href="/" title="English">EN</a>
+            <a class="switch-language" href="/fr/" title="Français">FR</a>
+            <a class="switch-language" href="/nl/" title="Nederlands">NL</a>
+            <a class="switch-language" href="/de/" title="Deutsch">DE</a>
+            <a class="switch-language" href="/es/" title="Español">ES</a>
+            <a class="switch-language" href="/it/" title="Italiano">IT</a>
           </div>
 
         </div>
@@ -95,6 +131,12 @@
                     <option value="fr" selected="selected">France</option>
                     <option value="be">Belgium</option>
                     <option value="ch">Switzerland</option>
+                    <option value="de">Germany</option>
+                    <option value="at">Austria</option>
+                    <option value="es">Spain</option>
+                    <option value="it">Italy</option>
+                    <option value="nl">Netherlands</option>
+                    <option value="lu">Luxembourg</option>
                   </select>
                 </div>
                 <div class="groupe" data-device-id="1">
@@ -150,7 +192,7 @@
             <header class="section__header">
               <h2 class="section__title">Online Usage</h2>
               <div class="section__intro">
-                <p>Today, video consumption accounts for more than 60% of global bandwidth  (<a href="#"  title="Link to the source - New tab" target="_blank">Source: The Shift Project</a>).</p>
+                <p>Today, video consumption accounts for more than 60% of global bandwidth  (<a href="https://theshiftproject.org/article/lean-ict-notre-nouveau-rapport/" title="Link to the source - New tab" target="_blank">Source: The Shift Project</a>).</p>
               </div>
             </header>
             <div class="section__main">
@@ -365,7 +407,7 @@
             <div class="results__grid__item -width-100">
               <div class="results__equivalents">
                 <div class="results__equivalents__item">
-                  <h3 class="results__equivalents__title">What can I compare my total impact* to? *&nbsp;?</h3>
+                  <h3 class="results__equivalents__title">What can I compare my total impact to?*</h3>
                   <div class="results__equivalents__intro">We give you some examples...<br />Source: <a href="https://monconvertisseurco2.fr/" title="Link to the source - New tab" target="_blank">My CO<sub>2</sub> Converter</a><br /> *Total impact = digital + travel</div>
                 </div>
                 <div class="results__equivalents__item">
