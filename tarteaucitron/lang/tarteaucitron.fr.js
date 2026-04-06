@@ -1,7 +1,8 @@
-    /*global tarteaucitron */
+/*global tarteaucitron */
+/* min ready */
 tarteaucitron.lang = {
 
-    "middleBarHead": "☝ 🍪",
+    "middleBarHead": "☝️ 🍪",
     "adblock": "Bonjour! Ce site joue la transparence et vous donne le choix des services tiers à activer.",
     "adblock_call": "Merci de désactiver votre adblocker pour commencer la personnalisation.",
     "reload": "Recharger la page",
@@ -10,11 +11,12 @@ tarteaucitron.lang = {
     "alertBigClick": "En poursuivant votre navigation,",
     "alertBig": "vous acceptez l'utilisation de services tiers pouvant installer des cookies",
     
-    "alertBigPrivacy": "Ce site utilise Matomo (service open source/privacy by design) pour suivre les statistiques de fréquentation.",
+    "alertBigPrivacy": "Ce site utilise des cookies et vous donne le contrôle sur ceux que vous souhaitez activer",
     "alertSmall": "Gestion des services",
-    "acceptAll": "Accepter Matomo",
+    "acceptAll": "Tout accepter",
     "personalize": "Personnaliser",
     "close": "Fermer",
+    "closeBanner": "Masquer le bandeau des cookies",
 
     "privacyUrl": "Politique de confidentialité",
 
@@ -37,9 +39,10 @@ tarteaucitron.lang = {
     "title": "Panneau de gestion des cookies",
     "cookieDetail": "Détail des cookies",
     "ourSite": "sur notre site",
+    "modalWindow": "(fenêtre modale)",
     "newWindow": "(nouvelle fenêtre)",
-    "allowAll": "Accepter Matomo",
-    "denyAll": "Refuser Matomo",
+    "allowAll": "Tout accepter",
+    "denyAll": "Tout refuser",
 
     "icon": "Cookies",
     
@@ -79,7 +82,15 @@ tarteaucitron.lang = {
         "title": "Autre",
         "details": "Services visant à afficher du contenu web."
     },
+
+    "google": {
+        "title": "Consentement spécifique aux services Google",
+        "details": "Google peut utiliser vos données pour la mesure d'audience, la performance publicitaire ou pour vous proposer des annonces personnalisées."
+    },
     
     "mandatoryTitle": "Cookies obligatoires",
-    "mandatoryText": "Ce site utilise des cookies nécessaires à son bon fonctionnement. Ils ne peuvent pas être désactivés."
+    "mandatoryText": "Ce site utilise des cookies nécessaires à son bon fonctionnement. Ils ne peuvent pas être désactivés.",
+
+    "save": "Enregistrer",
+    "ourpartners": "Nos partenaires"
 };

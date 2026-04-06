@@ -1,6 +1,7 @@
 /*global tarteaucitron */
+/* min ready */
 tarteaucitron.lang = {
-    "middleBarHead": "☝ 🍪",
+    "middleBarHead": "☝️ 🍪",
     "adblock": "Hello! This site is transparent and lets you choose the 3rd party services you want to allow.",
     "adblock_call": "Please disable your adblocker to start customizing.",
     "reload": "Refresh the page",
@@ -9,11 +10,12 @@ tarteaucitron.lang = {
     "alertBigClick": "If you continue to browse this website,",
     "alertBig": "you are allowing all third-party services",
     
-    "alertBigPrivacy": "This site sets cookies only for the use of Matomo (open source/privacy by design service) for website audience measurement. We give you the possibility to accept or not.",
+    "alertBigPrivacy": "This site uses cookies and gives you control over what you want to activate",
     "alertSmall": "Manage services",
     "personalize": "Personalize",
     "acceptAll": "OK, accept all",
     "close": "Close",
+    "closeBanner": "Hide cookie banner",
 
     "privacyUrl": "Privacy policy",
     
@@ -36,9 +38,10 @@ tarteaucitron.lang = {
     "title": "Cookies management panel",
     "cookieDetail": "Cookie detail for",
     "ourSite": "on our site",
+    "modalWindow": "(modal window)",
     "newWindow": "(new window)",
-    "allowAll": "Allow Matomo",
-    "denyAll": "Deny Matomo",
+    "allowAll": "Allow all cookies",
+    "denyAll": "Deny all cookies",
 
     "icon": "Cookies",
     
@@ -78,7 +81,15 @@ tarteaucitron.lang = {
         "title": "Other",
         "details": "Services to display web content."
     },
+
+    "google": {
+        "title": "Specific consent for Google services",
+        "details": "Google may use your data for audience measurement, advertising performance, or to offer you personalized ads."
+    },
     
     "mandatoryTitle": "Mandatory cookies",
-    "mandatoryText": "This site uses cookies necessary for its proper functioning which cannot be deactivated."
+    "mandatoryText": "This site uses cookies necessary for its proper functioning which cannot be deactivated.",
+
+    "save": "Save",
+    "ourpartners": "Our Partners"
 };
