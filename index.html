@@ -66,6 +66,19 @@
         g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
       })();
     </script>
+    <script>
+      (function() {
+        // Auto-detect browser language and redirect — skip if user already chose a language
+        if (!sessionStorage.getItem('lang-chosen')) {
+          var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().substring(0, 2);
+          var supported = { fr: 'fr/', nl: 'nl/', de: 'de/', es: 'es/', it: 'it/' };
+          if (supported[lang]) {
+            sessionStorage.setItem('lang-chosen', lang);
+            window.location.replace(supported[lang]);
+          }
+        }
+      })();
+    </script>
   </head>
   <body>
     <header class="header">
@@ -73,7 +86,7 @@
         <div id="head_container">
           <div id="logo"> <img src="img/isit.png" alt="ISIT, Institute for Sustainable IT" /></div>
           <div class="div-switch-language">
-            <a class="switch-language" href="./" title="English">EN</a>
+            <a class="switch-language" href="./" title="English" onclick="sessionStorage.setItem('lang-chosen','en')">EN</a>
             <a class="switch-language" href="fr/" title="Français">FR</a>
             <a class="switch-language" href="nl/" title="Nederlands">NL</a>
             <a class="switch-language" href="de/" title="Deutsch">DE</a>
@@ -473,9 +486,9 @@
           <p>The <a href="https://isit-be.org/the-institute" title="Link to the ISIT website - New tab" target="_blank">ISIT</a>, Institute for Sustainable IT, works on the issues of training in Sustainable IT, measuring the digital footprint and making available guides and best practice guidelines. The ISIT is present in three countries (France, Belgium & Switzerland) and has nearly 200 member organisations (July 2022).</p>
           <p>This calculator was created in 2020 and updated in July 2022.</p>
 
-          <p class="opacity-light">July 2022 update by <a href="https://athom.co/" title="Link to the athom website - New tab" target="_blank">athom</a><br />Initial 2020 contribution by <a href="https://www.linkedin.com/in/gontier-julien-06653312" title=" Link to LinkedIn profile - New tab" target="_blank">Julien Gontier</a> (Decathlon)</p>
+          <p class="opacity-light">2026 update by ggallon (<a href="https://institutnr.org" title="Link to INR France website - New tab" target="_blank">INR France</a>)<br />July 2022 update by <a href="https://athom.co/" title="Link to the athom website - New tab" target="_blank">athom</a><br />Initial 2020 contribution by <a href="https://www.linkedin.com/in/gontier-julien-06653312" title=" Link to LinkedIn profile - New tab" target="_blank">Julien Gontier</a> (Decathlon)</p>
           
-          <p class="opacity-light"><a href="about-sustainable-it.html" title="link to the sources">See the detail of the sources for the calculations</a> | <a href="legal-notice.html" title="link to the legal notice">legal notice</a></p>          
+          <p class="opacity-light"><a href="about-sustainable-it.html" title="link to the sources">See the detail of the sources for the calculations</a> | <a href="legal-notice.html" title="link to the legal notice">legal notice</a> | <a href="cookies.html" title="cookie management">cookies</a></p>          
         </div>
       </div>
     </footer>
