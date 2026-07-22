@@ -831,33 +831,32 @@ JgAA') format('woff2');
   }
 
   :root {
-    --navy: #194f6e;
-    --navy-deep: #022c44;
-    --action: #00659b;
-    --sky: #f5f8fb;
-    --sky-deep: #dae5f0;
-    --ink: #212121;
-    --ink-soft: #56707f;
-    --line: #e5e7eb;
+    --ink: #0b1f2e;
+    --ink-soft: #4c6478;
+    --paper: #eef1ee;
+    --paper-raised: #e2e7e1;
+    --line: #c9d0c9;
+    --accent: #0077b3;
+    --accent-deep: #045480;
+    --ember: #b56a34;
     --card: #ffffff;
-    --page: #ffffff;
-    --rose-a: #e11d48; --rose-b: #f43f5e;
-    --blue-a: #0284c7; --blue-b: #0ea5e9;
-    --yellow-a: #ca8a04; --yellow-b: #eab308;
-    --emerald-a: #059669; --emerald-b: #10b981;
-    --indigo-a: #4f46e5; --indigo-b: #6366f1;
+    --b1: #d7e4ec; --b2: #a9c7d9; --b3: #6fa3c3; --b4: #3d7ba3; --b5: #0b4f79;
   }
 
   :root[data-theme="dark"] {
-    --navy: #a9cfe6; --navy-deep: #01141f; --action: #6cc0ec;
-    --sky: #0e1b24; --sky-deep: #142834; --ink: #e7edf1; --ink-soft: #9fb8c8;
-    --line: #223442; --card: #10202b; --page: #081118;
+    --ink: #e7ece9; --ink-soft: #9fb2ab;
+    --paper: #0d1613; --paper-raised: #131f1a;
+    --line: #263630; --accent: #5fb6e0; --accent-deep: #8fcdf0; --ember: #d99a63;
+    --card: #101a16;
+    --b1: #16303e; --b2: #1b4457; --b3: #226080; --b4: #3f92c1; --b5: #79c3e8;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --navy: #a9cfe6; --navy-deep: #01141f; --action: #6cc0ec;
-      --sky: #0e1b24; --sky-deep: #142834; --ink: #e7edf1; --ink-soft: #9fb8c8;
-      --line: #223442; --card: #10202b; --page: #081118;
+      --ink: #e7ece9; --ink-soft: #9fb2ab;
+      --paper: #0d1613; --paper-raised: #131f1a;
+      --line: #263630; --accent: #5fb6e0; --accent-deep: #8fcdf0; --ember: #d99a63;
+      --card: #101a16;
+      --b1: #16303e; --b2: #1b4457; --b3: #226080; --b4: #3f92c1; --b5: #79c3e8;
     }
   }
 
@@ -865,117 +864,121 @@ JgAA') format('woff2');
   html { font-size: 10px; }
   body {
     margin: 0;
-    background: var(--page);
+    background: var(--paper);
     color: var(--ink);
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 1.7rem;
-    line-height: 1.6;
+    font-size: 1.75rem;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--action); }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--action); outline-offset: 3px; }
-  .data, .data * { font-variant-numeric: tabular-nums; font-weight: 800; }
+  a { color: var(--accent-deep); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .data, .data * { font-family: ui-monospace, "SF Mono", Menlo, "Cascadia Mono", monospace; font-variant-numeric: tabular-nums; }
 
-  .wrap { max-width: 124rem; margin: 0 auto; padding: 0 2.4rem; }
+  .serif { font-family: Charter, "Iowan Old Style", Georgia, "Times New Roman", serif; }
 
-  header.topbar { background: var(--card); border-bottom: .1rem solid var(--line); padding: 1.8rem 0; position: sticky; top: 0; z-index: 20; backdrop-filter: blur(6px); }
+  .wrap { max-width: 108rem; margin: 0 auto; padding: 0 2.4rem; }
+  .prose { max-width: 68ch; }
+
+  [data-reveal] { opacity: 0; transform: translateY(1.4rem); transition: opacity .7s ease, transform .7s ease; }
+  [data-reveal].is-visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; transition: none; } }
+
+  header.topbar { border-bottom: .1rem solid var(--line); padding: 2rem 0; }
   header.topbar .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; }
-  .wordmark { font-weight: 800; font-size: 2.1rem; color: var(--navy); letter-spacing: -.01em; }
-  .links { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .pill {
-    display: inline-flex; align-items: center; gap: .6rem; padding: 1.1rem 2rem; border-radius: .7rem;
-    font-size: 1.4rem; font-weight: 700; text-decoration: none; color: var(--action);
-    background: var(--sky); border: .1rem solid transparent; transition: transform .15s ease, box-shadow .15s ease;
+  .wordmark { font-family: Charter, Georgia, serif; font-weight: 700; font-size: 2.1rem; letter-spacing: -.01em; }
+  .links { display: flex; gap: 1.4rem; flex-wrap: wrap; align-items: center; }
+  .link-plain { font-size: 1.4rem; font-weight: 600; text-decoration: none; color: var(--ink); border-bottom: .1rem solid var(--line); padding-bottom: .1rem; }
+  .link-plain:hover { border-color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: .8rem; padding: 1.2rem 2.2rem; border-radius: .3rem;
+    font-size: 1.4rem; font-weight: 700; text-decoration: none; color: #fff; background: var(--accent-deep);
+    transition: background .15s ease;
   }
-  .pill.primary { background: var(--action); color: #fff; box-shadow: 0 .6rem 1.6rem -.6rem rgba(0,101,155,.55); }
-  .pill:hover { transform: translateY(-.2rem); }
+  .btn:hover { background: var(--accent); }
 
-  .hero { padding: 7rem 0 6rem; background: linear-gradient(180deg, var(--sky) 0%, var(--page) 100%); overflow: hidden; }
-  .hero .wrap { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center; }
-  .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: 1.2rem; font-weight: 800; color: var(--action); }
-  h1 { font-size: 4rem; line-height: 1.1; color: var(--navy); font-weight: 800; margin: 1.4rem 0 1.8rem; letter-spacing: -.01em; text-wrap: balance; }
-  .lede { font-size: 1.9rem; color: var(--ink-soft); max-width: 58ch; margin: 0 0 3rem; }
-  .cta-row { display: flex; gap: 1.2rem; flex-wrap: wrap; }
-  .cta-row .pill { padding: 1.5rem 2.6rem; font-size: 1.6rem; border-radius: .8rem; }
-
-  /* preview card mimicking the actual results screen */
-  .preview {
-    background: var(--navy-deep);
-    border-radius: 1.6rem;
-    padding: 2.6rem;
-    box-shadow: 0 3rem 6rem -2rem rgba(2,44,68,.45);
+  .hero { padding: 8rem 0 5rem; }
+  .hero .wrap { display: grid; grid-template-columns: 1fr; gap: 5rem; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: 1.2rem; font-weight: 700; color: var(--accent-deep); }
+  h1 {
+    font-family: Charter, "Iowan Old Style", Georgia, serif;
+    font-size: 4.4rem; line-height: 1.08; font-weight: 700; letter-spacing: -.015em;
+    margin: 1.6rem 0 2.2rem; text-wrap: balance;
   }
-  .preview__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; }
-  .preview__title { color: #fff; font-size: 1.4rem; font-weight: 700; opacity: .85; text-transform: uppercase; letter-spacing: .06em; }
-  .preview__tag { color: #9cc3dc; font-size: 1.2rem; }
-  .preview__rows { display: flex; flex-direction: column; gap: 1rem; }
-  .prow {
-    display: flex; align-items: center; justify-content: space-between; gap: 1.6rem;
-    padding: 1.6rem 1.8rem; border-radius: 1rem; color: #fff;
-  }
-  .prow .name { font-size: 1.4rem; font-weight: 600; opacity: .95; }
-  .prow .val { font-size: 1.9rem; font-weight: 800; }
-  .prow.rose { background: linear-gradient(90deg, var(--rose-a), var(--rose-b)); }
-  .prow.blue { background: linear-gradient(90deg, var(--blue-a), var(--blue-b)); }
-  .prow.yellow { background: linear-gradient(90deg, var(--yellow-a), var(--yellow-b)); }
-  .prow.emerald { background: linear-gradient(90deg, var(--emerald-a), var(--emerald-b)); }
-  .prow.indigo { background: linear-gradient(90deg, var(--indigo-a), var(--indigo-b)); }
-  .prow.total { background: rgba(255,255,255,.08); border: .1rem dashed rgba(255,255,255,.35); }
-  .prow.total .val { font-size: 2.6rem; }
-  .preview__note { color: #9cc3dc; font-size: 1.2rem; margin-top: 1.6rem; opacity: .8; }
+  .lede { font-size: 2rem; color: var(--ink-soft); max-width: 52ch; margin: 0 0 3.2rem; }
+  .cta-row { display: flex; gap: 1.6rem; flex-wrap: wrap; align-items: center; }
 
-  section { padding: 6rem 0; }
-  section.alt { background: var(--sky); }
-  .kicker { text-transform: uppercase; letter-spacing: .1em; font-size: 1.2rem; font-weight: 800; color: var(--action); margin: 0 0 .8rem; }
-  h2 { font-size: 2.8rem; font-weight: 800; color: var(--navy); margin: 0 0 1.2rem; text-wrap: balance; }
-  .section-note { color: var(--ink-soft); margin: 0 0 3.6rem; max-width: 66ch; font-size: 1.7rem; }
+  .chart-block { border-top: .1rem solid var(--line); padding-top: 3.2rem; }
+  .chart-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; gap: 1.6rem; flex-wrap: wrap; }
+  .chart-head h2 { margin: 0; font-size: 1.9rem; }
+  .chart-head .sub { color: var(--ink-soft); font-size: 1.3rem; }
+  canvas#bar { width: 100%; height: 9rem; display: block; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1.6rem 2.8rem; margin-top: 2rem; }
+  .legend-item { display: flex; align-items: center; gap: .9rem; font-size: 1.4rem; }
+  .swatch { width: 1.2rem; height: 1.2rem; border-radius: .2rem; flex-shrink: 0; }
+  .legend-item .name { color: var(--ink-soft); }
+  .legend-item .val { font-weight: 700; }
+  .threshold-note { margin-top: 1.6rem; font-size: 1.3rem; color: var(--ember); display: flex; align-items: center; gap: .8rem; }
+  .threshold-note .mark { width: .2rem; height: 1.4rem; background: var(--ember); display: inline-block; }
 
-  .grid-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr)); gap: 1.8rem; }
-  .card {
-    border-radius: 1.2rem; padding: 2.6rem 2.4rem; color: #fff; position: relative; overflow: hidden;
-    transition: transform .18s ease;
+  section { padding: 7rem 0; border-top: .1rem solid var(--line); }
+  .kicker { text-transform: uppercase; letter-spacing: .14em; font-size: 1.2rem; font-weight: 700; color: var(--accent-deep); margin: 0 0 1rem; }
+  h2.section-title {
+    font-family: Charter, Georgia, serif; font-size: 3rem; font-weight: 700; margin: 0 0 1.6rem; text-wrap: balance; letter-spacing: -.01em;
   }
-  .card:hover { transform: translateY(-.3rem); }
-  .card h3 { font-size: 1.9rem; margin: 0 0 1rem; font-weight: 800; }
-  .card p { margin: 0; font-size: 1.4rem; opacity: .92; line-height: 1.55; }
-  .card.rose { background: linear-gradient(135deg, var(--rose-a), var(--rose-b)); }
-  .card.blue { background: linear-gradient(135deg, var(--blue-a), var(--blue-b)); }
-  .card.yellow { background: linear-gradient(135deg, var(--yellow-a), var(--yellow-b)); }
-  .card.emerald { background: linear-gradient(135deg, var(--emerald-a), var(--emerald-b)); }
-  .card.indigo { background: linear-gradient(135deg, var(--indigo-a), var(--indigo-b)); }
-  .card.navy { background: var(--navy-deep); }
+  .section-note { color: var(--ink-soft); margin: 0 0 3.6rem; font-size: 1.7rem; }
+
+  .measure-list { display: flex; flex-direction: column; }
+  .measure-row {
+    display: grid; grid-template-columns: 3rem 1fr; gap: 2rem; padding: 2.6rem 0;
+    border-bottom: .1rem solid var(--line);
+  }
+  .measure-row:first-child { border-top: .1rem solid var(--line); }
+  .measure-row .dot { width: 1rem; height: 1rem; border-radius: 50%; margin-top: .7rem; }
+  .measure-row h3 { font-family: Charter, Georgia, serif; font-size: 2.1rem; margin: 0 0 .6rem; font-weight: 700; }
+  .measure-row p { margin: 0; color: var(--ink-soft); max-width: 62ch; }
 
   .trust {
-    display: flex; flex-wrap: wrap; gap: 1rem 2.2rem; align-items: center;
-    padding: 2.4rem 2.6rem; background: var(--card); border: .1rem solid var(--line); border-radius: 1.2rem;
+    display: flex; flex-wrap: wrap; gap: 1rem 2.4rem; align-items: baseline;
   }
-  .trust span { font-size: 1.3rem; color: var(--ink-soft); font-weight: 600; }
-  .trust a { font-size: 1.4rem; font-weight: 700; text-decoration: none; }
+  .trust .lbl { font-size: 1.3rem; color: var(--ink-soft); font-weight: 600; }
+  .trust a { font-size: 1.5rem; font-weight: 700; text-decoration: none; border-bottom: .1rem solid var(--line); padding-bottom: .1rem; }
+  .trust a:hover { border-color: var(--ink); }
 
-  .lang-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .lang-row { display: flex; flex-wrap: wrap; gap: 1.2rem; }
   .lang-row a {
-    background: var(--card); border: .15rem solid var(--line); border-radius: .8rem;
-    padding: 1.1rem 2rem; font-size: 1.5rem; font-weight: 700; text-decoration: none; color: var(--navy);
-    transition: border-color .15s ease;
+    font-size: 1.5rem; font-weight: 700; text-decoration: none; color: var(--ink);
+    border: .1rem solid var(--line); border-radius: .3rem; padding: 1rem 1.8rem;
+    transition: border-color .15s ease, color .15s ease;
   }
-  .lang-row a:hover { border-color: var(--action); }
+  .lang-row a:hover { border-color: var(--accent-deep); color: var(--accent-deep); }
 
-  .history-list { display: flex; flex-direction: column; gap: 1.4rem; }
-  .history-item { display: flex; gap: 2rem; align-items: baseline; padding-bottom: 1.4rem; border-bottom: .1rem solid var(--line); }
-  .history-item:last-child { border-bottom: none; }
-  .history-item .v { font-weight: 800; color: var(--navy); min-width: 5.5rem; font-size: 1.6rem; }
-  .history-item .d { color: var(--ink-soft); min-width: 9rem; font-size: 1.4rem; }
-  .history-item .c { font-size: 1.5rem; }
+  .timeline { position: relative; padding-left: 2.8rem; }
+  .timeline:before { content: ""; position: absolute; left: .4rem; top: .6rem; bottom: .6rem; width: .2rem; background: var(--line); }
+  .tl-item { position: relative; padding-bottom: 3.4rem; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item:before { content: ""; position: absolute; left: -2.8rem; top: .4rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--accent-deep); }
+  .tl-item .v { font-weight: 700; font-family: Charter, Georgia, serif; font-size: 1.9rem; }
+  .tl-item .d { color: var(--ink-soft); font-size: 1.3rem; margin: .3rem 0 .8rem; }
+  .tl-item .c { max-width: 60ch; }
 
-  footer { background: var(--navy-deep); color: #fff; padding: 5rem 0; }
-  footer .wrap p { max-width: 65ch; color: #cfe0ea; font-size: 1.4rem; }
-  footer a { color: #9cc3dc; }
-  footer .license { display: flex; align-items: center; gap: 1rem; margin-top: 1.8rem; }
-  footer .copy { margin-top: 2rem; opacity: .8; font-size: 1.3rem; }
+  .stack-list { display: flex; flex-direction: column; gap: 0; }
+  .stack-item { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem 0; border-bottom: .1rem solid var(--line); }
+  .stack-item:first-child { border-top: .1rem solid var(--line); }
+  .stack-item h3 { margin: 0 0 .4rem; font-size: 1.7rem; font-weight: 700; }
+  .stack-item p { margin: 0; color: var(--ink-soft); font-size: 1.4rem; max-width: 50ch; }
+
+  footer { background: var(--ink); color: var(--paper); padding: 5rem 0; }
+  footer .wrap p { max-width: 65ch; opacity: .85; font-size: 1.4rem; }
+  footer a { color: var(--b3); }
+  :root[data-theme="dark"] footer a, @media (prefers-color-scheme: dark) { }
+  footer .license { margin-top: 1.8rem; }
+  footer .copy { margin-top: 2rem; opacity: .6; font-size: 1.3rem; }
 
   @media screen and (min-width: 900px) {
-    .hero .wrap { grid-template-columns: 1.1fr .9fr; }
-    h1 { font-size: 4.8rem; }
+    .hero .wrap { grid-template-columns: 1fr; }
+    h1 { font-size: 5.6rem; }
+    .measure-row { grid-template-columns: 4rem 1fr; }
   }
 </style>
 
@@ -983,38 +986,39 @@ JgAA') format('woff2');
   <div class="wrap">
     <span class="wordmark">MyImpact</span>
     <nav class="links">
-      <a class="pill" href="https://github.com/Institut-du-Numerique-Responsable/myimpact">Code source</a>
-      <a class="pill primary" href="https://myimpact.isit-europe.org/">Calculer mon empreinte</a>
+      <a class="link-plain" href="https://github.com/Institut-du-Numerique-Responsable/myimpact">Code source</a>
+      <a class="btn" href="https://myimpact.isit-europe.org/">Calculer mon empreinte</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="hero">
+  <section class="hero" style="border-top:none;">
     <div class="wrap">
       <div>
         <p class="eyebrow">Institut du Numérique Responsable · ISIT</p>
         <h1>Combien pèse votre numérique professionnel ?</h1>
         <p class="lede">En cinq minutes, MyImpact estime le poids carbone de vos outils du quotidien : ordinateur, cloud, visioconférence, emails, déplacements. Gratuit, sans compte, sans donnée envoyée à un serveur.</p>
         <div class="cta-row">
-          <a class="pill primary" href="https://myimpact.isit-europe.org/">Calculer mon empreinte →</a>
-          <a class="pill" href="https://github.com/Institut-du-Numerique-Responsable/myimpact">Voir le code sur GitHub</a>
+          <a class="btn" href="https://myimpact.isit-europe.org/">Calculer mon empreinte →</a>
+          <a class="link-plain" href="https://github.com/Institut-du-Numerique-Responsable/myimpact">Voir le code sur GitHub</a>
         </div>
       </div>
-      <div class="preview" aria-hidden="true">
-        <div class="preview__head">
-          <span class="preview__title">Votre résultat</span>
-          <span class="preview__tag">Exemple</span>
+
+      <div class="chart-block">
+        <div class="chart-head">
+          <h2 class="serif">Composition d'un résultat type</h2>
+          <span class="sub">610 kg CO₂ éq. sur un an, exemple</span>
         </div>
-        <div class="preview__rows">
-          <div class="prow blue"><span class="name">Équipements</span><span class="val data">120 kg</span></div>
-          <div class="prow indigo"><span class="name">Usages en ligne</span><span class="val data">64 kg</span></div>
-          <div class="prow emerald"><span class="name">Stockage cloud</span><span class="val data">38 kg</span></div>
-          <div class="prow yellow"><span class="name">Emails</span><span class="val data">12 kg</span></div>
-          <div class="prow rose"><span class="name">Déplacements</span><span class="val data">376 kg</span></div>
-          <div class="prow total"><span class="name">Total sur un an</span><span class="val data">610 kg CO₂ éq.</span></div>
+        <canvas id="bar" role="img" aria-label="Diagramme en barre montrant la répartition de 610 kilogrammes de CO2 équivalent par an : équipements 120 kilogrammes, usages en ligne 64 kilogrammes, stockage cloud 38 kilogrammes, emails 12 kilogrammes, déplacements 376 kilogrammes."></canvas>
+        <div class="legend data">
+          <div class="legend-item"><span class="swatch" style="background:var(--b5)"></span><span class="name">Déplacements</span><span class="val">376 kg</span></div>
+          <div class="legend-item"><span class="swatch" style="background:var(--b4)"></span><span class="name">Équipements</span><span class="val">120 kg</span></div>
+          <div class="legend-item"><span class="swatch" style="background:var(--b3)"></span><span class="name">Usages en ligne</span><span class="val">64 kg</span></div>
+          <div class="legend-item"><span class="swatch" style="background:var(--b2)"></span><span class="name">Stockage cloud</span><span class="val">38 kg</span></div>
+          <div class="legend-item"><span class="swatch" style="background:var(--b1)"></span><span class="name">Emails</span><span class="val">12 kg</span></div>
         </div>
-        <p class="preview__note">Aperçu illustratif de l'écran de résultats. Le vôtre dépendra de vos réponses.</p>
+        <p class="threshold-note"><span class="mark"></span> Repère : 166 kg/mois, objectif individuel annuel de l'Accord de Paris ramené au mois</p>
       </div>
     </div>
   </section>
@@ -1022,26 +1026,26 @@ JgAA') format('woff2');
   <section id="calcule">
     <div class="wrap">
       <p class="kicker">Ce que MyImpact mesure</p>
-      <h2>Six familles d'usages, un seul chiffre à la fin</h2>
-      <p class="section-note">Chaque catégorie est reliée à une étude publique. Vous répondez à quelques questions simples, MyImpact fait le calcul et vous situe par rapport à l'objectif de l'Accord de Paris.</p>
-      <div class="grid-6">
-        <div class="card blue"><h3>Équipements</h3><p>Ordinateurs, smartphones, tablettes, écrans et imprimantes : fabrication et usage quotidien.</p></div>
-        <div class="card indigo"><h3>Usages en ligne</h3><p>Visioconférence, douze outils couverts dont Zoom, Teams et Meet, et navigation web.</p></div>
-        <div class="card emerald"><h3>Stockage cloud</h3><p>Le coût carbone de vos fichiers et sauvegardes hébergés à distance.</p></div>
-        <div class="card yellow"><h3>Emails</h3><p>Avec et sans pièce jointe, souvent sous-estimés dans les bilans numériques.</p></div>
-        <div class="card rose"><h3>Déplacements</h3><p>Avion, train, voiture, vélo et marche pour vos trajets professionnels.</p></div>
-        <div class="card navy"><h3>Résultat global</h3><p>Un total en kg CO₂ éq., des équivalences concrètes, et votre position face à l'objectif climat.</p></div>
+      <h2 class="section-title">Six familles d'usages, un seul chiffre à la fin</h2>
+      <p class="section-note prose">Chaque catégorie est reliée à une étude publique. Vous répondez à quelques questions simples, MyImpact fait le calcul et vous situe par rapport à l'objectif de l'Accord de Paris.</p>
+      <div class="measure-list">
+        <div class="measure-row" data-reveal><span class="dot" style="background:var(--b4)"></span><div><h3>Équipements</h3><p>Ordinateurs, smartphones, tablettes, écrans et imprimantes : fabrication et usage quotidien.</p></div></div>
+        <div class="measure-row" data-reveal><span class="dot" style="background:var(--b3)"></span><div><h3>Usages en ligne</h3><p>Visioconférence, douze outils couverts dont Zoom, Teams et Meet, et navigation web.</p></div></div>
+        <div class="measure-row" data-reveal><span class="dot" style="background:var(--b2)"></span><div><h3>Stockage cloud</h3><p>Le coût carbone de vos fichiers et sauvegardes hébergés à distance.</p></div></div>
+        <div class="measure-row" data-reveal><span class="dot" style="background:var(--b1)"></span><div><h3>Emails</h3><p>Avec et sans pièce jointe, souvent sous-estimés dans les bilans numériques.</p></div></div>
+        <div class="measure-row" data-reveal><span class="dot" style="background:var(--b5)"></span><div><h3>Déplacements</h3><p>Avion, train, voiture, vélo et marche pour vos trajets professionnels.</p></div></div>
+        <div class="measure-row" data-reveal><span class="dot" style="background:var(--ember)"></span><div><h3>Résultat global</h3><p>Un total en kg CO₂ éq., des équivalences concrètes, et votre position face à l'objectif climat.</p></div></div>
       </div>
     </div>
   </section>
 
-  <section class="alt" id="confiance">
+  <section id="confiance">
     <div class="wrap">
       <p class="kicker">Des chiffres sourcés</p>
-      <h2>Rien n'est inventé, tout est cité</h2>
-      <p class="section-note">Les valeurs utilisées par la calculatrice viennent d'études publiques reconnues. Le détail complet des sources et de la méthode est documenté dans le dépôt du projet.</p>
+      <h2 class="section-title">Rien n'est inventé, tout est cité</h2>
+      <p class="section-note prose">Les valeurs utilisées par la calculatrice viennent d'études publiques reconnues. Le détail complet des sources et de la méthode est documenté dans le dépôt du projet.</p>
       <div class="trust">
-        <span>Sources principales :</span>
+        <span class="lbl">Sources principales</span>
         <a href="https://librairie.ademe.fr/consommer-autrement/5226-guide-pratique-la-face-cachee-du-numerique.html">ADEME</a>
         <a href="https://www.umweltbundesamt.de/sites/default/files/medien/5750/publikationen/2021-06-17_texte_94-2021_green-cloud-computing.pdf">Umweltbundesamt</a>
         <a href="https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/">Greenspector</a>
@@ -1055,8 +1059,8 @@ JgAA') format('woff2');
   <section id="langues">
     <div class="wrap">
       <p class="kicker">Six langues</p>
-      <h2>Utilisable dans toute votre équipe, où qu'elle soit</h2>
-      <p class="section-note">La calculatrice s'adapte aussi au mix énergétique du pays choisi, de la Suisse à l'Allemagne.</p>
+      <h2 class="section-title">Utilisable dans toute votre équipe, où qu'elle soit</h2>
+      <p class="section-note prose">La calculatrice s'adapte aussi au mix énergétique du pays choisi, de la Suisse à l'Allemagne.</p>
       <div class="lang-row">
         <a href="https://myimpact.isit-europe.org/">English</a>
         <a href="https://myimpact.isit-europe.org/fr/">Français</a>
@@ -1068,15 +1072,15 @@ JgAA') format('woff2');
     </div>
   </section>
 
-  <section class="alt" id="a-propos">
+  <section id="a-propos">
     <div class="wrap">
       <p class="kicker">Le projet</p>
-      <h2>Porté par trois organisations, depuis 2020</h2>
-      <p class="section-note">MyImpact est créé et maintenu par l'<a href="https://institutnr.org">Institut du Numérique Responsable</a>, avec <a href="https://isit-be.org">ISIT Belgique</a> et <a href="https://isit-europe.org">ISIT Suisse</a>.</p>
-      <div class="history-list">
-        <div class="history-item"><span class="v data">v1.0</span><span class="d data">2020</span><span class="c">Architecture initiale, par Julien Gontier, Decathlon</span></div>
-        <div class="history-item"><span class="v data">v1.1</span><span class="d data">2022</span><span class="c">Mise à jour des indicateurs, nouvelles sections</span></div>
-        <div class="history-item"><span class="v data">v1.2</span><span class="d data">2026</span><span class="c">Sources actualisées, trois nouvelles langues, conformité RGPD renforcée, référencement</span></div>
+      <h2 class="section-title">Porté par trois organisations, depuis 2020</h2>
+      <p class="section-note prose">MyImpact est créé et maintenu par l'<a href="https://institutnr.org">Institut du Numérique Responsable</a>, avec <a href="https://isit-be.org">ISIT Belgique</a> et <a href="https://isit-europe.org">ISIT Suisse</a>.</p>
+      <div class="timeline">
+        <div class="tl-item"><div class="v">v1.0</div><div class="d data">2020</div><div class="c">Architecture initiale, par Julien Gontier, Decathlon</div></div>
+        <div class="tl-item"><div class="v">v1.1</div><div class="d data">2022</div><div class="c">Mise à jour des indicateurs, nouvelles sections</div></div>
+        <div class="tl-item"><div class="v">v1.2</div><div class="d data">2026</div><div class="c">Sources actualisées, trois nouvelles langues, conformité RGPD renforcée, référencement</div></div>
       </div>
     </div>
   </section>
@@ -1084,12 +1088,12 @@ JgAA') format('woff2');
   <section id="technique">
     <div class="wrap">
       <p class="kicker">Sous le capot</p>
-      <h2>Aussi sobre techniquement que dans son propos</h2>
-      <div class="grid-6">
-        <div class="card navy"><h3>HTML statique</h3><p>Aucun système de build, aucune dépendance serveur.</p></div>
-        <div class="card navy"><h3>Calcul local</h3><p>Tout se passe dans votre navigateur, rien n'est envoyé ailleurs.</p></div>
-        <div class="card navy"><h3>Matomo auto-hébergé</h3><p>Mesure d'audience sans transfert de données à des tiers.</p></div>
-        <div class="card navy"><h3>Conforme RGPD</h3><p>Consentement cookies géré par tarteaucitron.js.</p></div>
+      <h2 class="section-title">Aussi sobre techniquement que dans son propos</h2>
+      <div class="stack-list">
+        <div class="stack-item"><div><h3>HTML statique</h3><p>Aucun système de build, aucune dépendance serveur.</p></div></div>
+        <div class="stack-item"><div><h3>Calcul local</h3><p>Tout se passe dans votre navigateur, rien n'est envoyé ailleurs.</p></div></div>
+        <div class="stack-item"><div><h3>Matomo auto-hébergé</h3><p>Mesure d'audience sans transfert de données à des tiers.</p></div></div>
+        <div class="stack-item"><div><h3>Conforme RGPD</h3><p>Consentement cookies géré par tarteaucitron.js.</p></div></div>
       </div>
     </div>
   </section>
@@ -1098,7 +1102,83 @@ JgAA') format('woff2');
 <footer>
   <div class="wrap">
     <p><strong>Confidentialité :</strong> la calculatrice ne collecte aucune donnée personnelle. Les cookies analytiques nécessitent un consentement explicite. Contact du délégué à la protection des données : <a href="mailto:dpo@institutnr.org">dpo@institutnr.org</a>. Hébergeur : OVH SAS, Roubaix, France.</p>
-    <div class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">Licence Creative Commons BY-NC-SA 4.0</a></div>
+    <p class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">Licence Creative Commons BY-NC-SA 4.0</a></p>
     <p class="copy">© Institut du Numérique Responsable, ISIT Belgique, ISIT Suisse</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var data = [
+    { name: "Emails", val: 12, color: getVar('--b1') },
+    { name: "Stockage cloud", val: 38, color: getVar('--b2') },
+    { name: "Usages en ligne", val: 64, color: getVar('--b3') },
+    { name: "Équipements", val: 120, color: getVar('--b4') },
+    { name: "Déplacements", val: 376, color: getVar('--b5') }
+  ];
+  function getVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+  var canvas = document.getElementById('bar');
+  var ctx = canvas.getContext('2d');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function draw(progress) {
+    var dpr = window.devicePixelRatio || 1;
+    var rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, rect.width, rect.height);
+
+    var total = data.reduce(function (s, d) { return s + d.val; }, 0);
+    var barH = 46, barY = (rect.height - barH) / 2 - 6;
+    var x = 0;
+    data.forEach(function (d) {
+      var w = (d.val / total) * rect.width * progress;
+      ctx.fillStyle = d.color || '#888';
+      ctx.fillRect(x, barY, w, barH);
+      x += w;
+    });
+
+    ctx.strokeStyle = getVar('--ember');
+    ctx.lineWidth = 2;
+    var threshMonthly = 166;
+    var monthlyTotal = total; // treat total as one-year figure represented across full width
+    var xPos = Math.min((threshMonthly * 12 / monthlyTotal), 1) * rect.width;
+    ctx.beginPath();
+    ctx.moveTo(xPos, barY - 10);
+    ctx.lineTo(xPos, barY + barH + 10);
+    ctx.stroke();
+  }
+
+  function animate() {
+    if (reduced) { draw(1); return; }
+    var start = null, duration = 900;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      draw(eased);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var started = false;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !started) { started = true; animate(); }
+    });
+  }, { threshold: .3 });
+  io.observe(canvas);
+  window.addEventListener('resize', function () { draw(1); });
+
+  var revealIo = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); revealIo.unobserve(e.target); }
+    });
+  }, { threshold: .15 });
+  document.querySelectorAll('[data-reveal]').forEach(function (el) { revealIo.observe(el); });
+})();
+</script>
