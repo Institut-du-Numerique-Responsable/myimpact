@@ -1,12 +1,12 @@
 <title>MyImpact — Mesurer l'empreinte carbone du numérique professionnel</title>
-<meta name="description" content="MyImpact est une calculatrice libre et gratuite qui estime l'empreinte carbone du numérique professionnel : équipements, cloud, visioconférence, emails et déplacements. Projet open source de l'Institut du Numérique Responsable et d'ISIT.">
+<meta name="description" content="MyImpact est une calculatrice libre et gratuite qui estime en cinq minutes l'empreinte carbone de votre numérique professionnel : équipements, cloud, visioconférence, emails et déplacements. Un projet de l'Institut du Numérique Responsable et d'ISIT.">
 <meta name="keywords" content="empreinte carbone numérique, calculatrice CO2, numérique responsable, sobriété numérique, ISIT, Institut du Numérique Responsable, green IT, kg CO2 equivalent, bilan carbone digital">
 <meta name="author" content="Institut du Numérique Responsable, ISIT Belgique, ISIT Suisse">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://myimpact.isit-europe.org/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MyImpact — Calculatrice d'empreinte carbone numérique">
-<meta property="og:description" content="Estimez en quelques minutes l'empreinte carbone de votre activité numérique professionnelle. Outil libre, gratuit, sans collecte de données personnelles.">
+<meta property="og:description" content="Découvrez en cinq minutes le poids carbone de votre numérique professionnel. Gratuit, sans compte, sans données envoyées à un serveur.">
 <meta property="og:url" content="https://myimpact.isit-europe.org/">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
@@ -837,37 +837,27 @@ JgAA') format('woff2');
     --sky: #f5f8fb;
     --sky-deep: #dae5f0;
     --ink: #212121;
-    --ink-soft: #3f5360;
+    --ink-soft: #56707f;
     --line: #e5e7eb;
     --card: #ffffff;
     --page: #ffffff;
+    --rose-a: #e11d48; --rose-b: #f43f5e;
+    --blue-a: #0284c7; --blue-b: #0ea5e9;
+    --yellow-a: #ca8a04; --yellow-b: #eab308;
+    --emerald-a: #059669; --emerald-b: #10b981;
+    --indigo-a: #4f46e5; --indigo-b: #6366f1;
   }
 
   :root[data-theme="dark"] {
-    --navy: #9cc3dc;
-    --navy-deep: #01141f;
-    --action: #5cb3e0;
-    --sky: #0e1b24;
-    --sky-deep: #142834;
-    --ink: #e7edf1;
-    --ink-soft: #a9bccb;
-    --line: #223442;
-    --card: #10202b;
-    --page: #081118;
+    --navy: #a9cfe6; --navy-deep: #01141f; --action: #6cc0ec;
+    --sky: #0e1b24; --sky-deep: #142834; --ink: #e7edf1; --ink-soft: #9fb8c8;
+    --line: #223442; --card: #10202b; --page: #081118;
   }
-
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --navy: #9cc3dc;
-      --navy-deep: #01141f;
-      --action: #5cb3e0;
-      --sky: #0e1b24;
-      --sky-deep: #142834;
-      --ink: #e7edf1;
-      --ink-soft: #a9bccb;
-      --line: #223442;
-      --card: #10202b;
-      --page: #081118;
+      --navy: #a9cfe6; --navy-deep: #01141f; --action: #6cc0ec;
+      --sky: #0e1b24; --sky-deep: #142834; --ink: #e7edf1; --ink-soft: #9fb8c8;
+      --line: #223442; --card: #10202b; --page: #081118;
     }
   }
 
@@ -878,117 +868,114 @@ JgAA') format('woff2');
     background: var(--page);
     color: var(--ink);
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
   a { color: var(--action); }
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--action);
-    outline-offset: 3px;
-  }
-  .data, .data * {
-    font-variant-numeric: tabular-nums;
-    font-weight: 700;
-  }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--action); outline-offset: 3px; }
+  .data, .data * { font-variant-numeric: tabular-nums; font-weight: 800; }
 
-  .wrap { max-width: 130rem; margin: 0 auto; padding: 0 2rem; }
+  .wrap { max-width: 124rem; margin: 0 auto; padding: 0 2.4rem; }
 
-  header.topbar {
-    background: var(--sky);
-    padding: 2rem 0;
-  }
-  header.topbar .wrap {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.2rem;
-  }
-  .wordmark { font-weight: 800; font-size: 2rem; color: var(--navy); }
+  header.topbar { background: var(--card); border-bottom: .1rem solid var(--line); padding: 1.8rem 0; position: sticky; top: 0; z-index: 20; backdrop-filter: blur(6px); }
+  header.topbar .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; }
+  .wordmark { font-weight: 800; font-size: 2.1rem; color: var(--navy); letter-spacing: -.01em; }
   .links { display: flex; gap: 1rem; flex-wrap: wrap; }
   .pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 1rem 1.8rem;
-    border-radius: .5rem;
-    font-size: 1.4rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--action);
-    background: var(--card);
-    border: .1rem solid var(--line);
+    display: inline-flex; align-items: center; gap: .6rem; padding: 1.1rem 2rem; border-radius: .7rem;
+    font-size: 1.4rem; font-weight: 700; text-decoration: none; color: var(--action);
+    background: var(--sky); border: .1rem solid transparent; transition: transform .15s ease, box-shadow .15s ease;
   }
-  .pill.primary { background: var(--action); color: #fff; border-color: var(--action); }
+  .pill.primary { background: var(--action); color: #fff; box-shadow: 0 .6rem 1.6rem -.6rem rgba(0,101,155,.55); }
+  .pill:hover { transform: translateY(-.2rem); }
 
-  .hero { padding: 6rem 0 4rem; background: var(--sky); }
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--action);
-  }
-  h1 {
-    font-size: 3.9rem;
-    line-height: 1.15;
-    color: var(--navy);
-    font-weight: 800;
-    margin: 1.4rem 0 1.8rem;
-    text-wrap: balance;
-  }
-  .lede { font-size: 1.8rem; color: var(--ink-soft); max-width: 62ch; margin: 0 0 3rem; }
+  .hero { padding: 7rem 0 6rem; background: linear-gradient(180deg, var(--sky) 0%, var(--page) 100%); overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: 1.2rem; font-weight: 800; color: var(--action); }
+  h1 { font-size: 4rem; line-height: 1.1; color: var(--navy); font-weight: 800; margin: 1.4rem 0 1.8rem; letter-spacing: -.01em; text-wrap: balance; }
+  .lede { font-size: 1.9rem; color: var(--ink-soft); max-width: 58ch; margin: 0 0 3rem; }
+  .cta-row { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+  .cta-row .pill { padding: 1.5rem 2.6rem; font-size: 1.6rem; border-radius: .8rem; }
 
-  .readout { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-  .stat {
-    flex: 1;
-    min-width: 18rem;
-    background: var(--card);
-    border-radius: .5rem;
-    padding: 2rem 1.8rem;
+  /* preview card mimicking the actual results screen */
+  .preview {
+    background: var(--navy-deep);
+    border-radius: 1.6rem;
+    padding: 2.6rem;
+    box-shadow: 0 3rem 6rem -2rem rgba(2,44,68,.45);
   }
-  .stat .figure { font-size: 2.6rem; font-weight: 800; color: var(--navy); }
-  .stat .label { font-size: 1.3rem; color: var(--ink-soft); margin-top: .6rem; }
+  .preview__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; }
+  .preview__title { color: #fff; font-size: 1.4rem; font-weight: 700; opacity: .85; text-transform: uppercase; letter-spacing: .06em; }
+  .preview__tag { color: #9cc3dc; font-size: 1.2rem; }
+  .preview__rows { display: flex; flex-direction: column; gap: 1rem; }
+  .prow {
+    display: flex; align-items: center; justify-content: space-between; gap: 1.6rem;
+    padding: 1.6rem 1.8rem; border-radius: 1rem; color: #fff;
+  }
+  .prow .name { font-size: 1.4rem; font-weight: 600; opacity: .95; }
+  .prow .val { font-size: 1.9rem; font-weight: 800; }
+  .prow.rose { background: linear-gradient(90deg, var(--rose-a), var(--rose-b)); }
+  .prow.blue { background: linear-gradient(90deg, var(--blue-a), var(--blue-b)); }
+  .prow.yellow { background: linear-gradient(90deg, var(--yellow-a), var(--yellow-b)); }
+  .prow.emerald { background: linear-gradient(90deg, var(--emerald-a), var(--emerald-b)); }
+  .prow.indigo { background: linear-gradient(90deg, var(--indigo-a), var(--indigo-b)); }
+  .prow.total { background: rgba(255,255,255,.08); border: .1rem dashed rgba(255,255,255,.35); }
+  .prow.total .val { font-size: 2.6rem; }
+  .preview__note { color: #9cc3dc; font-size: 1.2rem; margin-top: 1.6rem; opacity: .8; }
 
-  section { padding: 5rem 0; }
+  section { padding: 6rem 0; }
   section.alt { background: var(--sky); }
-  h2 { font-size: 2.5rem; font-weight: 800; color: var(--navy); margin: 0 0 1rem; }
-  .section-note { color: var(--ink-soft); margin: 0 0 3rem; max-width: 65ch; font-size: 1.6rem; }
+  .kicker { text-transform: uppercase; letter-spacing: .1em; font-size: 1.2rem; font-weight: 800; color: var(--action); margin: 0 0 .8rem; }
+  h2 { font-size: 2.8rem; font-weight: 800; color: var(--navy); margin: 0 0 1.2rem; text-wrap: balance; }
+  .section-note { color: var(--ink-soft); margin: 0 0 3.6rem; max-width: 66ch; font-size: 1.7rem; }
 
-  .grid-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr)); gap: 1.5rem; }
-  .card { border-radius: .5rem; padding: 2rem 2.2rem; background: var(--card); border: .1rem solid var(--line); }
-  .card h3 { font-size: 1.6rem; color: var(--navy); margin: 0 0 .8rem; font-weight: 700; }
-  .card p { margin: 0; font-size: 1.4rem; color: var(--ink-soft); }
+  .grid-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr)); gap: 1.8rem; }
+  .card {
+    border-radius: 1.2rem; padding: 2.6rem 2.4rem; color: #fff; position: relative; overflow: hidden;
+    transition: transform .18s ease;
+  }
+  .card:hover { transform: translateY(-.3rem); }
+  .card h3 { font-size: 1.9rem; margin: 0 0 1rem; font-weight: 800; }
+  .card p { margin: 0; font-size: 1.4rem; opacity: .92; line-height: 1.55; }
+  .card.rose { background: linear-gradient(135deg, var(--rose-a), var(--rose-b)); }
+  .card.blue { background: linear-gradient(135deg, var(--blue-a), var(--blue-b)); }
+  .card.yellow { background: linear-gradient(135deg, var(--yellow-a), var(--yellow-b)); }
+  .card.emerald { background: linear-gradient(135deg, var(--emerald-a), var(--emerald-b)); }
+  .card.indigo { background: linear-gradient(135deg, var(--indigo-a), var(--indigo-b)); }
+  .card.navy { background: var(--navy-deep); }
 
-  .table-wrap { overflow-x: auto; border-radius: .5rem; border: .1rem solid var(--line); }
-  table { width: 100%; border-collapse: collapse; font-size: 1.5rem; background: var(--card); }
-  th, td { text-align: left; padding: 1.2rem 1.6rem; border-bottom: .1rem solid var(--line); }
-  th { font-weight: 700; color: var(--navy); font-size: 1.2rem; text-transform: uppercase; letter-spacing: .04em; background: var(--sky); }
-  td.data, th.data { text-align: right; }
-  tbody tr:last-child td { border-bottom: none; }
+  .trust {
+    display: flex; flex-wrap: wrap; gap: 1rem 2.2rem; align-items: center;
+    padding: 2.4rem 2.6rem; background: var(--card); border: .1rem solid var(--line); border-radius: 1.2rem;
+  }
+  .trust span { font-size: 1.3rem; color: var(--ink-soft); font-weight: 600; }
+  .trust a { font-size: 1.4rem; font-weight: 700; text-decoration: none; }
 
   .lang-row { display: flex; flex-wrap: wrap; gap: 1rem; }
   .lang-row a {
-    background: var(--card);
-    border: .1rem solid var(--line);
-    border-radius: .5rem;
-    padding: 1rem 1.8rem;
-    font-size: 1.4rem;
-    font-weight: 600;
-    text-decoration: none;
+    background: var(--card); border: .15rem solid var(--line); border-radius: .8rem;
+    padding: 1.1rem 2rem; font-size: 1.5rem; font-weight: 700; text-decoration: none; color: var(--navy);
+    transition: border-color .15s ease;
   }
+  .lang-row a:hover { border-color: var(--action); }
 
-  table.history { border-radius: .5rem; overflow: hidden; }
+  .history-list { display: flex; flex-direction: column; gap: 1.4rem; }
+  .history-item { display: flex; gap: 2rem; align-items: baseline; padding-bottom: 1.4rem; border-bottom: .1rem solid var(--line); }
+  .history-item:last-child { border-bottom: none; }
+  .history-item .v { font-weight: 800; color: var(--navy); min-width: 5.5rem; font-size: 1.6rem; }
+  .history-item .d { color: var(--ink-soft); min-width: 9rem; font-size: 1.4rem; }
+  .history-item .c { font-size: 1.5rem; }
 
   footer { background: var(--navy-deep); color: #fff; padding: 5rem 0; }
   footer .wrap p { max-width: 65ch; color: #cfe0ea; font-size: 1.4rem; }
   footer a { color: #9cc3dc; }
   footer .license { display: flex; align-items: center; gap: 1rem; margin-top: 1.8rem; }
-  footer .copy { margin-top: 2rem; opacity: .8; }
+  footer .copy { margin-top: 2rem; opacity: .8; font-size: 1.3rem; }
 
-  @media screen and (min-width: 998px) {
-    h1 { font-size: 4.6rem; }
-    .hero { padding: 8rem 0 6rem; }
+  @media screen and (min-width: 900px) {
+    .hero .wrap { grid-template-columns: 1.1fr .9fr; }
+    h1 { font-size: 4.8rem; }
   }
 </style>
 
@@ -996,8 +983,8 @@ JgAA') format('woff2');
   <div class="wrap">
     <span class="wordmark">MyImpact</span>
     <nav class="links">
-      <a class="pill" href="https://github.com/Institut-du-Numerique-Responsable/myimpact">Code source sur GitHub</a>
-      <a class="pill primary" href="https://myimpact.isit-europe.org/">Ouvrir la calculatrice</a>
+      <a class="pill" href="https://github.com/Institut-du-Numerique-Responsable/myimpact">Code source</a>
+      <a class="pill primary" href="https://myimpact.isit-europe.org/">Calculer mon empreinte</a>
     </nav>
   </div>
 </header>
@@ -1005,59 +992,71 @@ JgAA') format('woff2');
 <main>
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Outil libre · Institut du Numérique Responsable · ISIT</p>
-      <h1>Mesurer l'empreinte carbone de votre numérique professionnel</h1>
-      <p class="lede">MyImpact est une calculatrice gratuite qui estime, en kilogrammes de CO₂ équivalent, l'impact environnemental de vos équipements, de vos usages en ligne et de vos déplacements professionnels. Tous les calculs se font dans votre navigateur : aucune donnée n'est envoyée à un serveur.</p>
-      <div class="readout data">
-        <div class="stat"><div class="figure">6</div><div class="label">catégories d'impact mesurées</div></div>
-        <div class="stat"><div class="figure">6</div><div class="label">langues disponibles</div></div>
-        <div class="stat"><div class="figure">209.5 g</div><div class="label">CO₂ éq. par Go de stockage cloud, par an</div></div>
-        <div class="stat"><div class="figure">0 €</div><div class="label">coût, sans collecte de données</div></div>
+      <div>
+        <p class="eyebrow">Institut du Numérique Responsable · ISIT</p>
+        <h1>Combien pèse votre numérique professionnel ?</h1>
+        <p class="lede">En cinq minutes, MyImpact estime le poids carbone de vos outils du quotidien : ordinateur, cloud, visioconférence, emails, déplacements. Gratuit, sans compte, sans donnée envoyée à un serveur.</p>
+        <div class="cta-row">
+          <a class="pill primary" href="https://myimpact.isit-europe.org/">Calculer mon empreinte →</a>
+          <a class="pill" href="https://github.com/Institut-du-Numerique-Responsable/myimpact">Voir le code sur GitHub</a>
+        </div>
+      </div>
+      <div class="preview" aria-hidden="true">
+        <div class="preview__head">
+          <span class="preview__title">Votre résultat</span>
+          <span class="preview__tag">Exemple</span>
+        </div>
+        <div class="preview__rows">
+          <div class="prow blue"><span class="name">Équipements</span><span class="val data">120 kg</span></div>
+          <div class="prow indigo"><span class="name">Usages en ligne</span><span class="val data">64 kg</span></div>
+          <div class="prow emerald"><span class="name">Stockage cloud</span><span class="val data">38 kg</span></div>
+          <div class="prow yellow"><span class="name">Emails</span><span class="val data">12 kg</span></div>
+          <div class="prow rose"><span class="name">Déplacements</span><span class="val data">376 kg</span></div>
+          <div class="prow total"><span class="name">Total sur un an</span><span class="val data">610 kg CO₂ éq.</span></div>
+        </div>
+        <p class="preview__note">Aperçu illustratif de l'écran de résultats. Le vôtre dépendra de vos réponses.</p>
       </div>
     </div>
   </section>
 
   <section id="calcule">
     <div class="wrap">
-      <h2>Ce que la calculatrice couvre</h2>
-      <p class="section-note">Six familles d'usages numériques et de déplacements, chacune reliée à une source publique reconnue.</p>
+      <p class="kicker">Ce que MyImpact mesure</p>
+      <h2>Six familles d'usages, un seul chiffre à la fin</h2>
+      <p class="section-note">Chaque catégorie est reliée à une étude publique. Vous répondez à quelques questions simples, MyImpact fait le calcul et vous situe par rapport à l'objectif de l'Accord de Paris.</p>
       <div class="grid-6">
-        <div class="card"><h3>Équipements</h3><p>Ordinateurs, smartphones, tablettes, écrans et imprimantes, fabrication et usage compris.</p></div>
-        <div class="card"><h3>Usages en ligne</h3><p>Visioconférence, douze outils couverts, et navigation web.</p></div>
-        <div class="card"><h3>Stockage cloud</h3><p>Basé sur l'étude Green Cloud Computing, 2021.</p></div>
-        <div class="card"><h3>Emails</h3><p>Avec et sans pièce jointe, selon les valeurs de référence ADEME.</p></div>
-        <div class="card"><h3>Déplacements</h3><p>Avion, train, voiture, vélo et marche.</p></div>
-        <div class="card"><h3>Résultat global</h3><p>Impact total, équivalences concrètes, comparaison à l'objectif de l'Accord de Paris.</p></div>
+        <div class="card blue"><h3>Équipements</h3><p>Ordinateurs, smartphones, tablettes, écrans et imprimantes : fabrication et usage quotidien.</p></div>
+        <div class="card indigo"><h3>Usages en ligne</h3><p>Visioconférence, douze outils couverts dont Zoom, Teams et Meet, et navigation web.</p></div>
+        <div class="card emerald"><h3>Stockage cloud</h3><p>Le coût carbone de vos fichiers et sauvegardes hébergés à distance.</p></div>
+        <div class="card yellow"><h3>Emails</h3><p>Avec et sans pièce jointe, souvent sous-estimés dans les bilans numériques.</p></div>
+        <div class="card rose"><h3>Déplacements</h3><p>Avion, train, voiture, vélo et marche pour vos trajets professionnels.</p></div>
+        <div class="card navy"><h3>Résultat global</h3><p>Un total en kg CO₂ éq., des équivalences concrètes, et votre position face à l'objectif climat.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="alt" id="methodo">
+  <section class="alt" id="confiance">
     <div class="wrap">
-      <h2>Méthodologie et sources</h2>
-      <p class="section-note">Chaque valeur retenue par la calculatrice vient d'une étude ou d'une base publique. Aucun chiffre n'est inventé ou moyenné sans référence citée.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Poste</th><th class="data">Valeur retenue</th><th>Source</th></tr></thead>
-          <tbody>
-            <tr><td>Email sans pièce jointe</td><td class="data">4 g CO₂ éq.</td><td><a href="https://librairie.ademe.fr/consommer-autrement/5226-guide-pratique-la-face-cachee-du-numerique.html">ADEME</a></td></tr>
-            <tr><td>Email avec pièce jointe</td><td class="data">35 g CO₂ éq.</td><td><a href="https://librairie.ademe.fr/consommer-autrement/5226-guide-pratique-la-face-cachee-du-numerique.html">ADEME</a></td></tr>
-            <tr><td>Stockage cloud, par Go et par an</td><td class="data">209.5 g CO₂ éq.</td><td><a href="https://www.umweltbundesamt.de/sites/default/files/medien/5750/publikationen/2021-06-17_texte_94-2021_green-cloud-computing.pdf">Umweltbundesamt</a></td></tr>
-            <tr><td>Navigation web, par heure</td><td class="data">10 g CO₂ éq.</td><td><a href="https://nosgestesclimat.fr/documentation/num%C3%A9rique/internet">nosgestesclimat.fr</a></td></tr>
-            <tr><td>Voiture, par km</td><td class="data">0.193 kg CO₂ éq.</td><td><a href="https://librairie.ademe.fr/consommer-autrement/5226-guide-pratique-la-face-cachee-du-numerique.html">ADEME</a></td></tr>
-            <tr><td>Train, par km</td><td class="data">0.00173 kg CO₂ éq.</td><td><a href="https://monconvertisseurco2.fr/">Mon Convertisseur CO₂</a></td></tr>
-            <tr><td>Avion court et moyen courrier, par km</td><td class="data">0.186 kg CO₂ éq.</td><td><a href="https://monconvertisseurco2.fr/">Mon Convertisseur CO₂</a></td></tr>
-          </tbody>
-        </table>
+      <p class="kicker">Des chiffres sourcés</p>
+      <h2>Rien n'est inventé, tout est cité</h2>
+      <p class="section-note">Les valeurs utilisées par la calculatrice viennent d'études publiques reconnues. Le détail complet des sources et de la méthode est documenté dans le dépôt du projet.</p>
+      <div class="trust">
+        <span>Sources principales :</span>
+        <a href="https://librairie.ademe.fr/consommer-autrement/5226-guide-pratique-la-face-cachee-du-numerique.html">ADEME</a>
+        <a href="https://www.umweltbundesamt.de/sites/default/files/medien/5750/publikationen/2021-06-17_texte_94-2021_green-cloud-computing.pdf">Umweltbundesamt</a>
+        <a href="https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/">Greenspector</a>
+        <a href="https://www.energystar.gov/">ENERGY STAR</a>
+        <a href="https://theshiftproject.org/lean-ict/">The Shift Project</a>
+        <a href="https://github.com/Institut-du-Numerique-Responsable/myimpact#m%C3%A9thodologie-d%C3%A9taill%C3%A9e">Détail complet →</a>
       </div>
-      <p class="section-note" style="margin-top:2rem;">Visioconférence : étude Greenspector 2021, couvrant douze plateformes dont Zoom, Teams, Meet et Jitsi. Équipements : moyenne calculée à partir d'ADEME, ENERGY STAR et de l'outil NUTS.</p>
     </div>
   </section>
 
   <section id="langues">
     <div class="wrap">
-      <h2>Disponible en six langues</h2>
-      <p class="section-note">La calculatrice s'adapte aussi au mix énergétique du pays choisi par la personne qui l'utilise, de 0.027 kg CO₂ éq./kWh en Suisse à 0.420 en Allemagne.</p>
+      <p class="kicker">Six langues</p>
+      <h2>Utilisable dans toute votre équipe, où qu'elle soit</h2>
+      <p class="section-note">La calculatrice s'adapte aussi au mix énergétique du pays choisi, de la Suisse à l'Allemagne.</p>
       <div class="lang-row">
         <a href="https://myimpact.isit-europe.org/">English</a>
         <a href="https://myimpact.isit-europe.org/fr/">Français</a>
@@ -1071,30 +1070,26 @@ JgAA') format('woff2');
 
   <section class="alt" id="a-propos">
     <div class="wrap">
-      <h2>Un outil porté par trois organisations</h2>
-      <p class="section-note">MyImpact est créé et maintenu par l'<a href="https://institutnr.org">Institut du Numérique Responsable</a>, think and do tank français dédié au numérique responsable, avec <a href="https://isit-be.org">ISIT Belgique</a> et <a href="https://isit-europe.org">ISIT Suisse</a>, les instituts belge et suisse pour un numérique durable.</p>
-      <div class="table-wrap">
-        <table class="history">
-          <thead><tr><th>Version</th><th>Date</th><th>Ce qui a changé</th></tr></thead>
-          <tbody>
-            <tr><td class="data">v1.0</td><td class="data">2020</td><td>Architecture initiale, par Julien Gontier, Decathlon</td></tr>
-            <tr><td class="data">v1.1</td><td class="data">2022</td><td>Mise à jour des indicateurs, nouvelles sections</td></tr>
-            <tr><td class="data">v1.2</td><td class="data">2026</td><td>Sources actualisées, trois nouvelles langues, conformité RGPD renforcée, travail de référencement</td></tr>
-          </tbody>
-        </table>
+      <p class="kicker">Le projet</p>
+      <h2>Porté par trois organisations, depuis 2020</h2>
+      <p class="section-note">MyImpact est créé et maintenu par l'<a href="https://institutnr.org">Institut du Numérique Responsable</a>, avec <a href="https://isit-be.org">ISIT Belgique</a> et <a href="https://isit-europe.org">ISIT Suisse</a>.</p>
+      <div class="history-list">
+        <div class="history-item"><span class="v data">v1.0</span><span class="d data">2020</span><span class="c">Architecture initiale, par Julien Gontier, Decathlon</span></div>
+        <div class="history-item"><span class="v data">v1.1</span><span class="d data">2022</span><span class="c">Mise à jour des indicateurs, nouvelles sections</span></div>
+        <div class="history-item"><span class="v data">v1.2</span><span class="d data">2026</span><span class="c">Sources actualisées, trois nouvelles langues, conformité RGPD renforcée, référencement</span></div>
       </div>
     </div>
   </section>
 
   <section id="technique">
     <div class="wrap">
-      <h2>Un site simple et sobre techniquement</h2>
-      <p class="section-note">Pas de framework lourd ni de build : du HTML statique, jQuery, une police auto-hébergée et un suivi d'audience respectueux de la vie privée. Cohérent avec l'objet même de l'outil.</p>
+      <p class="kicker">Sous le capot</p>
+      <h2>Aussi sobre techniquement que dans son propos</h2>
       <div class="grid-6">
-        <div class="card"><h3>HTML statique</h3><p>Aucun système de build, aucune dépendance serveur.</p></div>
-        <div class="card"><h3>Matomo auto-hébergé</h3><p>Mesure d'audience sans transfert de données à des tiers.</p></div>
-        <div class="card"><h3>tarteaucitron.js</h3><p>Gestion du consentement aux cookies, conforme RGPD.</p></div>
-        <div class="card"><h3>Aucune donnée collectée</h3><p>Les calculs restent entièrement dans le navigateur.</p></div>
+        <div class="card navy"><h3>HTML statique</h3><p>Aucun système de build, aucune dépendance serveur.</p></div>
+        <div class="card navy"><h3>Calcul local</h3><p>Tout se passe dans votre navigateur, rien n'est envoyé ailleurs.</p></div>
+        <div class="card navy"><h3>Matomo auto-hébergé</h3><p>Mesure d'audience sans transfert de données à des tiers.</p></div>
+        <div class="card navy"><h3>Conforme RGPD</h3><p>Consentement cookies géré par tarteaucitron.js.</p></div>
       </div>
     </div>
   </section>
@@ -1103,9 +1098,7 @@ JgAA') format('woff2');
 <footer>
   <div class="wrap">
     <p><strong>Confidentialité :</strong> la calculatrice ne collecte aucune donnée personnelle. Les cookies analytiques nécessitent un consentement explicite. Contact du délégué à la protection des données : <a href="mailto:dpo@institutnr.org">dpo@institutnr.org</a>. Hébergeur : OVH SAS, Roubaix, France.</p>
-    <div class="license">
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">Licence Creative Commons BY-NC-SA 4.0</a>
-    </div>
+    <div class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">Licence Creative Commons BY-NC-SA 4.0</a></div>
     <p class="copy">© Institut du Numérique Responsable, ISIT Belgique, ISIT Suisse</p>
   </div>
 </footer>
