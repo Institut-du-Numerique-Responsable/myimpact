@@ -1,45 +1,54 @@
-# Guide de contribution et Certificat d'Origine (DCO)
+# Contributing to MyImpact
 
-Merci de l'intérêt que vous portez aux projets open source de l'Institut du Numérique Responsable (INR). Pour maintenir la transparence et la sécurité juridique de nos projets, nous demandons à tous les contributeurs d'accepter le Certificat d'Origine du Développeur (DCO).
+Thank you for your interest in contributing to MyImpact and to the open-source projects of the Institut du Numérique Responsable (INR) and the Institutes for Sustainable IT (ISIT).
 
-## 1. Comment contribuer ?
+## How to contribute
 
-Toute contribution (correction de bug, nouvelle fonctionnalité, documentation) doit suivre les étapes suivantes :
+Bug fixes, new features, translations, documentation and factor updates should follow this workflow:
 
-1.  **Forkez** le dépôt.
-2.  **Créez une branche** pour votre modification.
-3.  Effectuez vos modifications en suivant les **standards de code** du projet.
-4.  **Signez vos commits** (voir section 3 ci-dessous).
-5.  Soumettez une **Pull Request**.
+1. Fork the repository.
+2. Create a dedicated branch for your change.
+3. Follow the existing HTML, CSS and JavaScript conventions.
+4. Document the source, scope, unit and date of any environmental factor you add or change.
+5. Check that you have the right to redistribute every dependency, font, icon, image and dataset included in your contribution.
+6. Run the available checks and test all affected languages.
+7. Sign every commit as described below.
+8. Open a pull request explaining the purpose, sources and validation of the change.
 
-## 2. Certificat d'origine du développeur (DCO)
+Do not commit secrets, analytics credentials, personal data or third-party assets whose redistribution terms are unclear.
 
-Version 1.1 Copyright (C) 2004, 2006 La Fondation Linux et ses contributeurs.
+## Authorship and development tools
 
-En apportant une contribution à ce projet, je certifie que :
+The person signing a contribution remains responsible for its content, origin and licensing. Development and automation tools must not be listed as authors or co-authors. Commit authorship and `Signed-off-by` lines must identify the human contributor who reviewed and submits the work.
 
-a) La contribution a été créée en tout ou en partie par moi-même et j’ai le droit de la soumettre sous la licence open source indiquée dans le fichier ; ou bien
+## Developer Certificate of Origin
 
-b) La contribution est basée sur un travail antérieur qui, à ma connaissance, est couvert par une licence open source appropriée et j’ai le droit, en vertu de cette licence, de soumettre ce travail avec des modifications, qu’il ait été créé en tout ou en partie par moi, sous la même licence open source (sauf si je suis autorisé à le soumettre sous une licence différente), comme indiqué dans le fichier ; ou  
+Developer Certificate of Origin, Version 1.1
 
-c) La contribution m’a été fournie directement par une autre personne qui a certifié (a), (b) ou (c) et je ne l’ai pas modifiée.  
+Copyright (C) 2004, 2006 The Linux Foundation and its contributors.
 
-d) Je comprends et accepte que ce projet et la contribution sont publics et qu’un enregistrement de la contribution (y compris toutes les informations personnelles que je soumets avec elle, y compris ma signature) est conservé indéfiniment et peut être redistribué conformément à ce projet ou à la (aux) licence·s open source concernée·s.
+By making a contribution to this project, I certify that:
 
-## 3. Comment signer votre accord ?
+(a) The contribution was created in whole or in part by me and I have the right to submit it under the open source license indicated in the file; or
 
-Pour confirmer votre acceptation du certificat ci-dessus, vous devez ajouter une ligne "Signed-off-by" à la fin de chaque message de commit.
+(b) The contribution is based upon previous work that, to the best of my knowledge, is covered under an appropriate open source license and I have the right under that license to submit that work with modifications, whether created in whole or in part by me, under the same open source license (unless I am permitted to submit under a different license), as indicated in the file; or
 
-### Utilisation de la ligne de commande
+(c) The contribution was provided directly to me by some other person who certified (a), (b) or (c) and I have not modified it; and
 
-Utilisez l'option `-s` lors de vos commits :
+(d) I understand and agree that this project and the contribution are public and that a record of the contribution, including all personal information I submit with it, including my sign-off, is maintained indefinitely and may be redistributed consistently with this project or the open source license(s) involved.
+
+## Signing commits
+
+Add a `Signed-off-by` line to every commit by using Git's `-s` option:
 
 ```bash
-git commit -s -m "Description de ma contribution"
+git commit -s -m "Describe the contribution"
 ```
 
-Cela ajoutera automatiquement la mention suivante à votre message :
-`Signed-off-by: Votre Nom <votre.email@exemple.com>`
+Git will append a line in this form:
 
-> [!NOTE]
-> Nous n'acceptons pas les Pull Requests dont les commits ne sont pas signés. Si vous avez oublié de signer vos commits, vous pouvez utiliser `git commit --amend -s` pour le dernier commit ou un rebase interactif pour les précédents.
+```text
+Signed-off-by: Your Name <your.email@example.com>
+```
+
+Pull requests containing unsigned commits cannot be merged. If the latest commit is missing its sign-off, use `git commit --amend -s`. Older commits can be corrected with an interactive rebase.

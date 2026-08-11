@@ -216,7 +216,7 @@ MyImpact is maintained by:
 
 - [Institut du Numérique Responsable — INR France](https://institutnr.org)
 - [ISIT Belgium](https://isit-be.org)
-- [ISIT Switzerland](https://isit-europe.org)
+- [ISIT Switzerland](https://isit-ch.org/)
 
 ## Acknowledgements
 
@@ -235,6 +235,6 @@ The complete commit history remains the authoritative record of individual code 
 
 Contributions must follow [`CONTRIBUTING.md`](CONTRIBUTING.md), including the Developer Certificate of Origin sign-off.
 
-## License
+## License and third-party material
 
-This project is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+The repository is currently released under [CC0 1.0 Universal](LICENSE), as stated in the authoritative license file. Third-party libraries, fonts, icons, logos, trademarks and source data are excluded from that dedication and remain subject to their respective terms. See [Third-party notices](THIRD_PARTY_NOTICES.md).

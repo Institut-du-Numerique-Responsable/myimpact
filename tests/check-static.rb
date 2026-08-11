@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require "pathname"
+require "json"
 
 ROOT = Pathname.new(__dir__).join("..").expand_path
 HTML_FILES = ROOT.glob("**/*.html").freeze
@@ -105,7 +106,14 @@ end
 assert(impact_co2.include?('credentials: "omit"'), "identifiants indûment transmis à Impact CO₂")
 assert(system("node", ROOT.join("tests/check-impactco2.js").to_s, out: File::NULL), "intégration Impact CO₂ invalide")
 calculator_pages.each do |relative|
-  assert(ROOT.join(relative).read.include?("impactco2-equivalents.js"), "API Impact CO₂ absente de #{relative}")
+  content = ROOT.join(relative).read
+  assert(content.include?("impactco2-equivalents.js"), "API Impact CO₂ absente de #{relative}")
+  assert(content.include?("INR &amp; ISIT"), "nom de site INR/ISIT absent de #{relative}")
+  assert(content.include?("https://institutnr.org/"), "INR France absent de #{relative}")
+  assert(content.include?("https://isit-be.org/"), "ISIT Belgique absent de #{relative}")
+  assert(content.include?("https://isit-ch.org/"), "ISIT Suisse absent de #{relative}")
+  json_ld = content[/<script type="application\/ld\+json">\s*(.*?)\s*<\/script>/m, 1]
+  assert(json_ld && JSON.parse(json_ld), "JSON-LD invalide dans #{relative}")
 end
 assert(HTML_FILES.none? { |path| path.read.include?("monconvertisseurco2.fr") }, "ancien convertisseur CO₂ encore référencé")
 legal_pages = %w[
@@ -116,7 +124,13 @@ legal_pages.each do |relative|
   content = ROOT.join(relative).read
   assert(content.include?("https://impactco2.fr/doc/api"), "API Impact CO₂ absente de #{relative}")
   assert(content.include?("https://impactco2.fr/politique-de-confidentialite"), "confidentialité Impact CO₂ absente de #{relative}")
+  assert(content.include?("THIRD_PARTY_NOTICES.md"), "notice des composants tiers absente de #{relative}")
 end
+
+assert(HTML_FILES.none? { |path| path.read.include?("Font Awesome Pro") }, "icône Font Awesome Pro encore présente")
+assert(ROOT.join("THIRD_PARTY_NOTICES.md").read.include?("Font Awesome Free 7.3.1"), "attribution Font Awesome Free absente")
+assert(ROOT.join("fonts/OFL.txt").read.include?("SIL OPEN FONT LICENSE"), "licence Montserrat absente")
+assert(ROOT.join("README.md").read.include?("CC0 1.0 Universal"), "licence du README incohérente avec LICENSE")
 
 presentation = ROOT.join("fr/presentation-myimpact.html").read
 assert(presentation.include?('rel="canonical"'), "URL canonique absente de la présentation")
