@@ -24,10 +24,6 @@ var deviceTypes = [
   {
     "name": "Laptop",
     "devices": [
-      {"name": "Apple MacBook Air 2010/2011", "production": 202.53, "usage": 48},
-      {"name": "Apple MacBook Air 2013/2016", "production": 363.41, "usage": 48},
-      {"name": "Apple MacBook Pro 2011", "production": 323.33, "usage": 48},
-      {"name": "Apple MacBook Pro with Retina Display", "production": 580.28, "usage": 48},
       {"name": "Dell Latitude", "production": 266.02, "usage": 48},
       {"name": "HP", "production": 301.98, "usage": 48},
       {"name": "Lenovo Thinkpad & X1", "production": 314.41, "usage": 48},
@@ -41,7 +37,6 @@ var deviceTypes = [
   {
     "name": "Smartphone",
     "devices": [
-      {"name": "Apple iPhone", "production": 62.09, "usage": 1.5},
       {"name": "Smartphone andere < 128Go", "production": 44.07, "usage": 1.5},
       {"name": "Smartphone andere > 128Go", "production": 58.33, "usage": 1.5}
     ]

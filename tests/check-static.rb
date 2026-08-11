@@ -57,6 +57,24 @@ assert(equipment.include?('"production": 182.3'), "ordinateur portable génériq
 assert(equipment.include?('"production": 79.27'), "smartphone générique récent absent")
 assert(equipment.include?("including MacBook"), "repère MacBook récent absent")
 assert(equipment.include?("including iPhone"), "repère iPhone récent absent")
+[
+  "Apple MacBook Air 13-inch M4 (2025)",
+  "Dell Latitude 7450 (2024)",
+  "HP EliteBook 8 G2i 14-inch (2026)",
+  "Lenovo ThinkPad X1 Carbon Gen 8 (2020)",
+  "Apple iPhone 16 128GB (2024)",
+  "Samsung Galaxy S25 (2025)",
+  "OPPO Find X5 Pro (2022)"
+].each { |model| assert(equipment.include?(model), "modèle récent manquant : #{model}") }
+assert(equipment.include?('"scope": "manufacturer-model"'), "périmètre constructeur absent")
+assert(equipment.include?('"scope": "generic-category-branded-example"'), "périmètre générique OPPO absent")
+
+calculator_scripts = ["scripts-en.js", "fr/scripts.js", "nl/scripts.js", "de/scripts.js", "es/scripts.js", "it/scripts.js"]
+calculator_scripts.each do |relative|
+  script = ROOT.join(relative).read
+  assert(!script.match?(/201[0-4]/), "équipement 2010-2014 encore présent dans #{relative}")
+  assert(!script.include?('"name": "Apple iPhone"'), "ancien iPhone générique encore présent dans #{relative}")
+end
 assert(system("node", "--check", ROOT.join("equipment-additions.js").to_s, out: File::NULL), "syntaxe des équipements invalide")
 
 locations = ROOT.join("location-additions.js").read

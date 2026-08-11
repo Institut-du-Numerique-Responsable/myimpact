@@ -59,7 +59,7 @@ The annual impact is calculated as:
 (production + annual electricity × electricity factor × lifetime) / lifetime
 ```
 
-New version 1.3 equipment factors are maintained in [`equipment-additions.js`](equipment-additions.js). They use generic archetypes rather than claiming precise comparisons between manufacturers.
+New version 1.3 equipment factors are maintained in [`equipment-additions.js`](equipment-additions.js). The selector combines generic ADEME archetypes with recent manufacturer examples. Manufacturer declarations use different configurations, geographies and life-cycle methods: these entries support an estimate and must not be used to rank products or brands.
 
 ### Version 1.3 equipment factors
 
@@ -73,7 +73,21 @@ New version 1.3 equipment factors are maintained in [`equipment-additions.js`](e
 
 The webcam value represents 56% of the verified 5.66 kgCO₂e product footprint published for the Logitech C920e. Its electricity and video traffic are excluded from this equipment entry. Video-conferencing usage is calculated separately.
 
-The equipment selector also provides two current generic choices: **recent laptop, including MacBook** and **recent smartphone, including iPhone**. Their embodied values come from the detailed Impact CO₂/ADEME categories (`ordinateurportable` and `smartphone`) and are refreshed through the API. Impact CO₂ expresses use as `kgCO₂e/year`; MyImpact converts that value to annual electricity using its French electricity factor (`0.052 kgCO₂e/kWh`) before applying the location selected by the user. The Apple names are examples that help users choose a family; the factors are generic market estimates and must not be interpreted as Apple model-specific declarations. Historical MacBook entries remain available for users who own those devices.
+The equipment selector also provides two current generic choices: **recent laptop, including MacBook** and **recent smartphone, including iPhone**. Their embodied values come from the detailed Impact CO₂/ADEME categories (`ordinateurportable` and `smartphone`) and are refreshed through the API. Impact CO₂ expresses use as `kgCO₂e/year`; MyImpact converts that value to annual electricity using its French electricity factor (`0.052 kgCO₂e/kWh`) before applying the location selected by the user. The Apple names in these two generic entries are only family-selection examples.
+
+Entries explicitly dated from 2010 to 2014 have been removed from the lists. The following recent examples cover computers from Apple, Dell, HP and Lenovo, and phones from Apple, Samsung and OPPO:
+
+| Model | Year | Manufacturing | Annual electricity | Data scope |
+|---|---:|---:|---:|---|
+| Apple MacBook Air 13-inch M4 | 2025 | 85.2 kgCO₂e | 28.962 kWh | Apple production; generic ADEME use |
+| Dell Latitude 7450 | 2024 | 85.58 kgCO₂e | 13.5 kWh | Dell model data |
+| HP EliteBook 8 G2i 14-inch | 2026 | 159.31 kgCO₂e | 13 kWh | HP European model data |
+| Lenovo ThinkPad X1 Carbon Gen 8 | 2020 | 182.3 kgCO₂e | 18.4 kWh | Generic ADEME production; Lenovo/ENERGY STAR use |
+| Apple iPhone 16 128GB | 2024 | 44.8 kgCO₂e | 4.917 kWh | Apple production; generic ADEME use |
+| Samsung Galaxy S25 | 2025 | 40.216 kgCO₂e | 4.917 kWh | Samsung European production; generic ADEME use |
+| OPPO Find X5 Pro | 2022 | 79.27 kgCO₂e | 4.917 kWh | Generic ADEME smartphone values; model name only |
+
+Apple and Samsung manufacturing figures are calculated from the total product footprint multiplied by the manufacturing share disclosed in their reports. HP follows the same calculation using its European total and manufacturing share. Dell reports manufacturing and annual TEC directly. Lenovo publishes a product footprint and ENERGY STAR use value but does not isolate manufacturing, while OPPO states that it conducts product LCAs without publishing a per-model result for the Find X5 Pro; MyImpact therefore labels their substituted ADEME values as generic.
 
 ### Additional electricity mixes
 
@@ -136,6 +150,13 @@ Users can inspect the [Impact CO₂ carbon comparator](https://impactco2.fr/outi
 - [EcoDiag source code](https://gitlab.in2p3.fr/ecoinfo/ecodiag)
 - [EcoInfo overview of digital environmental impacts](https://ecoinfo.cnrs.fr/2019/04/30/introduction-aux-impacts-environnementaux-du-numerique/)
 - [Logitech C920e verified product carbon footprint](https://www.logitech.com/content/dam/logitech/en/sustainability/carbon-labeling-messaging/carbon-clarity/pdf/carbon-footprint-webcam-c920e.pdf)
+- [Apple MacBook Air M4 Product Environmental Report (2025)](https://www.apple.com/in/environment/pdf/products/notebooks/M4_MacBook_Air_PER_March2025.pdf)
+- [Dell Latitude 7450 Life Cycle Assessment (2024)](https://www.delltechnologies.com/asset/en-us/products/laptops-and-2-in-1s/technical-support/latitude-7450-pcf-report.pdf)
+- [HP EliteBook 8 G2i 14-inch Product Carbon Footprint (2026)](https://h20195.www2.hp.com/v2/getpdf.aspx/c09270910.pdf)
+- [Lenovo ThinkPad X1 Carbon Gen 8 Product Carbon Footprint (2020)](https://static.lenovo.com/ww/docs/regulatory/eco-declaration/pcf-thinkpad-x1-carbon-8th-update.pdf)
+- [Apple iPhone 16 Product Environmental Report (2024)](https://www.apple.com/environment/pdf/products/iphone/iPhone_16_and_iPhone_16_Plus_PER_Sept2024.pdf)
+- [Samsung Galaxy S25 Product Environmental Report (2025)](https://www.samsung.com/global/sustainability/landing_hub-file/AZUXQCVKIiwALYMV/Galaxy_S25_Environmental_Report_EN_2503.pdf)
+- [OPPO 2025 Sustainability Report announcement](https://www.oppo.com/en/newsroom/press/oppo-2025-sustainability-report/)
 - [Green Cloud Computing — Umweltbundesamt](https://www.umweltbundesamt.de/sites/default/files/medien/5750/publikationen/2021-06-17_texte_94-2021_green-cloud-computing.pdf)
 - [Greenspector video-conferencing study](https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/)
 - [ENERGY STAR](https://www.energystar.gov/)
