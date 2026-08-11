@@ -54,6 +54,35 @@ end
 assert(equipment.scan(/^[ ]{4}(?:en|fr|nl|de|es|it): \{$/).length == 6, "six traductions d’équipements attendues")
 assert(system("node", "--check", ROOT.join("equipment-additions.js").to_s, out: File::NULL), "syntaxe des équipements invalide")
 
+locations = ROOT.join("location-additions.js").read
+{
+  '"indicator": "ma", "energyMix": 0.5964' => "Maroc",
+  '"indicator": "tn", "energyMix": 0.56029' => "Tunisie",
+  '"indicator": "gb", "energyMix": 0.21741' => "Royaume-Uni",
+  '"indicator": "pl", "energyMix": 0.5886' => "Pologne",
+  '"indicator": "ro", "energyMix": 0.25075' => "Roumanie",
+  '"indicator": "pt", "energyMix": 0.12791' => "Portugal"
+}.each do |factor, country|
+  assert(locations.include?(factor), "facteur électrique manquant pour #{country}")
+end
+assert(locations.scan(/^[ ]{4}(?:en|fr|nl|de|es|it): \{/).length == 6, "six traductions de pays attendues")
+assert(system("node", "--check", ROOT.join("location-additions.js").to_s, out: File::NULL), "syntaxe des localisations invalide")
+calculator_pages = %w[index.html fr/index.html nl/index.html de/index.html es/index.html it/index.html]
+calculator_pages.each do |relative|
+  assert(ROOT.join(relative).read.include?("location-additions.js"), "localisations absentes de #{relative}")
+end
+methodology_pages = %w[
+  about-sustainable-it.html
+  fr/a-propos-numerique-responsable.html
+  nl/over-de-rekenmachine-duurzame-it.html
+  de/about-sustainable-it.html
+  es/about-sustainable-it.html
+  it/about-sustainable-it.html
+]
+methodology_pages.each do |relative|
+  assert(ROOT.join(relative).read.include?("carbon-intensity-electricity"), "source électrique absente de #{relative}")
+end
+
 CALCULATOR_SCRIPTS.each do |relative|
   path = ROOT.join(relative)
   content = path.read
@@ -74,4 +103,4 @@ stylesheet = ROOT.join("stylesheet-inr.css").read
 assert(stylesheet.include?('.box>div::after'), "unités absentes des blocs d’impact")
 assert(stylesheet.include?('#total_impact::after'), "unité absente du total")
 
-puts "OK : 25 pages, 6 calculateurs, les équipements v1.3 et la présentation SEO contrôlés"
+puts "OK : 25 pages, 6 calculateurs, les équipements, les localisations et la présentation SEO contrôlés"

@@ -71,6 +71,19 @@ New version 1.3 equipment factors are maintained in [`equipment-additions.js`](e
 
 The webcam value represents 56% of the verified 5.66 kgCO₂e product footprint published for the Logitech C920e. Its electricity and video traffic are excluded from this equipment entry. Video-conferencing usage is calculated separately.
 
+### Additional electricity mixes
+
+Version 1.3 adds six locations using Ember’s 2025 lifecycle carbon intensity of electricity generation, processed by Our World in Data.
+
+| Location | Electricity factor |
+|---|---:|
+| Morocco | 0.5964 kgCO₂e/kWh |
+| Tunisia | 0.56029 kgCO₂e/kWh |
+| United Kingdom | 0.21741 kgCO₂e/kWh |
+| Poland | 0.5886 kgCO₂e/kWh |
+| Romania | 0.25075 kgCO₂e/kWh |
+| Portugal | 0.12791 kgCO₂e/kWh |
+
 ## Other calculation factors
 
 | Activity | Factor |
@@ -100,6 +113,7 @@ Video-conferencing factors vary by platform. Enabling the camera increases the u
 - [Greenspector video-conferencing study](https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/)
 - [ENERGY STAR](https://www.energystar.gov/)
 - [Nos Gestes Climat — Internet](https://nosgestesclimat.fr/documentation/num%C3%A9rique/internet)
+- [Ember/Our World in Data — lifecycle carbon intensity of electricity](https://ourworldindata.org/grapher/carbon-intensity-electricity)
 
 EcoDiag is included as a methodological reference for equipment inventory, stock/flow approaches and lifetime allocation. Boavizta and EcoDiag share part of their manufacturer-data collection work; these sources should therefore not be treated as independent measurements when assessing uncertainty.
 
