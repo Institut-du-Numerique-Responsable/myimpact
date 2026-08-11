@@ -1,263 +1,194 @@
-# MyImpact — Calculatrice d'empreinte carbone numérique
+# MyImpact — Digital Environmental Footprint Calculator
 
-**MyImpact** est un outil web libre et gratuit permettant à toute personne, dans le cadre de son activité professionnelle, d'estimer son empreinte environnementale numérique et liée aux déplacements, exprimée en **kg CO₂ équivalent (kg CO₂ éq.)**.
+MyImpact is a free, open-source, browser-based calculator that helps individuals estimate the annual climate impact of their professional digital equipment, online activities, cloud storage, email and business travel.
 
-> Accès en ligne : [myimpact.isit-europe.org](https://myimpact.isit-europe.org)
+The calculator reports results in kilograms of carbon-dioxide equivalent (`kgCO₂e`). All calculations run locally in the browser: answers entered in the calculator are not sent to a backend.
 
----
+Live website: [myimpact.isit-europe.org](https://myimpact.isit-europe.org)
 
-## Auteurs et historique
+## Version 1.3.0
 
-Cet outil a été créé et est maintenu par :
+Version 1.3.0 improves privacy, accessibility and input reliability, and extends the equipment catalogue with:
 
-- **[Institut du Numérique Responsable (INR)](https://institutnr.org)** — Think & do tank français pour le numérique responsable
-- **[ISIT Belgique](https://isit-be.org)** — Institute for Sustainable IT, Belgique
-- **[ISIT Suisse](https://isit-europe.org)** — Institute for Sustainable IT, Suisse
+- Internet box / Wi-Fi router;
+- USB flash drive;
+- external SSD;
+- external hard drive;
+- external webcam, manufacturing impact only.
 
-| Version | Date | Contribution |
-|---------|------|-------------|
-| v1.0 | 2020 | Architecture initiale par **Julien Gontier** (Decathlon) |
-| v1.1 | Juillet 2022 | Mise à jour des indicateurs et nouvelles sections par [athom](https://athom.co/) |
-| v1.2 | 2026 | Actualisation des sources, nouvelles langues (DE, ES, IT), conformité RGPD, SEO par **ggallon** ([INR France](https://institutnr.org)) |
+The webcam hardware footprint is deliberately separated from video-conferencing usage. Network transfer and service usage remain calculated in the video-conferencing section, preventing the hardware and usage scopes from being confused.
 
----
+## Available languages
 
-## Langues disponibles
-
-| Langue | URL |
-|--------|-----|
+| Language | Path |
+|---|---|
 | English | `/` |
-| Français | `/fr/` |
-| Nederlands | `/nl/` |
-| Deutsch | `/de/` |
-| Español | `/es/` |
-| Italiano | `/it/` |
+| French | `/fr/` |
+| Dutch | `/nl/` |
+| German | `/de/` |
+| Spanish | `/es/` |
+| Italian | `/it/` |
 
----
+## What MyImpact calculates
 
-## Ce que calcule l'outil
+The calculator covers six areas:
 
-La calculatrice couvre six catégories d'impact :
+1. **Equipment** — manufacturing and electricity use of computers, phones, tablets, displays, printers, network equipment, external storage and webcam hardware.
+2. **Online activity** — video conferencing and web browsing.
+3. **Cloud storage** — annual footprint estimated per stored gigabyte.
+4. **Email** — messages sent with and without attachments.
+5. **Business travel** — plane, train and car travel.
+6. **Results** — annual totals, comparisons and illustrative equivalents.
 
-1. **Équipements** — Impact de la production et de l'utilisation des ordinateurs portables, fixes, smartphones, tablettes, écrans et imprimantes
-2. **Usages en ligne** — Visioconférence (12 outils supportés) et navigation web
-3. **Stockage cloud** — Basé sur l'étude Green Cloud Computing (2021) : 209,5 g CO₂/Go/an
-4. **Emails** — Avec et sans pièce jointe
-5. **Déplacements professionnels** — Avion, train, voiture, vélo/marche
-6. **Résultats** — Impact total avec équivalences et comparaison aux objectifs de l'Accord de Paris
+The result is an estimate, not a product-level life-cycle assessment. Hardware declarations, electricity mixes, lifetimes and usage patterns all carry uncertainty.
 
----
+## Equipment model
 
-## Méthodologie détaillée
+For each device, MyImpact stores:
 
-Toutes les valeurs sont exprimées en **kg CO₂ équivalent**. Les calculs s'effectuent entièrement côté client (navigateur), aucune donnée n'est transmise à des serveurs tiers.
+- `production`: embodied climate impact in `kgCO₂e`;
+- `usage`: estimated annual electricity consumption in `kWh`;
+- the user-selected lifetime;
+- the electricity mix of the selected country.
 
-### Emails
+The annual impact is calculated as:
 
-La mesure de l'empreinte des emails est une approximation : la consommation réelle dépend du nombre de destinataires, de la taille des pièces jointes, des serveurs traversés, etc.
-
-| Type d'email | Valeur retenue |
-|---|---|
-| Sans pièce jointe | **4 g CO₂ éq.** |
-| Avec pièce jointe | **35 g CO₂ éq.** |
-
-Source : [ADEME — La face cachée du numérique](https://librairie.ademe.fr/consommer-autrement/5226-guide-pratique-la-face-cachee-du-numerique.html)
-
-### Visioconférence
-
-Les données libres sur l'impact de la visioconférence sont encore peu nombreuses. La calculatrice s'appuie sur l'étude Greenspector 2021, couvrant 12 plateformes (Zoom, Teams, Meet, Jitsi, etc.).
-
-Sources :
-- [Greenspector — Quelle application mobile de visioconférence pour réduire votre impact ? (2021)](https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/)
-- [UNSW Sydney — Video conferencing energy study](http://www2.eet.unsw.edu.au/~vijay/pubs/jrnl/14comcomVC.pdf)
-
-### Stockage cloud
-
-L'empreinte du stockage de données dans le cloud est calculée à partir de l'étude de référence utilisée par la DINUM française.
-
-| Indicateur | Valeur retenue |
-|---|---|
-| Stockage cloud | **209,5 g CO₂ éq. / Go / an** |
-
-Source : [Green Cloud Computing — Umweltbundesamt (2021)](https://www.umweltbundesamt.de/sites/default/files/medien/5750/publikationen/2021-06-17_texte_94-2021_green-cloud-computing.pdf)
-
-### Navigation web
-
-| Activité | Valeur retenue |
-|---|---|
-| Navigation web | **10 g CO₂ éq. / heure** |
-
-Source : [nosgestesclimat.fr — Documentation numérique / internet](https://nosgestesclimat.fr/documentation/num%C3%A9rique/internet)
-
-### Déplacements professionnels
-
-Les facteurs d'émission sont issus de la base carbone ADEME et des moyennes européennes.
-
-| Mode de transport | Valeur retenue |
-|---|---|
-| Voiture (moyenne) | **0,193 kg CO₂ éq. / km** |
-| Train | **0,00173 kg CO₂ éq. / km** |
-| Avion (court/moyen courrier) | **0,186 kg CO₂ éq. / km** |
-| Vélo / Marche | **0 kg CO₂ éq. / km** |
-
-Sources : [ADEME](https://librairie.ademe.fr/consommer-autrement/5226-guide-pratique-la-face-cachee-du-numerique.html), [Mon Convertisseur CO₂](https://monconvertisseurco2.fr/)
-
-### Équipements (matériels)
-
-L'impact des équipements intègre à la fois la **phase de fabrication** (extraction des matières premières, assemblage) et la **phase d'utilisation** (consommation électrique sur la durée de vie), exprimé en kg CO₂ éq. par an d'utilisation.
-
-L'impact des équipements génériques est une moyenne calculée à partir de l'agrégation de données de différents modèles issus des sources ci-dessous.
-
-Sources : [ADEME — La face cachée du numérique](https://librairie.ademe.fr/consommer-autrement/5226-guide-pratique-la-face-cachee-du-numerique.html), [ENERGY STAR](https://www.energystar.gov/), [NUTS online tool](https://nuts.fr/)
-
-### Mix énergétique par pays
-
-La consommation électrique des équipements est pondérée par le mix énergétique du pays sélectionné par l'utilisateur.
-
-| Pays | kg CO₂ éq. / kWh |
-|------|-----------------|
-| Suisse | 0,027 |
-| France | 0,052 |
-| Luxembourg | 0,089 |
-| Autriche | 0,158 |
-| Espagne | 0,207 |
-| Belgique | 0,220 |
-| Italie | 0,233 |
-| Pays-Bas | 0,284 |
-| Allemagne | 0,420 |
-
----
-
-## Sources de données
-
-| Source | Usage |
-|--------|-------|
-| [ADEME — La face cachée du numérique](https://librairie.ademe.fr/consommer-autrement/5226-guide-pratique-la-face-cachee-du-numerique.html) | Équipements, emails, déplacements |
-| [ENERGY STAR](https://www.energystar.gov/) | Consommation électrique des équipements |
-| [NUTS online tool](https://nuts.fr/) | Données fabricants sur les émissions GES |
-| [Green Cloud Computing — Umweltbundesamt (2021)](https://www.umweltbundesamt.de/sites/default/files/medien/5750/publikationen/2021-06-17_texte_94-2021_green-cloud-computing.pdf) | Stockage cloud |
-| [Greenspector (2021)](https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/) | Visioconférence |
-| [nosgestesclimat.fr](https://nosgestesclimat.fr/documentation/num%C3%A9rique/internet) | Navigation web |
-| [The Shift Project](https://theshiftproject.org/lean-ict/) | Référence générale numérique |
-| [Mon Convertisseur CO₂](https://monconvertisseurco2.fr/) | Équivalences et déplacements |
-
----
-
-## Stack technique
-
-- HTML5 statique (aucun système de build requis)
-- [jQuery 3.7.1](https://jquery.com/)
-- [tarteaucitron.js](https://github.com/AmauryCarrade/tarteaucitron.js) — Consentement cookies conforme RGPD
-- [Matomo](https://matomo.org/) — Analytics respectueux de la vie privée (auto-hébergé, ID site = 6)
-- Police Montserrat variable auto-hébergée (conforme RGPD, sans appel Google Fonts)
-
----
-
-## Lancer le projet en local
-
-```bash
-# Avec Python (recommandé)
-python3 -m http.server 8080
-
-# Puis ouvrir http://localhost:8080
+```text
+(production + annual electricity × electricity factor × lifetime) / lifetime
 ```
 
-> L'outil nécessite un serveur local car il utilise des chemins relatifs entre sous-répertoires de langues. Ouvrir `index.html` directement via `file://` fonctionnera pour la page racine, mais la navigation entre langues nécessite un serveur.
+New version 1.3 equipment factors are maintained in [`equipment-additions.js`](equipment-additions.js). They use generic archetypes rather than claiming precise comparisons between manufacturers.
 
-### Vérifications statiques
+### Version 1.3 equipment factors
 
-Les contrôles vérifient les liens locaux, le consentement Matomo, l'accessibilité du viewport, la validation des nombres et la syntaxe des six calculateurs :
+| Equipment | Embodied impact | Annual electricity | Main source |
+|---|---:|---:|---|
+| Internet box / Wi-Fi router | 36.1 kgCO₂e | 87.6 kWh | BoaviztAPI / ADEME Base Empreinte |
+| USB flash drive | 6.25 kgCO₂e | 0.1314 kWh | BoaviztAPI / ADEME Base Empreinte |
+| External SSD | 109 kgCO₂e | 1.095 kWh | BoaviztAPI / ADEME Base Empreinte |
+| External hard drive | 15.8 kgCO₂e | 3.3945 kWh | BoaviztAPI / ADEME Base Empreinte |
+| External webcam | 3.17 kgCO₂e | Not included | Logitech C920e PCF, manufacturing phase |
+
+The webcam value represents 56% of the verified 5.66 kgCO₂e product footprint published for the Logitech C920e. Its electricity and video traffic are excluded from this equipment entry. Video-conferencing usage is calculated separately.
+
+## Other calculation factors
+
+| Activity | Factor |
+|---|---:|
+| Email without attachment | 4 gCO₂e/message |
+| Email with attachment | 35 gCO₂e/message |
+| Cloud storage | 209.5 gCO₂e/GB/year |
+| Web browsing | 10 gCO₂e/hour |
+| Average car | 0.193 kgCO₂e/km |
+| Train | 0.00173 kgCO₂e/km |
+| Short/medium-haul flight | 0.186 kgCO₂e/km |
+
+Video-conferencing factors vary by platform. Enabling the camera increases the usage estimate by a factor of 2.6; this concerns service usage and does not represent webcam manufacturing.
+
+## Sources and methodological references
+
+- [ADEME — Digital purchasing footprint calculator](https://agirpourlatransition.ademe.fr/particuliers/evaluer-son-impact/calculer-impact-achats/calculez-empreinte-carbone-achats-numeriques)
+- [ADEME — La face cachée du numérique](https://librairie.ademe.fr/consommer-autrement/5226-guide-pratique-la-face-cachee-du-numerique.html)
+- [ADEME Base Empreinte](https://base-empreinte.ademe.fr/)
+- [BoaviztAPI routes and equipment archetypes](https://doc.api.boavizta.org/Reference/routes/)
+- [Boavizta environmental footprint methodology](https://doc.api.boavizta.org/Explanations/embedded_methodology/)
+- [EcoDiag by EcoInfo/CNRS](https://ecoinfo.cnrs.fr/ecodiag-calcul/)
+- [EcoDiag source code](https://gitlab.in2p3.fr/ecoinfo/ecodiag)
+- [EcoInfo overview of digital environmental impacts](https://ecoinfo.cnrs.fr/2019/04/30/introduction-aux-impacts-environnementaux-du-numerique/)
+- [Logitech C920e verified product carbon footprint](https://www.logitech.com/content/dam/logitech/en/sustainability/carbon-labeling-messaging/carbon-clarity/pdf/carbon-footprint-webcam-c920e.pdf)
+- [Green Cloud Computing — Umweltbundesamt](https://www.umweltbundesamt.de/sites/default/files/medien/5750/publikationen/2021-06-17_texte_94-2021_green-cloud-computing.pdf)
+- [Greenspector video-conferencing study](https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/)
+- [ENERGY STAR](https://www.energystar.gov/)
+- [Nos Gestes Climat — Internet](https://nosgestesclimat.fr/documentation/num%C3%A9rique/internet)
+
+EcoDiag is included as a methodological reference for equipment inventory, stock/flow approaches and lifetime allocation. Boavizta and EcoDiag share part of their manufacturer-data collection work; these sources should therefore not be treated as independent measurements when assessing uncertainty.
+
+## Privacy
+
+- Calculator answers remain in the browser.
+- Matomo is hosted by INR at `analytic.institutnr.org`.
+- Analytics are loaded only after explicit consent through tarteaucitron.js.
+- Privacy and cookie-management links are localized for every supported language.
+- DPO contact: [dpo@institutnr.org](mailto:dpo@institutnr.org).
+
+## Accessibility and validation
+
+Version 1.3 restores browser zoom, visible keyboard focus and accessible disclosure state. Dynamically added equipment fields receive unique identifiers. Negative and invalid numeric inputs are normalized to zero.
+
+## Technical stack
+
+- static HTML5, CSS and JavaScript;
+- jQuery 3.7.1;
+- tarteaucitron.js for consent management;
+- self-hosted Matomo analytics;
+- self-hosted Montserrat variable font;
+- no application backend and no build step.
+
+## Run locally
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open [http://localhost:8080](http://localhost:8080).
+
+## Verification
+
+Ruby and Node.js are required for the static checks:
 
 ```bash
 ruby tests/check-static.rb
 ```
 
----
+The checks cover local links, the accessible viewport, consent configuration, direct Matomo loading, input validation, dynamic identifiers and JavaScript syntax for all six calculators.
 
-## Structure du projet
+## Project structure
 
-```
+```text
 myimpact/
-├── index.html                          # Anglais (défaut)
+├── index.html
 ├── scripts-en.js
-├── fr/
-│   ├── index.html                      # Français
-│   ├── scripts.js
-│   ├── a-propos-numerique-responsable.html
-│   ├── mentions-legales.html
-│   └── gestion-cookies.html
-├── nl/
-│   ├── index.html                      # Nederlands
-│   ├── scripts.js
-│   ├── over-de-rekenmachine-duurzame-it.html
-│   ├── wettelijke-vermeldingen.html
-│   └── cookiebeheer.html
-├── de/
-│   ├── index.html                      # Deutsch
-│   ├── scripts.js
-│   ├── about-sustainable-it.html
-│   ├── rechtliche-hinweise.html
-│   └── cookie-verwaltung.html
-├── es/
-│   ├── index.html                      # Español
-│   ├── scripts.js
-│   ├── about-sustainable-it.html
-│   ├── aviso-legal.html
-│   └── gestion-cookies.html
-├── it/
-│   ├── index.html                      # Italiano
-│   ├── scripts.js
-│   ├── about-sustainable-it.html
-│   ├── note-legali.html
-│   └── gestione-cookie.html
-├── about-sustainable-it.html           # Sources & méthodo (EN)
-├── legal-notice.html                   # Mentions légales (EN)
-├── cookies.html                        # Gestion cookies (EN)
-├── stylesheet-inr.css                  # Feuille de style principale
-├── jquery-3.7.1.min.js
-├── fonts/
-│   └── montserrat-variable.woff2
-├── img/
-│   ├── isit.png                        # Logo ISIT (EN, NL, DE, ES, IT)
-│   └── inr.png                         # Logo INR (FR uniquement)
-├── tarteaucitron/                      # Bibliothèque consentement cookies
+├── equipment-additions.js
+├── cookie-consent.js
+├── stylesheet-inr.css
+├── fr/ nl/ de/ es/ it/
+├── tests/check-static.rb
+├── tarteaucitron/
 ├── sitemap.xml
-├── robots.txt
-└── README.md
+└── robots.txt
 ```
 
----
+## Contributors and history
 
-## Déploiement
+| Version | Date | Main changes |
+|---|---|---|
+| 1.0 | 2020 | Initial architecture by Julien Gontier (Decathlon) |
+| 1.1 | July 2022 | Updated indicators and new sections by athom |
+| 1.2 | 2026 | Updated sources, German/Spanish/Italian translations, privacy and SEO work by Guillaume Gallon / INR France |
+| 1.3 | 2026 | Consent, accessibility, validation, tests and additional equipment families |
 
-L'outil est déployé en site statique sur les serveurs OVH. Aucun traitement côté serveur n'est nécessaire — tous les calculs sont effectués côté client en JavaScript.
+MyImpact is maintained by:
 
-Pour déployer, transférer l'ensemble des fichiers en conservant la structure des répertoires. S'assurer que le serveur web sert `index.html` comme document par défaut pour chaque répertoire.
+- [Institut du Numérique Responsable — INR France](https://institutnr.org)
+- [ISIT Belgium](https://isit-be.org)
+- [ISIT Switzerland](https://isit-europe.org)
 
----
+## Acknowledgements
 
-## Protection des données (RGPD)
+We warmly thank everyone who has helped create, maintain and improve MyImpact:
 
-- **Aucune donnée personnelle n'est collectée** par la calculatrice — les calculs s'effectuent entièrement dans le navigateur de l'utilisateur.
-- Les cookies analytiques (Matomo, auto-hébergé) nécessitent le consentement explicite de l'utilisateur via tarteaucitron.js.
-- **DPO (Délégué à la Protection des Données)** : [dpo@institutnr.org](mailto:dpo@institutnr.org)
-- Hébergeur : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France
+- **Julien Gontier (Decathlon)** for the original calculator architecture released to INR in 2020;
+- **athom** for the 2022 indicator update and additional sections;
+- **Guillaume Gallon and INR France** for the 2026 maintenance, translations, privacy, accessibility, validation and equipment updates;
+- the **INR France, ISIT Belgium and ISIT Switzerland** communities for maintaining and reviewing the project;
+- **EcoInfo/CNRS and the EcoDiag contributors** for their open methodology and work on IT equipment inventories;
+- the **Boavizta contributors** for their open data, documented archetypes and environmental-impact methodology;
+- **ADEME**, **Umweltbundesamt**, **Greenspector**, **ENERGY STAR** and the manufacturers publishing reviewed product environmental reports for making the underlying studies available.
 
----
+The complete commit history remains the authoritative record of individual code contributions. Thank you to every contributor who reports an issue, improves a translation, reviews a factor or submits a signed contribution.
 
-## Licence
+Contributions must follow [`CONTRIBUTING.md`](CONTRIBUTING.md), including the Developer Certificate of Origin sign-off.
 
-[![Licence Creative Commons](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)
+## License
 
-Ce projet est mis à disposition selon les termes de la [Licence Creative Commons Attribution — Pas d'Utilisation Commerciale — Partage dans les Mêmes Conditions 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr).
-
-**Vous êtes libre de :**
-- **Partager** — copier et redistribuer le contenu sur tout support ou format
-- **Adapter** — remixer, transformer et créer à partir du contenu
-
-**Selon les conditions suivantes :**
-- **Attribution (BY)** — Vous devez créditer l'œuvre en mentionnant l'INR, fournir un lien vers la licence et indiquer les modifications éventuelles
-- **Pas d'Utilisation Commerciale (NC)** — Vous n'êtes pas autorisé à faire un usage commercial de cette œuvre
-- **Partage dans les Mêmes Conditions (SA)** — Si vous remixez, transformez ou créez à partir du contenu, vous devez diffuser votre contribution sous la même licence que l'original
-
-© Institut du Numérique Responsable, ISIT Belgique, ISIT Suisse
+This project is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).

@@ -40,6 +40,20 @@ consent = ROOT.join("cookie-consent.js").read
 assert(consent.include?("matomoCustomJSPath"), "script Matomo auto-hébergé non configuré")
 assert(consent.include?('push("matomocloud")'), "service Matomo soumis au consentement absent")
 
+equipment = ROOT.join("equipment-additions.js").read
+{
+  '"production": 36.1' => "box/routeur",
+  '"production": 6.25' => "clé USB",
+  '"production": 109' => "SSD externe",
+  '"production": 15.8' => "disque dur externe",
+  '"production": 3.17' => "webcam externe",
+  '"scope": "manufacturing-only"' => "périmètre matériel de la webcam"
+}.each do |factor, label|
+  assert(equipment.include?(factor), "facteur manquant pour #{label}")
+end
+assert(equipment.scan(/^[ ]{4}(?:en|fr|nl|de|es|it): \{$/).length == 6, "six traductions d’équipements attendues")
+assert(system("node", "--check", ROOT.join("equipment-additions.js").to_s, out: File::NULL), "syntaxe des équipements invalide")
+
 CALCULATOR_SCRIPTS.each do |relative|
   path = ROOT.join(relative)
   content = path.read
@@ -51,4 +65,4 @@ end
 
 assert(system("node", "--check", ROOT.join("cookie-consent.js").to_s, out: File::NULL), "syntaxe du consentement invalide")
 
-puts "OK : 24 pages et 6 calculateurs contrôlés"
+puts "OK : 24 pages, 6 calculateurs et les équipements v1.3 contrôlés"
