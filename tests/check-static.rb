@@ -18,7 +18,7 @@ def assert(condition, message)
   abort "ÉCHEC : #{message}" unless condition
 end
 
-assert(HTML_FILES.length == 24, "24 pages HTML attendues, #{HTML_FILES.length} trouvées")
+assert(HTML_FILES.length == 25, "25 pages HTML attendues, #{HTML_FILES.length} trouvées")
 
 HTML_FILES.each do |path|
   content = path.read
@@ -65,4 +65,13 @@ end
 
 assert(system("node", "--check", ROOT.join("cookie-consent.js").to_s, out: File::NULL), "syntaxe du consentement invalide")
 
-puts "OK : 24 pages, 6 calculateurs et les équipements v1.3 contrôlés"
+presentation = ROOT.join("fr/presentation-myimpact.html").read
+assert(presentation.include?('rel="canonical"'), "URL canonique absente de la présentation")
+assert(presentation.include?('"@type": "WebApplication"'), "données structurées WebApplication absentes")
+assert(presentation.include?('"@type": "FAQPage"'), "données structurées FAQ absentes")
+assert(ROOT.join("sitemap.xml").read.include?("fr/presentation-myimpact.html"), "présentation absente du sitemap")
+stylesheet = ROOT.join("stylesheet-inr.css").read
+assert(stylesheet.include?('.box>div::after'), "unités absentes des blocs d’impact")
+assert(stylesheet.include?('#total_impact::after'), "unité absente du total")
+
+puts "OK : 25 pages, 6 calculateurs, les équipements v1.3 et la présentation SEO contrôlés"

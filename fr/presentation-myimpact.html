@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>MyImpact : calculer son empreinte numérique professionnelle</title>
+    <meta name="description" content="Découvrez MyImpact, la calculatrice gratuite et open source pour estimer l’empreinte carbone de vos équipements, usages numériques et déplacements professionnels." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://myimpact.isit-europe.org/fr/presentation-myimpact.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MyImpact" />
+    <meta property="og:url" content="https://myimpact.isit-europe.org/fr/presentation-myimpact.html" />
+    <meta property="og:title" content="MyImpact, la calculatrice d’empreinte numérique professionnelle" />
+    <meta property="og:description" content="Un outil gratuit et open source pour comprendre l’impact climatique de ses équipements, usages numériques et déplacements professionnels." />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content="https://myimpact.isit-europe.org/img/android-chrome-192x192.png" />
+    <meta property="og:image:alt" content="Logo de MyImpact" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="MyImpact, calculatrice d’empreinte numérique" />
+    <meta name="twitter:description" content="Estimez gratuitement l’empreinte carbone de vos équipements, usages numériques et déplacements professionnels." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../stylesheet-inr.css" />
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+    <link rel="icon" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MyImpact",
+      "url": "https://myimpact.isit-europe.org/fr/",
+      "description": "Calculatrice gratuite et open source de l’empreinte carbone des équipements, usages numériques et déplacements professionnels.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Tout système équipé d’un navigateur web",
+      "inLanguage": "fr",
+      "isAccessibleForFree": true,
+      "softwareVersion": "1.3.0",
+      "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Institut du Numérique Responsable",
+        "url": "https://institutnr.org"
+      },
+      "sameAs": "https://github.com/Institut-du-Numerique-Responsable/myimpact"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "MyImpact est-il gratuit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. La calculatrice est accessible gratuitement, sans création de compte, et son code source est ouvert."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le résultat constitue-t-il un bilan carbone réglementaire ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. MyImpact produit une estimation individuelle destinée à la sensibilisation. Un bilan organisationnel exige un périmètre et une collecte de données plus complets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi séparer webcam et visioconférence ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La webcam est un équipement physique dont la fabrication a un impact propre. La visioconférence recouvre le fonctionnement du terminal, du réseau et du service. Séparer ces périmètres rend le résultat plus compréhensible et évite le double comptage."
+          }
+        }
+      ]
+    }
+    </script>
+    <script src="../tarteaucitron/tarteaucitron.js"></script>
+    <script src="../cookie-consent.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div id="head">
+        <div id="head_container">
+          <div id="logo">
+            <a href="./" title="Accéder à la calculatrice MyImpact">
+              <img src="../img/inr.png" alt="Institut du Numérique Responsable" />
+            </a>
+          </div>
+        </div>
+        <div id="title">
+          <h1>MyImpact, la calculatrice d’empreinte numérique professionnelle</h1>
+          <div class="version">Un service gratuit, open source et multilingue — version 1.3</div>
+        </div>
+        <div class="head-wrapper">
+          <div id="header_text">
+            <p>MyImpact aide les particuliers, salariés et organisations à estimer simplement les émissions de gaz à effet de serre associées à leurs équipements, usages numériques et déplacements professionnels.</p>
+            <p><a class="add-device" href="./" style="display:inline-flex;text-decoration:none;">Calculer mon empreinte numérique</a></p>
+          </div>
+          <nav class="direct-access" aria-label="Sommaire de la présentation">
+            <h2 class="direct-access__title">Découvrir MyImpact</h2>
+            <ul class="direct-access__list">
+              <li><a class="direct-access__link" href="#fonctionnement">Fonctionnement</a></li>
+              <li><a class="direct-access__link" href="#perimetre">Périmètre du calcul</a></li>
+              <li><a class="direct-access__link" href="#methodologie">Méthodologie et sources</a></li>
+              <li><a class="direct-access__link" href="#confidentialite">Confidentialité</a></li>
+              <li><a class="direct-access__link" href="#questions">Questions fréquentes</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="page">
+      <div id="content">
+        <div id="data">
+          <section class="section" id="fonctionnement">
+            <header class="section__header">
+              <h2 class="section__title">Comprendre son empreinte pour mieux agir</h2>
+              <div class="section__intro">
+                <p>MyImpact fournit une estimation annuelle en kilogrammes de CO₂ équivalent (kg CO₂e). L’utilisateur renseigne son matériel, sa durée de conservation, son pays, certains usages en ligne, son stockage, ses emails et ses déplacements.</p>
+                <p>Le résultat distingue les grandes sources d’impact et propose des ordres de grandeur comparables. Il s’agit d’un outil de sensibilisation et d’aide à la décision : ses résultats ne remplacent pas une analyse de cycle de vie détaillée d’un produit ou le bilan carbone complet d’une organisation.</p>
+              </div>
+            </header>
+          </section>
+
+          <section class="section" id="perimetre">
+            <header class="section__header">
+              <h2 class="section__title">Que calcule MyImpact ?</h2>
+              <div class="section__intro">
+                <ul>
+                  <li><strong>Équipements :</strong> ordinateurs, smartphones, tablettes, écrans, imprimantes, box ou routeurs, supports de stockage externes et webcam.</li>
+                  <li><strong>Usages en ligne :</strong> navigation web et visioconférence.</li>
+                  <li><strong>Données :</strong> stockage dans le cloud et envoi d’emails.</li>
+                  <li><strong>Mobilité professionnelle :</strong> déplacements en voiture, train et avion.</li>
+                </ul>
+                <p><strong>La webcam désigne ici le matériel.</strong> MyImpact retient uniquement son impact de fabrication, estimé à 3,17 kg CO₂e. Son électricité, le transfert de données et le service utilisé sont traités dans la partie visioconférence, afin de ne pas compter deux fois le même usage.</p>
+              </div>
+            </header>
+          </section>
+
+          <section class="section" id="methodologie">
+            <header class="section__header">
+              <h2 class="section__title">Une méthodologie ouverte et documentée</h2>
+              <div class="section__intro">
+                <p>Pour le matériel, le calcul répartit l’impact de fabrication sur la durée d’utilisation indiquée et y ajoute l’électricité consommée selon le mix électrique du pays. Les facteurs génériques donnent des ordres de grandeur ; ils comportent une incertitude liée aux modèles, aux durées de vie et aux conditions réelles d’utilisation.</p>
+                <p>Les principales références comprennent la <a href="https://base-empreinte.ademe.fr/" target="_blank" rel="noopener">Base Empreinte de l’ADEME</a>, les <a href="https://doc.api.boavizta.org/Reference/routes/" target="_blank" rel="noopener">archétypes ouverts de BoaviztAPI</a>, <a href="https://ecoinfo.cnrs.fr/ecodiag-calcul/" target="_blank" rel="noopener">EcoDiag d’EcoInfo/CNRS</a> et l’<a href="https://www.logitech.com/content/dam/logitech/en/sustainability/carbon-labeling-messaging/carbon-clarity/pdf/carbon-footprint-webcam-c920e.pdf" target="_blank" rel="noopener">empreinte produit vérifiée de la Logitech C920e</a>.</p>
+                <p><a href="a-propos-numerique-responsable.html">Consulter le détail des facteurs, hypothèses et sources de calcul</a>.</p>
+              </div>
+            </header>
+          </section>
+
+          <section class="section" id="confidentialite">
+            <header class="section__header">
+              <h2 class="section__title">Un calcul local et respectueux de la vie privée</h2>
+              <div class="section__intro">
+                <p>Les réponses saisies et les résultats sont calculés dans le navigateur : ils ne sont pas transmis à un serveur applicatif. L’outil de mesure d’audience Matomo est auto-hébergé sur l’infrastructure de l’INR et ne se charge qu’après un consentement explicite.</p>
+                <p>Le code source est publié sous licence libre sur <a href="https://github.com/Institut-du-Numerique-Responsable/myimpact" target="_blank" rel="noopener">le dépôt GitHub de MyImpact</a>. Cette ouverture permet de vérifier les calculs, proposer des corrections et contribuer à de nouveaux facteurs.</p>
+              </div>
+            </header>
+          </section>
+
+          <section class="section" id="questions">
+            <header class="section__header">
+              <h2 class="section__title">Questions fréquentes</h2>
+              <div class="section__intro">
+                <h3>MyImpact est-il gratuit ?</h3>
+                <p>Oui. La calculatrice est accessible gratuitement, sans création de compte, et son code source est ouvert.</p>
+                <h3>Le résultat constitue-t-il un bilan carbone réglementaire ?</h3>
+                <p>Non. MyImpact produit une estimation individuelle destinée à la sensibilisation. Un bilan organisationnel exige un périmètre et une collecte de données plus complets.</p>
+                <h3>Pourquoi séparer webcam et visioconférence ?</h3>
+                <p>La webcam est un équipement physique dont la fabrication a un impact propre. La visioconférence recouvre le fonctionnement du terminal, du réseau et du service. Séparer ces périmètres rend le résultat plus compréhensible et évite le double comptage.</p>
+              </div>
+            </header>
+          </section>
+        </div>
+
+        <footer class="credits">
+          <h2 class="credits__title">Un projet collectif de l’INR</h2>
+          <p>MyImpact est porté par l’Institut du Numérique Responsable avec les communautés INR et ISIT. Merci à Julien Gontier pour l’architecture initiale, à athom pour les évolutions de 2022, à Guillaume Gallon pour l’actualisation 2026, ainsi qu’aux contributeurs d’EcoInfo/EcoDiag, Boavizta et aux organismes qui rendent leurs données accessibles.</p>
+          <p class="opacity-light"><a href="./">Calculatrice</a> | <a href="a-propos-numerique-responsable.html">Méthodologie et sources</a> | <a href="mentions-legales.html">Mentions légales</a> | <a href="gestion-cookies.html">Gestion des cookies</a></p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
