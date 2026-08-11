@@ -6,6 +6,8 @@ The calculator reports results in kilograms of carbon-dioxide equivalent (`kgCO�
 
 Live website: [myimpact.isit-europe.org](https://myimpact.isit-europe.org)
 
+![French MyImpact interface showing equipment selection, manufacturing and usage results, and web-usage inputs](img/myimpact-interface-fr.png)
+
 ## Version 1.3.0
 
 Version 1.3.0 improves privacy, accessibility and input reliability, and extends the equipment catalogue with:
@@ -71,6 +73,8 @@ New version 1.3 equipment factors are maintained in [`equipment-additions.js`](e
 
 The webcam value represents 56% of the verified 5.66 kgCO₂e product footprint published for the Logitech C920e. Its electricity and video traffic are excluded from this equipment entry. Video-conferencing usage is calculated separately.
 
+The equipment selector also provides two current generic choices: **recent laptop, including MacBook** and **recent smartphone, including iPhone**. Their embodied values come from the detailed Impact CO₂/ADEME categories (`ordinateurportable` and `smartphone`) and are refreshed through the API. Impact CO₂ expresses use as `kgCO₂e/year`; MyImpact converts that value to annual electricity using its French electricity factor (`0.052 kgCO₂e/kWh`) before applying the location selected by the user. The Apple names are examples that help users choose a family; the factors are generic market estimates and must not be interpreted as Apple model-specific declarations. Historical MacBook entries remain available for users who own those devices.
+
 ### Additional electricity mixes
 
 Version 1.3 adds six locations using Ember’s 2025 lifecycle carbon intensity of electricity generation, processed by Our World in Data.
@@ -92,11 +96,34 @@ Version 1.3 adds six locations using Ember’s 2025 lifecycle carbon intensity o
 | Email with attachment | 35 gCO₂e/message |
 | Cloud storage | 209.5 gCO₂e/GB/year |
 | Web browsing | 10 gCO₂e/hour |
-| Average car | 0.193 kgCO₂e/km |
+| Thermal car | 0.142253 kgCO₂e/km |
 | Train | 0.00173 kgCO₂e/km |
-| Short/medium-haul flight | 0.186 kgCO₂e/km |
+| Medium-haul flight | 0.184661 kgCO₂e/km |
 
 Video-conferencing factors vary by platform. Enabling the camera increases the usage estimate by a factor of 2.6; this concerns service usage and does not represent webcam manufacturing.
+
+## Impact CO₂ API and carbon equivalents
+
+MyImpact retrieves the current comparison and travel factors from the public [Impact CO₂ API](https://impactco2.fr/doc/api), published by ADEME:
+
+- `/api/v1/thematiques/ecv/alimentation` for a meal with beef;
+- `/api/v1/thematiques/ecv/numerique` for laptops and smartphones;
+- `/api/v1/thematiques/ecv/transport` for thermal cars and medium- and long-haul flights.
+
+The total in `kgCO₂e` is divided by the corresponding API factor to produce each illustrative equivalent. The Paris–New York return-trip comparison uses the long-haul flight factor; the generic flight-distance comparison and business-travel calculation use the medium-haul factor.
+
+MyImpact is a static website and does not expose an API key. Anonymous API requests are supported at the time of this release but may be restricted by Impact CO₂ in the future. [`impactco2-equivalents.js`](impactco2-equivalents.js) therefore embeds the following current fallback values so the calculator remains available if the API cannot be reached:
+
+| Equivalent or activity | Fallback factor |
+|---|---:|
+| Meal with beef | 4.97 kgCO₂e/meal |
+| Thermal car | 0.1422534122 kgCO₂e/km |
+| Medium-haul flight | 0.184661 kgCO₂e/km |
+| Long-haul flight | 0.177894 kgCO₂e/km |
+| Laptop | 192.62004125 kgCO₂e/device |
+| Smartphone | 80.155343125 kgCO₂e/device |
+
+Users can inspect the [Impact CO₂ carbon comparator](https://impactco2.fr/outils/comparateur#simulateur) and the [downloadable equivalent list](https://impactco2.fr/equivalents.csv). These comparisons are illustrative orders of magnitude, not avoided-emission claims.
 
 ## Sources and methodological references
 
@@ -114,12 +141,15 @@ Video-conferencing factors vary by platform. Enabling the camera increases the u
 - [ENERGY STAR](https://www.energystar.gov/)
 - [Nos Gestes Climat — Internet](https://nosgestesclimat.fr/documentation/num%C3%A9rique/internet)
 - [Ember/Our World in Data — lifecycle carbon intensity of electricity](https://ourworldindata.org/grapher/carbon-intensity-electricity)
+- [Impact CO₂ carbon comparator](https://impactco2.fr/outils/comparateur#simulateur)
+- [Impact CO₂ API documentation](https://impactco2.fr/doc/api)
 
 EcoDiag is included as a methodological reference for equipment inventory, stock/flow approaches and lifetime allocation. Boavizta and EcoDiag share part of their manufacturer-data collection work; these sources should therefore not be treated as independent measurements when assessing uncertainty.
 
 ## Privacy
 
 - Calculator answers remain in the browser.
+- The browser contacts `impactco2.fr` to refresh six public carbon factors. These requests expose ordinary connection metadata such as the IP address and user agent to Impact CO₂/ADEME, but contain none of the answers entered in MyImpact. See the [Impact CO₂ privacy policy](https://impactco2.fr/politique-de-confidentialite) and [legal notice](https://impactco2.fr/mentions-legales).
 - Matomo is hosted by INR at `analytic.institutnr.org`.
 - Analytics are loaded only after explicit consent through tarteaucitron.js.
 - Privacy and cookie-management links are localized for every supported language.
@@ -135,6 +165,7 @@ Version 1.3 restores browser zoom, visible keyboard focus and accessible disclos
 - jQuery 3.7.1;
 - tarteaucitron.js for consent management;
 - self-hosted Matomo analytics;
+- the public Impact CO₂ API, with local fallback factors;
 - self-hosted Montserrat variable font;
 - no application backend and no build step.
 
@@ -197,7 +228,8 @@ We warmly thank everyone who has helped create, maintain and improve MyImpact:
 - the **INR France, ISIT Belgium and ISIT Switzerland** communities for maintaining and reviewing the project;
 - **EcoInfo/CNRS and the EcoDiag contributors** for their open methodology and work on IT equipment inventories;
 - the **Boavizta contributors** for their open data, documented archetypes and environmental-impact methodology;
-- **ADEME**, **Umweltbundesamt**, **Greenspector**, **ENERGY STAR** and the manufacturers publishing reviewed product environmental reports for making the underlying studies available.
+- the **Impact CO₂ team and ADEME** for maintaining a free API, an open comparator and regularly updated carbon-equivalent data;
+- **Umweltbundesamt**, **Greenspector**, **ENERGY STAR** and the manufacturers publishing reviewed product environmental reports for making the underlying studies available.
 
 The complete commit history remains the authoritative record of individual code contributions. Thank you to every contributor who reports an issue, improves a translation, reviews a factor or submits a signed contribution.
 

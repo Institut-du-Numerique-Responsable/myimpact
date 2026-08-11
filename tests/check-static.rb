@@ -52,6 +52,10 @@ equipment = ROOT.join("equipment-additions.js").read
   assert(equipment.include?(factor), "facteur manquant pour #{label}")
 end
 assert(equipment.scan(/^[ ]{4}(?:en|fr|nl|de|es|it): \{$/).length == 6, "six traductions d’équipements attendues")
+assert(equipment.include?('"production": 182.3'), "ordinateur portable générique récent absent")
+assert(equipment.include?('"production": 79.27'), "smartphone générique récent absent")
+assert(equipment.include?("including MacBook"), "repère MacBook récent absent")
+assert(equipment.include?("including iPhone"), "repère iPhone récent absent")
 assert(system("node", "--check", ROOT.join("equipment-additions.js").to_s, out: File::NULL), "syntaxe des équipements invalide")
 
 locations = ROOT.join("location-additions.js").read
@@ -94,6 +98,26 @@ end
 
 assert(system("node", "--check", ROOT.join("cookie-consent.js").to_s, out: File::NULL), "syntaxe du consentement invalide")
 
+impact_co2 = ROOT.join("impactco2-equivalents.js").read
+%w[repasavecduboeuf ordinateurportable smartphone voiturethermique avion-moyencourrier avion-longcourrier].each do |slug|
+  assert(impact_co2.include?(slug), "équivalent Impact CO₂ manquant : #{slug}")
+end
+assert(impact_co2.include?('credentials: "omit"'), "identifiants indûment transmis à Impact CO₂")
+assert(system("node", ROOT.join("tests/check-impactco2.js").to_s, out: File::NULL), "intégration Impact CO₂ invalide")
+calculator_pages.each do |relative|
+  assert(ROOT.join(relative).read.include?("impactco2-equivalents.js"), "API Impact CO₂ absente de #{relative}")
+end
+assert(HTML_FILES.none? { |path| path.read.include?("monconvertisseurco2.fr") }, "ancien convertisseur CO₂ encore référencé")
+legal_pages = %w[
+  legal-notice.html fr/mentions-legales.html nl/wettelijke-vermeldingen.html
+  de/rechtliche-hinweise.html es/aviso-legal.html it/note-legali.html
+]
+legal_pages.each do |relative|
+  content = ROOT.join(relative).read
+  assert(content.include?("https://impactco2.fr/doc/api"), "API Impact CO₂ absente de #{relative}")
+  assert(content.include?("https://impactco2.fr/politique-de-confidentialite"), "confidentialité Impact CO₂ absente de #{relative}")
+end
+
 presentation = ROOT.join("fr/presentation-myimpact.html").read
 assert(presentation.include?('rel="canonical"'), "URL canonique absente de la présentation")
 assert(presentation.include?('"@type": "WebApplication"'), "données structurées WebApplication absentes")
@@ -107,4 +131,4 @@ calculator_pages.each do |relative|
 end
 assert(stylesheet.include?('#total_impact::after'), "unités absentes des totaux")
 
-puts "OK : 25 pages, 6 calculateurs, les équipements, les localisations et la présentation SEO contrôlés"
+puts "OK : 25 pages, 6 calculateurs, Impact CO₂, les équipements, les localisations et la présentation SEO contrôlés"

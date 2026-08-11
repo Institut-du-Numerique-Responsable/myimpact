@@ -299,9 +299,9 @@ nb_jours_travailles = 215,
 numWeeks = 46,
 CO2GigaByteCloud = 0.2095,
 C02navigation_web = 10, // pollution en g co2 eq / heure
-CO2kmvoiture = 0.193,
+CO2kmvoiture = window.impactCO2Factors.car,
 CO2kmtrain = 0.00173,
-CO2kmavion = 0.186,
+CO2kmavion = window.impactCO2Factors.planeMedium,
 CO2streaming = 0.0015;
 $(document).ready(function () {
   function positiveNumber(value) {
@@ -373,13 +373,13 @@ $(document).ready(function () {
         "--offset": "" + pieSegment0Value + "",
         "--over50": pieSegment1Value > 50 ? "1" : "0"
       });
-      $("#impact_eq_beef_meal").html((a / 7.26).toFixed());
-      $("#impact_eq_car_km").html((a / 0.193).toFixed());
-      $("#impact_eq_lille_marseille").html((a / 0.193 / 1000).toFixed(1));
-      $("#impact_eq_plane_km").html((a / 0.186).toFixed());
-      $("#impact_eq_ar_paris_nyc").html((a / 0.186 / 5800 / 2).toFixed(1));
-      $("#impact_eq_laptop").html((a / 156).toFixed());
-      $("#impact_eq_smartphone").html((a / 32.8).toFixed());
+      $("#impact_eq_beef_meal").html((a / window.impactCO2Factors.mealBeef).toFixed());
+      $("#impact_eq_car_km").html((a / window.impactCO2Factors.car).toFixed());
+      $("#impact_eq_lille_marseille").html((a / window.impactCO2Factors.car / 1000).toFixed(1));
+      $("#impact_eq_plane_km").html((a / window.impactCO2Factors.planeMedium).toFixed());
+      $("#impact_eq_ar_paris_nyc").html((a / window.impactCO2Factors.planeLong / 5800 / 2).toFixed(1));
+      $("#impact_eq_laptop").html((a / window.impactCO2Factors.laptop).toFixed());
+      $("#impact_eq_smartphone").html((a / window.impactCO2Factors.smartphone).toFixed());
   }
   function w() {
     var selectedCountryIndicator = $('#select_country').val();
@@ -473,6 +473,13 @@ newDevice.find('label[for="lifetime"]').attr("for", lifetimeID);
   $(document).on('change', '#select_country', w);
   $(document).on('change', '[data-device-field]', i);
   w();
+  if (window.impactCO2Ready) {
+    window.impactCO2Ready.then(function () {
+      w();
+      $("#deplacement_plane").change();
+      $("#deplacement_car").change();
+    });
+  }
   $("#visio_tool").change(y);
   $("#visio_hours").change(y);
   $("#visio_camera").change(y);
