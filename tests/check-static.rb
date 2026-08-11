@@ -27,6 +27,7 @@ HTML_FILES.each do |path|
   assert(content.include?('content="width=device-width, initial-scale=1"'), "viewport accessible manquant dans #{relative}")
   assert(content.include?("cookie-consent.js"), "gestion du consentement absente de #{relative}")
   assert(!content.include?("var _paq = window._paq"), "chargement Matomo direct dans #{relative}")
+  assert(!content.include?('\n'), "séquence \\n littérale visible dans #{relative}")
 
   content.scan(/(?:href|src)="([^"]+)"/).flatten.each do |reference|
     next if reference.empty? || reference.match?(/\A(?:https?:|mailto:|tel:|#|data:|javascript:)/)
