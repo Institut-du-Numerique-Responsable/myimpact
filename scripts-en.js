@@ -303,6 +303,10 @@ CO2kmvoiture = 0.193,
 CO2kmtrain = 0.00173,
 CO2kmavion = 0.186;
 $(document).ready(function () {
+  function positiveNumber(value) {
+    return Math.max(0, Number(value) || 0);
+  }
+
   var e = 0,
       t = 0,
       a = 0,
@@ -418,7 +422,7 @@ $(document).ready(function () {
     var visioHours = $("#visio_hours").val();
 
     if(visioTool.length > 0 && visioHours != "") {
-      impactHebdo = Number(visioHours) * 60 * visioTool[0].usage / 1000;
+      impactHebdo = positiveNumber(visioHours) * 60 * visioTool[0].usage / 1000;
 
       if($("#visio_camera").val() == "on") {
         impactHebdo = impactHebdo * 2.6;
@@ -438,7 +442,7 @@ $(document).ready(function () {
     var impactAnnuel = 0;
     if($(this).val() != "") {
       var CO2mail = fieldID.includes("without") ? 4 : 35;
-      impactDaily = (Number($(this).val()) * CO2mail) / 1000;
+      impactDaily = (positiveNumber($(this).val()) * CO2mail) / 1000;
       impactAnnuel = impactDaily * 46 * 5;
     }
     $("#impact_" + fieldID.replace("num_", "") + "_quotidien").html(impactDaily.toFixed(2));
@@ -452,6 +456,12 @@ $(document).ready(function () {
     $("#device_total_" + numOfDevices).after('<div id="device_total_' + newDeviceID + '"></div>');
     $("#device_impact_annuel_" + numOfDevices).after('<div id="device_impact_annuel_' + newDeviceID + '"></div>');
     var newDevice = $('.groupe[data-device-id="1"]').clone().attr("data-device-id", newDeviceID);
+var modelID = "model_" + newDeviceID;
+var lifetimeID = "lifetime_" + newDeviceID;
+newDevice.find('[data-device-field="model"]').attr({"id": modelID, "name": modelID});
+newDevice.find('label[for="model"]').attr("for", modelID);
+newDevice.find('[data-device-field="lifetime"]').attr({"id": lifetimeID, "name": lifetimeID});
+newDevice.find('label[for="lifetime"]').attr("for", lifetimeID);
     newDevice.find('.device-title').html('Mon équipement n°' + newDeviceID);
     $(".add-device").before(newDevice);
     newDevice.find('[data-device-field="model"]').change();
@@ -468,7 +478,7 @@ $(document).ready(function () {
   $("#surf_hours").change(function () {
     var surfHours = $("#surf_hours").val();
     if("" != surfHours) {
-      var surfWeekly = Number(surfHours) * C02navigation_web / 1000;
+      var surfWeekly = positiveNumber(surfHours) * C02navigation_web / 1000;
       $('#impact_surf_weekly').html(surfWeekly.toFixed(2));
       $('#impact_surf_annuel').html((surfWeekly * numWeeks).toFixed(2));
     } else {
@@ -480,7 +490,7 @@ $(document).ready(function () {
   $("#storage_google").change(function () {
     "" != $("#storage_google").val()
       ? $("#storage_google_annuel").html(
-          ($("#storage_google").val() * CO2GigaByteCloud).toFixed(2)
+          (positiveNumber($("#storage_google").val()) * CO2GigaByteCloud).toFixed(2)
         )
       : $("#storage_google_annuel").html("0"),
       l();
@@ -489,21 +499,21 @@ $(document).ready(function () {
   $("#num_emails_with_attachments").change(o),
   $("#deplacement_plane").change(function () {
     if ("" != $("#deplacement_plane").val()) {
-      var e = Number($("#deplacement_plane").val() * CO2kmavion).toFixed(2);
+      var e = (positiveNumber($("#deplacement_plane").val()) * CO2kmavion).toFixed(2);
       $("#impact_plane_annuel").html(Number(e).toFixed(2));
     } else $("#impact_plane_annuel").html("0");
     l();
   }),
   $("#deplacement_train").change(function () {
     if ("" != $("#deplacement_train").val()) {
-      var e = Number($("#deplacement_train").val() * CO2kmtrain).toFixed(2);
+      var e = (positiveNumber($("#deplacement_train").val()) * CO2kmtrain).toFixed(2);
       $("#impact_train_annuel").html(Number(e).toFixed(2));
     } else $("#impact_train_annuel").html("0");
     l();
   }),
   $("#deplacement_car").change(function () {
     if ("" != $("#deplacement_car").val()) {
-      var e = Number($("#deplacement_car").val() * CO2kmvoiture).toFixed(2);
+      var e = (positiveNumber($("#deplacement_car").val()) * CO2kmvoiture).toFixed(2);
       $("#impact_car_annuel").html(Number(e).toFixed(2));
     } else $("#impact_car_annuel").html("0");
     l();
@@ -513,47 +523,3 @@ $(document).ready(function () {
   $("#deplacement_train").change(),
   $("#deplacement_car").change();
 });
-
-jQuery(document).ready(function($) {
-  tarteaucitron.init({
-        "privacyUrl": "https://numeriqueresponsable.org/mentions-legales.php", /* Privacy policy url */
-
-        "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
-        "cookieName": "tarteaucitron", /* Cookie name */
-    
-        "orientation": "bottom", /* Banner position (top - bottom) */
-       
-          "groupServices": false, /* Group services by category */
-                           
-        "showAlertSmall": false, /* Show the small banner on bottom right */
-        "cookieslist": false, /* Show the cookie list */
-                           
-          "closePopup": false, /* Show a close X on the banner */
-
-          "showIcon": false, /* Show cookie icon to manage cookies */
-          //"iconSrc": "", /* Optionnal: URL or base64 encoded image */
-          "iconPosition": "BottomRight", /* BottomRight, BottomLeft, TopRight and TopLeft */
-
-        "adblocker": false, /* Show a Warning if an adblocker is detected */
-                           
-          "DenyAllCta" : true, /* Show the deny all button */
-          "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
-          "highPrivacy": true, /* HIGHLY RECOMMANDED Disable auto consent */
-                           
-        "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
-
-        "removeCredit": false, /* Remove credit link */
-        "moreInfoLink": true, /* Show more info link */
-
-          "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
-          "useExternalJs": false, /* If false, the tarteaucitron.js file will be loaded */
-
-        //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
-                          
-          "readmoreLink": "", /* Change the default readmore link */
-
-          "mandatory": true, /* Show a message about mandatory cookies */
-        });
-
-});
-

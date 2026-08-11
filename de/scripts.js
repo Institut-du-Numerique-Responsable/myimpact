@@ -104,6 +104,10 @@ CO2kmtrain = 0.00173,
 CO2kmavion = 0.186;
 
 $(document).ready(function () {
+  function positiveNumber(value) {
+    return Math.max(0, Number(value) || 0);
+  }
+
   var e = 0, t = 0, a = 0, numOfDevices = 1, currentEnergyMix;
 
   function n(a, e) {
@@ -177,7 +181,7 @@ $(document).ready(function () {
     var visioTool = $.grep(visioTools, function(e) { return e.key === $("#visio_tool").val(); });
     var visioHours = $("#visio_hours").val();
     if (visioTool.length > 0 && visioHours != "") {
-      impactHebdo = Number(visioHours) * 60 * visioTool[0].usage / 1000;
+      impactHebdo = positiveNumber(visioHours) * 60 * visioTool[0].usage / 1000;
       if ($("#visio_camera").val() == "on") { impactHebdo = impactHebdo * 2.6; }
       impactAnnuel = impactHebdo * 46;
     }
@@ -190,7 +194,7 @@ $(document).ready(function () {
     var impactDaily = 0, impactAnnuel = 0;
     if ($(this).val() != "") {
       var CO2mail = fieldID.includes("without") ? 4 : 35;
-      impactDaily = (Number($(this).val()) * CO2mail) / 1000;
+      impactDaily = (positiveNumber($(this).val()) * CO2mail) / 1000;
       impactAnnuel = impactDaily * 46 * 5;
     }
     $("#impact_" + fieldID.replace("num_", "") + "_quotidien").html(impactDaily.toFixed(2));
@@ -204,6 +208,12 @@ $(document).ready(function () {
     $("#device_total_" + numOfDevices).after('<div id="device_total_' + newDeviceID + '"></div>');
     $("#device_impact_annuel_" + numOfDevices).after('<div id="device_impact_annuel_' + newDeviceID + '"></div>');
     var newDevice = $('.groupe[data-device-id="1"]').clone().attr("data-device-id", newDeviceID);
+var modelID = "model_" + newDeviceID;
+var lifetimeID = "lifetime_" + newDeviceID;
+newDevice.find('[data-device-field="model"]').attr({"id": modelID, "name": modelID});
+newDevice.find('label[for="model"]').attr("for", modelID);
+newDevice.find('[data-device-field="lifetime"]').attr({"id": lifetimeID, "name": lifetimeID});
+newDevice.find('label[for="lifetime"]').attr("for", lifetimeID);
     newDevice.find('.device-title').html('Mein Gerät Nr. ' + newDeviceID);
     $(".add-device").before(newDevice);
     newDevice.find('[data-device-field="model"]').change();
@@ -219,44 +229,30 @@ $(document).ready(function () {
   $("#visio_camera").change(y);
   $("#surf_hours").change(function () {
     var surfHours = $("#surf_hours").val();
-    if ("" != surfHours) { $('#impact_surf_weekly').html((Number(surfHours) * C02navigation_web / 1000).toFixed(2)); $('#impact_surf_annuel').html((Number(surfHours) * C02navigation_web / 1000 * numWeeks).toFixed(2)); }
+    if ("" != surfHours) { $('#impact_surf_weekly').html((positiveNumber(surfHours) * C02navigation_web / 1000).toFixed(2)); $('#impact_surf_annuel').html((positiveNumber(surfHours) * C02navigation_web / 1000 * numWeeks).toFixed(2)); }
     else { $('#impact_surf_weekly').html("0"); $('#impact_surf_annuel').html("0"); }
     l();
   });
   $("#storage_google").change(function () {
-    "" != $("#storage_google").val() ? $("#storage_google_annuel").html(($("#storage_google").val() * CO2GigaByteCloud).toFixed(2)) : $("#storage_google_annuel").html("0");
+    "" != $("#storage_google").val() ? $("#storage_google_annuel").html((positiveNumber($("#storage_google").val()) * CO2GigaByteCloud).toFixed(2)) : $("#storage_google_annuel").html("0");
     l();
   });
   $("#num_emails_without_attachments").change(o);
   $("#num_emails_with_attachments").change(o);
   $("#deplacement_plane").change(function () {
-    "" != $("#deplacement_plane").val() ? $("#impact_plane_annuel").html(Number($("#deplacement_plane").val() * CO2kmavion).toFixed(2)) : $("#impact_plane_annuel").html("0");
+    "" != $("#deplacement_plane").val() ? $("#impact_plane_annuel").html((positiveNumber($("#deplacement_plane").val()) * CO2kmavion).toFixed(2)) : $("#impact_plane_annuel").html("0");
     l();
   });
   $("#deplacement_train").change(function () {
-    "" != $("#deplacement_train").val() ? $("#impact_train_annuel").html(Number($("#deplacement_train").val() * CO2kmtrain).toFixed(2)) : $("#impact_train_annuel").html("0");
+    "" != $("#deplacement_train").val() ? $("#impact_train_annuel").html((positiveNumber($("#deplacement_train").val()) * CO2kmtrain).toFixed(2)) : $("#impact_train_annuel").html("0");
     l();
   });
   $("#deplacement_car").change(function () {
-    "" != $("#deplacement_car").val() ? $("#impact_car_annuel").html(Number($("#deplacement_car").val() * CO2kmvoiture).toFixed(2)) : $("#impact_car_annuel").html("0");
+    "" != $("#deplacement_car").val() ? $("#impact_car_annuel").html((positiveNumber($("#deplacement_car").val()) * CO2kmvoiture).toFixed(2)) : $("#impact_car_annuel").html("0");
     l();
   });
   $("#storage_google").change();
   $("#deplacement_plane").change();
   $("#deplacement_train").change();
   $("#deplacement_car").change();
-
-  jQuery(document).ready(function($) {
-    tarteaucitron.init({
-      "privacyUrl": "https://numeriqueresponsable.org/mentions-legales.php",
-      "hashtag": "#tarteaucitron", "cookieName": "tarteaucitron",
-      "orientation": "bottom", "groupServices": false,
-      "showAlertSmall": false, "cookieslist": false, "closePopup": false,
-      "showIcon": false, "iconPosition": "BottomRight", "adblocker": false,
-      "DenyAllCta": true, "AcceptAllCta": true, "highPrivacy": true,
-      "handleBrowserDNTRequest": false, "removeCredit": false,
-      "moreInfoLink": true, "useExternalCss": false, "useExternalJs": false,
-      "readmoreLink": "", "mandatory": true
-    });
-  });
 });

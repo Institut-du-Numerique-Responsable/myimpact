@@ -12,7 +12,7 @@
     <link rel="icon" href="../img/android-chrome-192x192.png" sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" href="../img/apple-touch-icon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- SEO -->
     <link rel="canonical" href="https://myimpact.isit-europe.org/de/" />
     <link rel="alternate" hreflang="en" href="https://myimpact.isit-europe.org/" />
@@ -50,12 +50,7 @@
     }
     </script>
     <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
-    <script>
-      tarteaucitron.user.matomoId = 6;
-      tarteaucitron.user.matomoHost = 'https://analytic.institutnr.org:8443/';
-      tarteaucitron.user.matomoCustomJSPath = 'https://analytic.institutnr.org:8443/matomo.js';
-      (tarteaucitron.job = tarteaucitron.job || []).push('matomocloud');
-    </script>
+    <script src="../cookie-consent.js"></script>
   </head>
   <body>
     <header class="header">
@@ -78,11 +73,11 @@
         <div class="head-wrapper">
           <div id="header_text">
             <p>Unsere Nutzung digitaler Technologie nimmt ständig zu, sowohl im privaten als auch im beruflichen Bereich. Unsere Auswirkungen sind schwer zu quantifizieren, weil sie immateriell sind. Es gibt jedoch mittlerweile viele Messinstrumente, die diesen Prozess erleichtern.</p>
-            <div class="panel">
+            <div class="panel" id="intro-details">
               <p>Um Licht auf die Auswirkungen unseres übermäßigen Konsums digitaler Technologie zu werfen, hat das ISIT einen Rechner entwickelt, mit dem wir einfach unseren beruflichen digitalen Einfluss berechnen können. Die Architektur des Rechners v1.0 wurde dem INR von Decathlon zur Verfügung gestellt. Version 1.1 wurde im Juli 2022 mit aktualisierten Indikatoren und neuen Abschnitten veröffentlicht. Version 1.2 (2026) aktualisiert alle Emissionsfaktoren und fügt 3 neue Sprachen hinzu (DE, ES, IT). Quellcode und Änderungsanfragen: <a href="https://github.com/Institut-du-Numerique-Responsable/myimpact" target="_blank">GitHub</a>.</p>
               <p>Die Daten stammen hauptsächlich aus dem Treibhausgas-Ressourcenzentrum der ADEME, dem ENERGY STAR-Programm und dem Online-Tool NUTS, einem Datalake mit Herstellerdaten zu THG-Emissionen.</p>
             </div>
-            <button type="button" class="collapsible">Mehr erfahren</button>
+            <button type="button" class="collapsible" aria-expanded="false" aria-controls="intro-details">Mehr erfahren</button>
           </div>
           <nav class="direct-access">
             <h2 class="direct-access__title">Inhaltsverzeichnis</h2>
@@ -343,7 +338,7 @@
     </footer>
     <script>
       var acc = document.getElementsByClassName("collapsible"); var i;
-      for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); }
+      for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; var expanded = this.getAttribute("aria-expanded") === "true"; this.setAttribute("aria-expanded", String(!expanded)); if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); }
       $(document).ready(function () { $('.info').stop().mouseout(function () { $(this).parents('.question').next('.encart').hide('slow'); return false; }); $('.encart').stop().click(function () { $('.encart').hide('fast'); return false; }); $('.info').stop().mouseover(function () { $(this).parents('.question').next('.encart').show('fast'); return false; }); });
     </script>
   </body>

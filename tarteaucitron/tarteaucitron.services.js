@@ -5874,7 +5874,7 @@ tarteaucitron.services.matomohightrack = {
 tarteaucitron.services.matomocloud = {
     "key": "matomocloud",
     "type": "analytic",
-    "name": "Matomo Cloud (privacy by design)",
+    "name": "Matomo (auto-hébergé)",
     "uri": "https://matomo.org/faq/general/faq_146/",
     "needConsent": true,
     "cookies": ['_pk_ref', '_pk_cvar', '_pk_id', '_pk_ses', '_pk_hsr', 'mtm_consent', 'matomo_ignore', 'matomo_sessid'],

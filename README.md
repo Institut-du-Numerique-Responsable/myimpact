@@ -164,6 +164,14 @@ python3 -m http.server 8080
 
 > L'outil nécessite un serveur local car il utilise des chemins relatifs entre sous-répertoires de langues. Ouvrir `index.html` directement via `file://` fonctionnera pour la page racine, mais la navigation entre langues nécessite un serveur.
 
+### Vérifications statiques
+
+Les contrôles vérifient les liens locaux, le consentement Matomo, l'accessibilité du viewport, la validation des nombres et la syntaxe des six calculateurs :
+
+```bash
+ruby tests/check-static.rb
+```
+
 ---
 
 ## Structure du projet

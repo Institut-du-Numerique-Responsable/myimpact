@@ -12,7 +12,7 @@
     <link rel="icon" href="../img/android-chrome-192x192.png" sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" href="../img/apple-touch-icon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- SEO -->
     <link rel="canonical" href="https://myimpact.isit-europe.org/it/" />
     <link rel="alternate" hreflang="en" href="https://myimpact.isit-europe.org/" />
@@ -50,12 +50,7 @@
     }
     </script>
     <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
-    <script>
-      tarteaucitron.user.matomoId = 6;
-      tarteaucitron.user.matomoHost = 'https://analytic.institutnr.org:8443/';
-      tarteaucitron.user.matomoCustomJSPath = 'https://analytic.institutnr.org:8443/matomo.js';
-      (tarteaucitron.job = tarteaucitron.job || []).push('matomocloud');
-    </script>
+    <script src="../cookie-consent.js"></script>
   </head>
   <body>
     <header class="header">
@@ -78,11 +73,11 @@
         <div class="head-wrapper">
           <div id="header_text">
             <p>Il nostro utilizzo della tecnologia digitale è in costante aumento, sia nella sfera personale che professionale. I nostri impatti sono difficili da quantificare perché sono dematerializzati. Tuttavia, esistono ora molti strumenti di misurazione per facilitare questo processo contabile.</p>
-            <div class="panel">
+            <div class="panel" id="intro-details">
               <p>Per fare luce sugli impatti legati al nostro consumo eccessivo di tecnologia digitale, l'ISIT ha creato una calcolatrice che ci permette di calcolare semplicemente il nostro impatto digitale professionale. L'architettura della calcolatrice v1.0 è stata messa a disposizione dell'INR da Decathlon. La versione 1.1 è stata distribuita nel luglio 2022 con indicatori aggiornati e nuove sezioni. La versione 1.2 (2026) aggiorna tutti i fattori di emissione e aggiunge 3 nuove lingue (DE, ES, IT). Codice sorgente e richieste di aggiornamento: <a href="https://github.com/Institut-du-Numerique-Responsable/myimpact" target="_blank">GitHub</a>.</p>
               <p>I dati provengono principalmente dal centro risorse sui gas serra dell'ADEME, dal programma ENERGY STAR e dallo strumento online NUTS, un datalake con dati dei produttori sulle emissioni di GES.</p>
             </div>
-            <button type="button" class="collapsible">Per saperne di più</button>
+            <button type="button" class="collapsible" aria-expanded="false" aria-controls="intro-details">Per saperne di più</button>
           </div>
           <nav class="direct-access">
             <h2 class="direct-access__title">Sommario</h2>
@@ -343,7 +338,7 @@
     </footer>
     <script>
       var acc = document.getElementsByClassName("collapsible"); var i;
-      for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); }
+      for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; var expanded = this.getAttribute("aria-expanded") === "true"; this.setAttribute("aria-expanded", String(!expanded)); if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); }
       $(document).ready(function () { $('.info').stop().mouseout(function () { $(this).parents('.question').next('.encart').hide('slow'); return false; }); $('.encart').stop().click(function () { $('.encart').hide('fast'); return false; }); $('.info').stop().mouseover(function () { $(this).parents('.question').next('.encart').show('fast'); return false; }); });
     </script>
   </body>

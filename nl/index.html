@@ -49,14 +49,9 @@
     <link rel="icon" href="../img/android-chrome-192x192.png" sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" href="../img/apple-touch-icon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
-    <script>
-      tarteaucitron.user.matomoId = 6;
-      tarteaucitron.user.matomoHost = 'https://analytic.institutnr.org:8443/';
-      tarteaucitron.user.matomoCustomJSPath = 'https://analytic.institutnr.org:8443/matomo.js';
-      (tarteaucitron.job = tarteaucitron.job || []).push('matomocloud');
-    </script>
+    <script src="../cookie-consent.js"></script>
   </head>
   <body>
     <header class="header">
@@ -80,11 +75,11 @@
         <div class="head-wrapper">
           <div id="header_text">
             <p>Ons gebruik van digitale technologie neemt voortdurend toe, zowel in de persoonlijke als beroepssfeer. Onze impact is moeilijk te kwantificeren omdat ze gedematerialiseerd zijn. Er bestaan nu echter veel meetinstrumenten om te proberen dit boekhoudproces te vergemakkelijken. </p>
-            <div class="panel">
+            <div class="panel" id="intro-details">
               <p>Om licht te werpen op de gevolgen van onze overconsumptie van digitale technologie, heeft het ISIT een rekenmachine gemaakt waarmee we eenvoudig onze professionele digitale impact kunnen berekenen. De architectuur van de v1.0 rekenmachine werd door Decathlon aan het INR ter beschikking gesteld. Versie 1.1 werd in juli 2022 in gebruik genomen, met bijgewerkte indicatoren en nieuwe onderdelen. Versie 1.2 (2026) werkt alle emissiefactoren bij en voegt 3 nieuwe talen toe (DE, ES, IT). Broncode en updateverzoeken: <a href="https://github.com/Institut-du-Numerique-Responsable/myimpact" target="_blank">GitHub</a>. </p>
               <p>De gegevens zijn voornamelijk afkomstig van het informatiecentrum voor broeikasgassen van het ADEME, het ENERGY STAR-programma en het online-instrument NUTS, een datalijst met gegevens van fabrikanten over broeikasgasemissies.</p>
             </div>
-            <button type="button" class="collapsible">Lees meer</button>
+            <button type="button" class="collapsible" aria-expanded="false" aria-controls="intro-details">Lees meer</button>
           </div>
           <nav class="direct-access">
             <h2 class="direct-access__title">DIRECTE TOEGANG</h2>
@@ -469,6 +464,6 @@
         </div>
       </div>
     </footer>
-    <script>var acc = document.getElementsByClassName("collapsible"); var i; for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); } $(document).ready(function () { $('.info').stop().mouseout(function () { $(this).parents('.question').next('.encart').hide('slow'); return false; }); $('.encart').stop().click(function () { $('.encart').hide('fast'); return false; }); $('.info').stop().mouseover(function () { $(this).parents('.question').next('.encart').show('fast'); return false; }); });</script>
+    <script>var acc = document.getElementsByClassName("collapsible"); var i; for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; var expanded = this.getAttribute("aria-expanded") === "true"; this.setAttribute("aria-expanded", String(!expanded)); if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); } $(document).ready(function () { $('.info').stop().mouseout(function () { $(this).parents('.question').next('.encart').hide('slow'); return false; }); $('.encart').stop().click(function () { $('.encart').hide('fast'); return false; }); $('.info').stop().mouseover(function () { $(this).parents('.question').next('.encart').show('fast'); return false; }); });</script>
   </body>
 </html>

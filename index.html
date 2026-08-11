@@ -49,14 +49,9 @@
     <link rel="icon" href="img/android-chrome-192x192.png" sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="tarteaucitron/tarteaucitron.js"></script>
-    <script>
-      tarteaucitron.user.matomoId = 6;
-      tarteaucitron.user.matomoHost = 'https://analytic.institutnr.org:8443/';
-      tarteaucitron.user.matomoCustomJSPath = 'https://analytic.institutnr.org:8443/matomo.js';
-      (tarteaucitron.job = tarteaucitron.job || []).push('matomocloud');
-    </script>
+    <script src="cookie-consent.js"></script>
     <script>
       (function() {
         // Auto-detect browser language and redirect — skip if user already chose a language
@@ -93,11 +88,11 @@
         <div class="head-wrapper">
           <div id="header_text">
             <p>Our use of digital technology is constantly increasing, both in the personal and professional spheres. Our impacts are difficult to quantify because they are dematerialised. However, many measurement tools now exist to try to facilitate this accounting process.</p>
-            <div class="panel">
+            <div class="panel" id="intro-details">
               <p>To shed light on the impacts linked to our overconsumption of digital technology, the ISIT has created a calculator that allows us to simply calculate our professional digital impact. The architecture of the v1.0 calculator was made available to INR by Décathlon. Version 1.1 was deployed in July 2022 with updated indicators and new sections. Version 1.2 (2026) updates all emission factors and adds 3 new languages (DE, ES, IT). Source code and update requests: <a href="https://github.com/Institut-du-Numerique-Responsable/myimpact" target="_blank">GitHub</a>.</p>
               <p>The data is mainly sourced from ADEME's greenhouse gas resource centre, the ENERGY STAR programme and the NUTS online tool, a datalake of manufacturers' data on GHG emissions. </p>
             </div>
-            <button type="button" class="collapsible">Read more</button>
+            <button type="button" class="collapsible" aria-expanded="false" aria-controls="intro-details">Read more</button>
           </div>
           <nav class="direct-access">
             <h2 class="direct-access__title">Summary</h2>
@@ -482,6 +477,6 @@
         </div>
       </div>
     </footer>
-    <script>var acc = document.getElementsByClassName("collapsible"); var i; for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); } $(document).ready(function () { $('.info').stop().mouseout(function () { $(this).parents('.question').next('.encart').hide('slow'); return false; }); $('.encart').stop().click(function () { $('.encart').hide('fast'); return false; }); $('.info').stop().mouseover(function () { $(this).parents('.question').next('.encart').show('fast'); return false; }); });</script>
+    <script>var acc = document.getElementsByClassName("collapsible"); var i; for (i = 0; i < acc.length; i++) { acc[i].addEventListener("click", function () { this.classList.toggle("active"); var panel = this.previousElementSibling; var expanded = this.getAttribute("aria-expanded") === "true"; this.setAttribute("aria-expanded", String(!expanded)); if (panel.style.maxHeight) { panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; } }); } $(document).ready(function () { $('.info').stop().mouseout(function () { $(this).parents('.question').next('.encart').hide('slow'); return false; }); $('.encart').stop().click(function () { $('.encart').hide('fast'); return false; }); $('.info').stop().mouseover(function () { $(this).parents('.question').next('.encart').show('fast'); return false; }); });</script>
   </body>
 </html>
