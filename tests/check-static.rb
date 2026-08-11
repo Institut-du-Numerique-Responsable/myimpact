@@ -100,7 +100,11 @@ assert(presentation.include?('"@type": "WebApplication"'), "données structurée
 assert(presentation.include?('"@type": "FAQPage"'), "données structurées FAQ absentes")
 assert(ROOT.join("sitemap.xml").read.include?("fr/presentation-myimpact.html"), "présentation absente du sitemap")
 stylesheet = ROOT.join("stylesheet-inr.css").read
-assert(stylesheet.include?('.box>div::after'), "unités absentes des blocs d’impact")
-assert(stylesheet.include?('#total_impact::after'), "unité absente du total")
+assert(stylesheet.include?(".block-unit"), "style des unités absent des libellés")
+calculator_pages.each do |relative|
+  content = ROOT.join(relative).read
+  assert(content.scan('class="block-unit"').length == 10, "10 libellés avec unité attendus dans #{relative}")
+end
+assert(stylesheet.include?('#total_impact::after'), "unités absentes des totaux")
 
 puts "OK : 25 pages, 6 calculateurs, les équipements, les localisations et la présentation SEO contrôlés"
