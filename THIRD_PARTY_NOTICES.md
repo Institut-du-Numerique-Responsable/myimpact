@@ -28,6 +28,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 tarteaucitron.js is copyright AmauriC and is distributed under the MIT License. Its complete notice is retained in [`tarteaucitron/LICENSE`](tarteaucitron/LICENSE).
 
+## Boavizta environmental footprint data
+
+Selected manufacturer Product Carbon Footprint records are adapted from the [Boavizta environmental-footprint-data database](https://github.com/Boavizta/environmental-footprint-data), made available under the [Open Database License 1.0](https://opendatacommons.org/licenses/odbl/1-0/). Individual database contents are licensed under the Database Contents License. MyImpact identifies the adapted entries and documents the calculations applied to them in the README.
+
 ## Trademarks
 
 INR, ISIT and product or company names cited by the calculator are trademarks or trade names of their respective owners. Their descriptive use identifies organisations, equipment families, software or documented sources and does not imply sponsorship or endorsement.

@@ -80,14 +80,19 @@ Entries explicitly dated from 2010 to 2014 have been removed from the lists. The
 | Model | Year | Manufacturing | Annual electricity | Data scope |
 |---|---:|---:|---:|---|
 | Apple MacBook Air 13-inch M4 | 2025 | 85.2 kgCO₂e | 28.962 kWh | Apple production; generic ADEME use |
+| Apple MacBook Air M2 256GB | 2022 | 101.43 kgCO₂e | 28.962 kWh | Boavizta/Apple production; generic ADEME use |
 | Dell Latitude 7450 | 2024 | 85.58 kgCO₂e | 13.5 kWh | Dell model data |
+| Dell XPS 9320 | 2022 | 334.78 kgCO₂e | 16 kWh | Boavizta/Dell model data |
 | HP EliteBook 8 G2i 14-inch | 2026 | 159.31 kgCO₂e | 13 kWh | HP European model data |
+| HP Spectre x360 16-inch | 2022 | 182.16 kgCO₂e | 26.41 kWh | Boavizta/HP model data |
 | Lenovo ThinkPad X1 Carbon Gen 8 | 2020 | 182.3 kgCO₂e | 18.4 kWh | Generic ADEME production; Lenovo/ENERGY STAR use |
 | Apple iPhone 16 128GB | 2024 | 44.8 kgCO₂e | 4.917 kWh | Apple production; generic ADEME use |
 | Samsung Galaxy S25 | 2025 | 40.216 kgCO₂e | 4.917 kWh | Samsung European production; generic ADEME use |
 | OPPO Find X5 Pro | 2022 | 79.27 kgCO₂e | 4.917 kWh | Generic ADEME smartphone values; model name only |
 
-Apple and Samsung manufacturing figures are calculated from the total product footprint multiplied by the manufacturing share disclosed in their reports. HP follows the same calculation using its European total and manufacturing share. Dell reports manufacturing and annual TEC directly. Lenovo publishes a product footprint and ENERGY STAR use value but does not isolate manufacturing, while OPPO states that it conducts product LCAs without publishing a per-model result for the Find X5 Pro; MyImpact therefore labels their substituted ADEME values as generic.
+Apple and Samsung manufacturing figures are calculated from the total product footprint multiplied by the manufacturing share disclosed in their reports. HP follows the same calculation using its European total and manufacturing share. Dell reports manufacturing and annual TEC directly. The three 2022 entries sourced through Boavizta use the same formula (`gwp_total × gwp_manufacturing_ratio`); their values are 147 × 0.69, 380 × 0.881 and 264 × 0.69 respectively. The Dell and HP rows provide annual TEC, while Apple does not, so the Apple use value remains generic. Lenovo publishes a product footprint and ENERGY STAR use value but does not isolate manufacturing, while OPPO states that it conducts product LCAs without publishing a per-model result for the Find X5 Pro; MyImpact therefore labels their substituted ADEME values as generic.
+
+The Boavizta database itself warns that manufacturer PCFs have large uncertainties and differing methods. MyImpact consequently exposes their provenance and does not present cross-brand comparisons as precise measurements.
 
 ### Additional electricity mixes
 
@@ -146,6 +151,8 @@ Users can inspect the [Impact CO₂ carbon comparator](https://impactco2.fr/outi
 - [ADEME Base Empreinte](https://base-empreinte.ademe.fr/)
 - [BoaviztAPI routes and equipment archetypes](https://doc.api.boavizta.org/Reference/routes/)
 - [Boavizta environmental footprint methodology](https://doc.api.boavizta.org/Explanations/embedded_methodology/)
+- [Boavizta environmental-footprint-data (ODbL)](https://github.com/Boavizta/environmental-footprint-data)
+- [Datavizta data explorer](https://dataviz.boavizta.org/)
 - [EcoDiag by EcoInfo/CNRS](https://ecoinfo.cnrs.fr/ecodiag-calcul/)
 - [EcoDiag source code](https://gitlab.in2p3.fr/ecoinfo/ecodiag)
 - [EcoInfo overview of digital environmental impacts](https://ecoinfo.cnrs.fr/2019/04/30/introduction-aux-impacts-environnementaux-du-numerique/)
@@ -165,7 +172,7 @@ Users can inspect the [Impact CO₂ carbon comparator](https://impactco2.fr/outi
 - [Impact CO₂ carbon comparator](https://impactco2.fr/outils/comparateur#simulateur)
 - [Impact CO₂ API documentation](https://impactco2.fr/doc/api)
 
-EcoDiag is included as a methodological reference for equipment inventory, stock/flow approaches and lifetime allocation. Boavizta and EcoDiag share part of their manufacturer-data collection work; these sources should therefore not be treated as independent measurements when assessing uncertainty.
+EcoDiag is included as a methodological reference for equipment inventory, stock/flow approaches and lifetime allocation. Its historical `2020.043` data file uses generic factors (not product-level declarations), including 210 kgCO₂e and 48 kWh/year for a laptop and 63 kgCO₂e and 5 kWh/year for a smartphone. MyImpact therefore retains the newer Impact CO₂/ADEME generic categories and manufacturer reports for the selector. Boavizta and EcoDiag share part of their manufacturer-data collection work; these sources should not be treated as independent measurements when assessing uncertainty. The [Rémi Cailletaud EcoDiag repository](https://gitlab.in2p3.fr/remi.cailletaud/ecodiag) is a historical mirror/fork; the [EcoInfo repository](https://gitlab.in2p3.fr/ecoinfo/ecodiag) remains the canonical project referenced here.
 
 ## Privacy
 

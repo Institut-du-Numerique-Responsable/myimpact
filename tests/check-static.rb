@@ -59,8 +59,11 @@ assert(equipment.include?("including MacBook"), "repère MacBook récent absent"
 assert(equipment.include?("including iPhone"), "repère iPhone récent absent")
 [
   "Apple MacBook Air 13-inch M4 (2025)",
+  "Apple MacBook Air M2 256GB (2022)",
   "Dell Latitude 7450 (2024)",
+  "Dell XPS 9320 (2022)",
   "HP EliteBook 8 G2i 14-inch (2026)",
+  "HP Spectre x360 16-inch (2022)",
   "Lenovo ThinkPad X1 Carbon Gen 8 (2020)",
   "Apple iPhone 16 128GB (2024)",
   "Samsung Galaxy S25 (2025)",
@@ -68,6 +71,7 @@ assert(equipment.include?("including iPhone"), "repère iPhone récent absent")
 ].each { |model| assert(equipment.include?(model), "modèle récent manquant : #{model}") }
 assert(equipment.include?('"scope": "manufacturer-model"'), "périmètre constructeur absent")
 assert(equipment.include?('"scope": "generic-category-branded-example"'), "périmètre générique OPPO absent")
+assert(equipment.include?('"scope": "boavizta-manufacturer-model"'), "périmètre Boavizta absent")
 
 calculator_scripts = ["scripts-en.js", "fr/scripts.js", "nl/scripts.js", "de/scripts.js", "es/scripts.js", "it/scripts.js"]
 calculator_scripts.each do |relative|

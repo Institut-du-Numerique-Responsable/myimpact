@@ -130,6 +130,13 @@
       "scope": "manufacturer-production-generic-use"
     },
     {
+      "name": "Apple MacBook Air M2 256GB (2022) — " + text.manufacturerProductionGenericUse,
+      "production": 101.43,
+      "usage": 28.9616971154,
+      "source": "Boavizta environmental-footprint-data / Apple report, June 2022; Impact CO₂/ADEME usage",
+      "scope": "boavizta-production-generic-use"
+    },
+    {
       "name": "Dell Latitude 7450 (2024)",
       "production": 85.58,
       "usage": 13.5,
@@ -137,11 +144,25 @@
       "scope": "manufacturer-model"
     },
     {
+      "name": "Dell XPS 9320 (2022) — Boavizta",
+      "production": 334.78,
+      "usage": 16,
+      "source": "Boavizta environmental-footprint-data / Dell PCF, June 2022",
+      "scope": "boavizta-manufacturer-model"
+    },
+    {
       "name": "HP EliteBook 8 G2i 14-inch (2026)",
       "production": 159.31,
       "usage": 13,
       "source": "HP Product Carbon Footprint c09270910, Europe, March 2026",
       "scope": "manufacturer-model"
+    },
+    {
+      "name": "HP Spectre x360 16-inch (2022) — Boavizta",
+      "production": 182.16,
+      "usage": 26.41,
+      "source": "Boavizta environmental-footprint-data / HP PCF, February 2022",
+      "scope": "boavizta-manufacturer-model"
     },
     {
       "name": "Lenovo ThinkPad X1 Carbon Gen 8 (2020) — " + text.genericFootprint,
