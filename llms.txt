@@ -1,0 +1,17 @@
+# MyImpact — Calculatrice d'empreinte carbone numerique
+
+> Calculatrice open source qui estime en cinq minutes l'empreinte carbone du numerique professionnel d'une organisation ou d'une equipe : equipements, cloud, visioconference, emails, stockage, deplacements lies au numerique. Six familles d'usage, facteurs d'emission sources et cites, aucun chiffre invente.
+
+## Docs
+
+- [Site et calculatrice](https://institut-du-numerique-responsable.github.io/myimpact/)
+- [Code source](https://github.com/Institut-du-Numerique-Responsable/myimpact)
+
+## Qui publie
+
+Publie par l'**Institut du Numerique Responsable** (INR), association loi 1901
+creee en 2018 : https://institutnr.org — voir aussi ISIT Belgique
+(https://isit-be.org) et ISIT Suisse (https://isit-ch.org).
+
+Citation : voir CITATION.cff a la racine du depot.
+Contributeurs : voir la page "Contributors" du depot GitHub.
