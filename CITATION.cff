@@ -1,0 +1,32 @@
+# Métadonnées de citation lisibles par les humains, les moteurs et les assistants IA.
+# Format Citation File Format 1.2.0 — https://citation-file-format.github.io
+cff-version: 1.2.0
+message: "Si vous utilisez ce travail, merci de le citer comme ci-dessous."
+type: software
+title: "myimpact — Calculatrice d'impacts numériques individuels"
+abstract: "Calculatrice pour évaluer ses impacts numériques / Calculator to assess your own digital footprint"
+authors:
+  - name: "Institut du Numérique Responsable"
+    alias: "INR"
+    website: "https://institutnr.org"
+  - given-names: "Guillaume"
+    family-names: "Gallon"
+    alias: "gridboy"
+    affiliation: "Institut du Numérique Responsable"
+repository-code: "https://github.com/Institut-du-Numerique-Responsable/myimpact"
+url: "https://myimpact.isit-europe.org/"
+license: CC0-1.0
+date-released: 2026-04-05
+keywords:
+  - "calculator"
+  - "carbon-footprint"
+  - "digital-footprint"
+  - "digital-sustainability"
+  - "ecoconception"
+  - "green-it"
+  - "green-software"
+  - "impact-calculator"
+  - "inr"
+  - "numerique-responsable"
+  - "sobriete-numerique"
+  - "sustainable-it"
