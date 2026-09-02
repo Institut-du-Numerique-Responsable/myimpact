@@ -21,9 +21,11 @@ RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
   # Content Security Policy
   # - scripts: self + inline (tarteaucitron init) + Matomo
-  # - connect: Matomo analytics server
+  # - connect: Matomo analytics server + impactco2.fr (equivalences ADEME,
+  #   appelees par impactco2-equivalents.js ; sans cette source la conversion
+  #   des resultats en equivalents du quotidien echoue silencieusement)
   # - frame-ancestors: prevents embedding in iframes
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://analytic.institutnr.org:8443; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://analytic.institutnr.org:8443; font-src 'self'; frame-ancestors 'self';"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://analytic.institutnr.org:8443; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://analytic.institutnr.org:8443 https://impactco2.fr; font-src 'self'; frame-ancestors 'self';"
 </IfModule>
 
 # ── Cache static assets ───────────────────────────────────────────────────────
