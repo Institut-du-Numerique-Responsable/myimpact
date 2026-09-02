@@ -1,0 +1,287 @@
+# MyImpact — méthodologie et sources / methodology and sources
+
+> Document destiné aux moteurs de réponse. Texte repris des pages « Sources & détails »
+> du site MyImpact, calculatrice d'empreinte numérique de l'Institut du Numérique Responsable.
+
+## Attribution
+
+    Institut du Numérique Responsable, MyImpact — calculatrice d'impacts numériques,
+    https://myimpact.isit-europe.org
+
+Généré le 2026-09-02. © INR — tous droits réservés. Voir https://myimpact.isit-europe.org/legal-notice.html
+
+---
+
+# Sources & détails (FR) — https://myimpact.isit-europe.org/fr/a-propos-numerique-responsable.html
+
+EN 
+FR 
+NL 
+DE 
+ES 
+IT 
+
+## Notes & détails des sources utilisées dans le moteur de la Calculatrice NR
+
+Version 1.3 — Actualisation 2026 par ggallon ( INR France ) 
+
+La calculatrice NR s'appuie sur des données libres et ouvertes. L'objectif est de donner à chacune et chacun la possibilité de calculer son empreinte environnementale numérique dans le cadre de son activité professionnelle.
+
+Les données sont principalement issues de la base impact de l'ADEME, du programme ENERGY STAR et l'outil en ligne NUTS, datalake regroupant les données des fabricants autour des émissions de GES. Toutes les valeurs sont exprimées en kg CO₂ équivalent (kg CO₂ éq.).
+
+### À propos des équipements (matériels)
+
+La liste des équipements sera complétée au fil du temps lorsque de nouvelles données fiables seront disponibles.
+
+L'impact des équipements génériques (Laptop autre, Desktop autre, etc.) est une moyenne réalisée à partir de l'agrégation de données de divers équipements ou directement de moyennes existantes dans les sources pré-citées.
+
+Les valeurs d'impact couvrent à la fois la phase de fabrication et la phase d'utilisation sur la durée de vie du produit, exprimées en kg CO₂ éq. par an d'utilisation.
+
+Sources : ADEME — La face cachée du numérique , archétypes BoaviztAPI / Base Empreinte ADEME , EcoDiag d’EcoInfo/CNRS , empreinte produit vérifiée de la Logitech C920e , ENERGY STAR et l’outil NUTS .
+
+### Évolutions de la version 1.3
+
+La version 1.3 ajoute des facteurs génériques pour une box Internet ou un routeur Wi-Fi, une clé USB, un SSD externe et un disque dur externe à partir des archétypes BoaviztAPI issus de la Base Empreinte ADEME. EcoDiag/EcoInfo est cité comme méthodologie complémentaire pour l’inventaire des équipements et l’allocation selon leur durée de vie.
+
+Pour la webcam externe, seule la fabrication est comptée (3,17 kg CO₂e). Son électricité, le trafic réseau et le service de visioconférence sont exclus de cet équipement et restent calculés dans la rubrique visioconférence, afin d’éviter un double comptage.
+
+Les équipements explicitement datés de 2010 à 2014 ont été retirés. Les listes actualisées proposent des exemples récents Apple, Dell, HP, Lenovo, Samsung et OPPO en complément des ordinateurs portables et smartphones génériques ADEME. Les données constructeur ne sont utilisées que pour les champs effectivement publiés ; toute valeur de fabrication ou de consommation annuelle manquante reste clairement signalée comme estimation générique ADEME. Le README documente les valeurs, les calculs et les sources officielles des constructeurs .
+
+Les localisations Maroc, Tunisie, Royaume-Uni, Pologne, Roumanie et Portugal utilisent l’intensité carbone en cycle de vie de leur production électrique en 2025, publiée par Ember avec le traitement d’Our World in Data .
+
+### À propos des emails
+
+Cette donnée est particulièrement sensible car il est très difficile d'avoir des mesures exactes de la consommation énergétique des emails. De nombreux cycles de vie devraient être observés pour être certains de la mesure.
+
+La mesure reste une approche de la consommation potentielle mais ne peut pas tenir compte de manière certaine de la complexité des situations.
+
+Type Valeur utilisée (g CO₂ éq.) 
+
+Email sans pièce jointe 4 g CO₂ éq. 
+Email avec pièce jointe 35 g CO₂ éq. 
+
+Source : ADEME — La face cachée du numérique .
+
+### À propos de la visioconférence
+
+Les données libres et ouvertes sont encore relativement peu disponibles. La calculatrice se base sur les données publiées par Greenspector (2021), couvrant 12 plateformes majeures.
+
+Le chiffre utilisé reste une approche qu'il conviendra d'affiner au fil du temps.
+
+Sources :
+
+- Greenspector — Quelle application mobile de visioconférence pour réduire votre impact ? (2021) 
+
+- UNSW Sydney — Étude énergétique visioconférence 
+
+### À propos du stockage cloud
+
+L'empreinte estimable concernant la manipulation de données dans le cloud reste conditionnée aux études existantes avec des résultats disparates. Nous avons retenu les chiffres de l'étude Green Cloud Computing (2021), utilisée comme référence par la DINUM.
+
+Indicateur Valeur utilisée 
+
+Stockage cloud 209,5 g CO₂ éq. / Go / an 
+
+Il s'agit d'un indicateur unique quelle que soit la solution cloud utilisée.
+
+Source : Green Cloud Computing — Umweltbundesamt (2021) .
+
+### À propos de la navigation web
+
+Les données ADEME permettent d'estimer le coût énergétique de la navigation sur Internet. Ce chiffre, mis à jour au 2ème semestre 2022, a permis de réajuster le calcul pour mieux estimer le coût carbone d'une heure de navigation.
+
+Activité Valeur utilisée 
+
+Navigation web 10 g CO₂ éq. / heure 
+
+Source : nosgestesclimat.fr — Documentation empreinte numérique internet .
+
+### À propos des déplacements professionnels
+
+Les émissions liées aux déplacements professionnels sont calculées par kilomètre parcouru, sur la base des facteurs d'émission ADEME pour la France et les moyennes européennes.
+
+Mode de transport Valeur utilisée (kg CO₂ éq. / km) 
+
+Voiture (moyenne) 0,142253 kg CO₂ éq. / km 
+Train 0,00173 kg CO₂ éq. / km 
+Avion (court/moyen courrier) 0,184661 kg CO₂ éq. / km 
+Vélo / Marche 0 kg CO₂ éq. / km 
+
+Sources : ADEME , Impact CO₂ .
+
+### Mix énergétique par pays
+
+Le mix énergétique du pays sélectionné est utilisé pour calculer l'impact carbone de la consommation électrique des équipements. Valeurs exprimées en kg CO₂ éq. par kWh.
+
+Pays kg CO₂ éq. / kWh 
+
+Suisse 0,027 
+France 0,052 
+Luxembourg 0,089 
+Autriche 0,158 
+Espagne 0,207 
+Belgique 0,220 
+Italie 0,233 
+Pays-Bas 0,284 
+Allemagne 0,420 
+
+### À propos des informations complémentaires
+
+Les informations complémentaires, comme votre pays de résidence, demandées dans le cadre de vos réponses ont pour objectif d'affiner les chiffres consolidés et anonymes mais ne constituent en aucun cas un moyen de collecter des données personnelles sur les répondants.
+
+### Principe d'amélioration continue
+
+L'INR s'engage à améliorer de manière continue la calculatrice NR et mettre à jour régulièrement les indicateurs en fonction des sorties d'études publiques, libres et ouvertes permettant d'améliorer la précision des résultats fournis.
+
+L'INR est preneur de vos retours et suggestions pour améliorer l'outil. Vous pouvez nous contacter à l'adresse : myimpact [@] isit-europe.org 
+
+### À propos de l'INR
+
+L'INR ( Institut du Numérique Responsable ) est un think & do tank dont la mission se déploie sur les trois enjeux clés du numérique responsable : la réduction de l'empreinte du numérique, la capacité du numérique à réduire l'empreinte de l'humanité, et la création de valeur durable via le numérique pour réussir l'e-inclusion de toutes et tous.
+
+L'INR est présent dans trois pays ( INR France , ISIT Belgique & ISIT Suisse ) et compte près de 200 organisations membres.
+
+Actualisation 2026 par ggallon ( INR France ) Actualisation juillet 2022 par athom Contribution initiale 2020 par Julien Gontier (Décathlon)
+
+Merci à l’équipe Impact CO₂ et à l’ADEME pour leur API publique, leur comparateur ouvert et l’actualisation des données carbone.
+
+Sources & détails | Mentions légales | Cookies
+
+---
+
+# Sources & détails (EN) — https://myimpact.isit-europe.org/about-sustainable-it.html
+
+EN 
+FR 
+NL 
+DE 
+ES 
+IT 
+
+## Notes and details of the sources used in the Sustainable IT Calculator engine
+
+Version 1.3 — 2026 update by ggallon ( INR France ) 
+
+The Sustainable IT calculator is based on free and open data. The objective is to give everyone the possibility to calculate his or her digital environmental footprint in the context of his or her professional activity.
+
+The data comes mainly from the ADEME impact database, the ENERGY STAR program and the NUTS online tool, a datalake gathering manufacturers' data on GHG emissions. All values are expressed in kg CO₂ equivalent (kg CO₂ eq.).
+
+### About equipment (hardware)
+
+The list of equipment will be completed over time as new reliable data becomes available.
+
+The impact of generic equipment (Laptop other, Desktop other, etc.) is an average made from the aggregation of data from various equipment or directly from existing averages in the above mentioned sources.
+
+The impact values cover both the manufacturing phase and the use phase over the product lifetime, expressed in kg CO₂ eq. per year of use.
+
+Sources: ADEME — La face cachée du numérique , BoaviztAPI / ADEME Base Empreinte archetypes , EcoDiag by EcoInfo/CNRS , Logitech C920e verified PCF , ENERGY STAR , and NUTS online tool .
+
+### Changes in version 1.3
+
+Version 1.3 adds generic factors for an Internet box/Wi-Fi router, USB flash drive, external SSD and external hard drive based on BoaviztAPI archetypes sourced from ADEME Base Empreinte. EcoDiag/EcoInfo is cited as a complementary methodology for equipment inventories and lifetime allocation.
+
+The external webcam entry counts manufacturing only (3.17 kg CO₂e). Its electricity, network traffic and video-conferencing service impact are excluded here and remain in the video-conferencing section, avoiding double counting.
+
+Equipment explicitly dated from 2010 to 2014 has been removed. The updated lists include recent examples from Apple, Dell, HP, Lenovo, Samsung and OPPO alongside generic ADEME laptop and smartphone entries. The calculation uses manufacturer data only for the fields actually disclosed: missing manufacturing or annual electricity values remain clearly labelled generic ADEME estimates. See the documented values, calculations and official manufacturer sources .
+
+Morocco, Tunisia, the United Kingdom, Poland, Romania and Portugal use their 2025 lifecycle carbon intensity of electricity generation from Ember, with processing by Our World in Data .
+
+### About emails
+
+Email carbon footprint is particularly sensitive because it is very difficult to obtain exact measurements of energy consumption. Many life cycle scenarios would need to be observed to ensure accuracy (e.g. an email with a 1.5 MB attachment sent to 3 recipients, 1 email without attachment sent to 10 recipients, etc.).
+
+The measure therefore remains an approximation of potential consumption and cannot account with certainty for the full complexity of situations.
+
+Type Value used (g CO₂ eq.) 
+
+Email without attachment 4 g CO₂ eq. 
+Email with attachment 35 g CO₂ eq. 
+
+Source: ADEME — La face cachée du numérique .
+
+### About video conferencing
+
+Free and open data are still relatively unavailable for video conferencing tools. The calculator is based on data published by Greenspector (2021), covering 12 major platforms.
+
+The figure used remains an approximation that will need to be refined over time as new data becomes available.
+
+Sources:
+
+- Greenspector — Quelle application mobile de visioconférence pour réduire votre impact ? (2021) 
+
+- UNSW Sydney — Video conferencing energy study 
+
+### About cloud storage
+
+The carbon footprint associated with data manipulation in the cloud is subject to studies with disparate results. We have chosen to use the figures from the Green Cloud Computing study (2021) based on the work of Umweltbundesamt (the German federal environment agency), which provides a rational approach to the subject and is used as a reference by DINUM.
+
+Indicator Value used 
+
+Cloud storage 209.5 g CO₂ eq. / GB / year 
+
+This is a single indicator regardless of the cloud solution used.
+
+Source: Green Cloud Computing — Umweltbundesamt (2021) .
+
+### About web browsing
+
+ADEME data allows us to estimate the energy cost of browsing the Internet. This figure, updated in the second half of 2022 by ADEME, has enabled us to readjust the calculation proposed by our calculator to better estimate the carbon cost of one hour of Internet browsing.
+
+Activity Value used 
+
+Web browsing 10 g CO₂ eq. / hour 
+
+Source: nosgestesclimat.fr — Internet carbon footprint documentation .
+
+### About business travel
+
+Business travel emissions are calculated per kilometre travelled, based on ADEME emission factors for France and European averages.
+
+Mode of transport Value used (kg CO₂ eq. / km) 
+
+Car (average) 0.142253 kg CO₂ eq. / km 
+Train 0.00173 kg CO₂ eq. / km 
+Plane (short/medium haul) 0.184661 kg CO₂ eq. / km 
+Bike / Walking 0 kg CO₂ eq. / km 
+
+Sources: ADEME , Impact CO₂ .
+
+### Energy mix by country
+
+The energy mix of the country selected by the user is used to calculate the carbon impact of device usage (electricity consumption). Values are expressed in kg CO₂ eq. per kWh.
+
+Country kg CO₂ eq. / kWh 
+
+Switzerland 0.027 
+France 0.052 
+Luxembourg 0.089 
+Austria 0.158 
+Spain 0.207 
+Belgium 0.220 
+Italy 0.233 
+Netherlands 0.284 
+Germany 0.420 
+
+### About additional information
+
+Additional information, such as your country of residence, requested as part of your responses is intended to refine the consolidated, anonymous figures but is in no way a means of collecting personal data on respondents.
+
+### Principle of continuous improvement
+
+INR is committed to continuous improvement of the Sustainable IT calculator and to regularly updating the indicators based on public, free and open studies that improve the accuracy of the results provided.
+
+INR welcomes your feedback and suggestions to improve the tool. You can contact us at: myimpact [@] isit-europe.org 
+
+### About ISIT
+
+The ISIT ( Institute for Sustainable IT ) is a think & do tank whose mission is to address the three key issues of Sustainable IT: reducing the digital footprint (economic, social and environmental), the capacity of digital technology to reduce the footprint of humanity, and the creation of sustainable value via digital technology to achieve e-inclusion for all.
+
+The ISIT is present in three countries ( INR France , ISIT Belgium & ISIT Switzerland ) and has nearly 200 member organisations.
+
+2026 update by ggallon ( INR France ) July 2022 update by athom Initial 2020 contribution by Julien Gontier (Decathlon)
+
+Thanks to the Impact CO₂ team and ADEME for their public API, open comparator and regularly updated carbon data.
+
+Sources & details | Legal notice | Cookies
+
+---

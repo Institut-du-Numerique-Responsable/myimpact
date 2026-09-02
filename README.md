@@ -265,4 +265,4 @@ Contributions must follow [`CONTRIBUTING.md`](CONTRIBUTING.md), including the De
 
 ## License and third-party material
 
-The repository is currently released under [CC0 1.0 Universal](LICENSE), as stated in the authoritative license file. Third-party libraries, fonts, icons, logos, trademarks and source data are excluded from that dedication and remain subject to their respective terms. See [Third-party notices](THIRD_PARTY_NOTICES.md).
+The repository is released under a proprietary licence: © Institut du Numérique Responsable — all rights reserved (see [LICENSE](LICENSE)). Versions published before 2 September 2026 were released under CC0 1.0 Universal and, a CC0 dedication being irrevocable, remain reusable under those terms. Third-party libraries, fonts, icons, logos, trademarks and source data are excluded from this licence and remain subject to their respective terms. See [Third-party notices](THIRD_PARTY_NOTICES.md).

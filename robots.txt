@@ -1,5 +1,71 @@
-User-Agent: *
+# MyImpact — Institut du Numérique Responsable
+#
+# Exploration ouverte, moteurs de réponse compris. Toute reprise ou résumé
+# doit citer la source :
+#   Institut du Numérique Responsable — MyImpact,
+#   https://myimpact.isit-europe.org
+# Index destiné aux assistants : https://myimpact.isit-europe.org/llms.txt
+
+User-agent: *
 Allow: /
 Disallow: /tarteaucitron/
+
+# Moteurs de réponse et robots d'IA : accès explicitement autorisé.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
 
 Sitemap: https://myimpact.isit-europe.org/sitemap.xml

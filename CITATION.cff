@@ -15,7 +15,8 @@ authors:
     affiliation: "Institut du Numérique Responsable"
 repository-code: "https://github.com/Institut-du-Numerique-Responsable/myimpact"
 url: "https://myimpact.isit-europe.org/"
-license: CC0-1.0
+license: LicenseRef-INR-Proprietary
+license-url: "https://github.com/Institut-du-Numerique-Responsable/myimpact/blob/main/LICENSE"
 date-released: 2026-04-05
 keywords:
   - "calculator"

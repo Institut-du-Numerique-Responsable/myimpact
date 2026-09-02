@@ -41,24 +41,115 @@
     <meta name="twitter:title" content="MyImpact | Digitaler Fußabdruck-Rechner von INR &amp; ISIT" />
     <meta name="twitter:description" content="Messen Sie Ihren beruflichen digitalen Fußabdruck mit dem kostenlosen Rechner von INR Frankreich, ISIT Belgien und ISIT Schweiz." />
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://institutnr.org/#organization",
+      "name": "Institut du Numérique Responsable",
+      "alternateName": [
+        "INR",
+        "Institute for Sustainable IT",
+        "ISIT"
+      ],
+      "url": "https://institutnr.org/",
+      "logo": "https://myimpact.isit-europe.org/img/logo-inr.png",
+      "sameAs": [
+        "https://isit-europe.org/",
+        "https://isit-be.org/",
+        "https://isit-ch.org/",
+        "https://github.com/Institut-du-Numerique-Responsable"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://myimpact.isit-europe.org/#website",
+      "url": "https://myimpact.isit-europe.org/",
+      "name": "MyImpact",
+      "inLanguage": [
+        "en",
+        "fr",
+        "nl",
+        "de",
+        "es",
+        "it"
+      ],
+      "publisher": {
+        "@id": "https://institutnr.org/#organization"
+      }
+    },
+    {
       "@type": "WebApplication",
+      "@id": "https://myimpact.isit-europe.org/#app",
       "name": "MyImpact",
       "url": "https://myimpact.isit-europe.org/de/",
-      "description": "Rechner für den digitalen und beruflichen CO2-Fußabdruck",
+      "description": "Messen Sie den CO2-Fußabdruck beruflicher digitaler Geräte und Nutzungen mit MyImpact, dem kostenlosen Rechner des europäischen INR- und ISIT-Netzwerks.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
       "isAccessibleForFree": true,
-      "dateModified": "2026-08-11",
       "inLanguage": "de",
-      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+      "dateModified": "2026-09-02",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
       "author": [
-        {"@type": "Organization", "name": "Institut du Numérique Responsable (INR France)", "url": "https://institutnr.org/"},
-        {"@type": "Organization", "name": "Belgian Institute for Sustainable IT (ISIT-BE)", "url": "https://isit-be.org/"},
-        {"@type": "Organization", "name": "Swiss Institute for Sustainable IT (ISIT-CH)", "url": "https://isit-ch.org/"}
+        {
+          "@type": "Organization",
+          "name": "Institut du Numérique Responsable (INR France)",
+          "url": "https://institutnr.org/"
+        },
+        {
+          "@type": "Organization",
+          "name": "Belgian Institute for Sustainable IT (ISIT-BE)",
+          "url": "https://isit-be.org/"
+        },
+        {
+          "@type": "Organization",
+          "name": "Swiss Institute for Sustainable IT (ISIT-CH)",
+          "url": "https://isit-ch.org/"
+        }
+      ],
+      "publisher": {
+        "@id": "https://institutnr.org/#organization"
+      },
+      "creditText": "Institut du Numérique Responsable — MyImpact",
+      "citation": "Institut du Numérique Responsable, MyImpact — calculatrice d'impacts numériques, https://myimpact.isit-europe.org",
+      "isBasedOn": [
+        {
+          "@type": "Dataset",
+          "name": "Boavizta — impacts des équipements numériques",
+          "url": "https://boavizta.org/"
+        },
+        {
+          "@type": "Dataset",
+          "name": "Impact CO₂ (ADEME)",
+          "url": "https://impactco2.fr/"
+        }
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://myimpact.isit-europe.org/de/#page",
+      "url": "https://myimpact.isit-europe.org/de/",
+      "name": "MyImpact – Rechner für digitalen Fußabdruck | INR &amp; ISIT",
+      "description": "Messen Sie den CO2-Fußabdruck beruflicher digitaler Geräte und Nutzungen mit MyImpact, dem kostenlosen Rechner des europäischen INR- und ISIT-Netzwerks.",
+      "inLanguage": "de",
+      "isPartOf": {
+        "@id": "https://myimpact.isit-europe.org/#website"
+      },
+      "about": {
+        "@id": "https://myimpact.isit-europe.org/#app"
+      },
+      "publisher": {
+        "@id": "https://institutnr.org/#organization"
+      }
     }
+  ]
+}
     </script>
     <script type="text/javascript" src="../tarteaucitron/tarteaucitron.js"></script>
     <script src="../cookie-consent.js"></script>

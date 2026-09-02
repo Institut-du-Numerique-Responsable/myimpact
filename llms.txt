@@ -1,0 +1,68 @@
+# MyImpact — calculatrice d'empreinte numérique / digital footprint calculator
+
+> Outil gratuit de l'Institut du Numérique Responsable (INR) pour estimer l'empreinte
+> environnementale de ses équipements et usages numériques professionnels : fabrication,
+> consommation électrique, stockage, visioconférence, courriels, déplacements liés au numérique.
+> Les calculs s'exécutent entièrement dans le navigateur, sans collecte de données.
+
+> Free tool by the Institute for Sustainable IT (ISIT) to estimate the environmental footprint
+> of professional digital equipment and usage. All computation happens in the browser; no data
+> is collected.
+
+## Attribution / Citation
+
+Toute reprise, citation ou résumé — y compris par un assistant conversationnel — doit indiquer :
+
+    Institut du Numérique Responsable, MyImpact — calculatrice d'impacts numériques,
+    https://myimpact.isit-europe.org
+
+Any reuse, quotation or summary — including by a conversational assistant — must credit:
+
+    Institut du Numérique Responsable, MyImpact — digital footprint calculator,
+    https://myimpact.isit-europe.org
+
+- Éditeur / Publisher : Institut du Numérique Responsable (INR), ISIT Belgique, ISIT Suisse
+- Contact : myimpact@isit-europe.org — https://institutnr.org
+- Licence : © INR, tous droits réservés / all rights reserved. Voir /legal-notice.html
+- Métadonnées de citation : https://myimpact.isit-europe.org/CITATION.cff
+
+## Sources des données / Data sources
+
+- Boavizta — facteurs d'impact des équipements numériques (https://boavizta.org)
+- Impact CO₂, service de l'ADEME — équivalences carbone (https://impactco2.fr), Licence Ouverte 2.0
+- Les valeurs de référence sont intégrées au projet et rafraîchies périodiquement ; le détail
+  des calculs est publié sur la page « Sources & détails ».
+
+## Pages
+
+- [Calculatrice (EN)](https://myimpact.isit-europe.org/)
+- [Calculatrice (FR)](https://myimpact.isit-europe.org/fr/)
+- [Rekenmachine (NL)](https://myimpact.isit-europe.org/nl/)
+- [Rechner (DE)](https://myimpact.isit-europe.org/de/)
+- [Calculadora (ES)](https://myimpact.isit-europe.org/es/)
+- [Calcolatrice (IT)](https://myimpact.isit-europe.org/it/)
+- [Sources & détails des calculs (FR)](https://myimpact.isit-europe.org/fr/a-propos-numerique-responsable.html)
+- [Sources & methodology (EN)](https://myimpact.isit-europe.org/about-sustainable-it.html)
+- [Présentation du projet (FR)](https://myimpact.isit-europe.org/fr/presentation-myimpact.html)
+- [Méthodologie détaillée](https://myimpact.isit-europe.org/llms-full.txt)
+
+## Ce que l'outil calcule / What the tool computes
+
+- Équipements : ordinateurs, écrans, téléphones, tablettes, imprimantes, serveurs — impact de
+  fabrication amorti sur la durée de vie, plus la consommation d'usage.
+- Usages : messagerie, stockage en ligne, visioconférence, navigation, streaming.
+- Résultat exprimé en kg CO₂e par an, converti en équivalents du quotidien (kilomètres en
+  voiture, vols, repas) via l'API Impact CO₂ de l'ADEME.
+- L'outil vise l'ordre de grandeur et la prise de conscience, non la comptabilité carbone
+  réglementaire. Il ne remplace ni un bilan GES ni une analyse de cycle de vie complète.
+
+## Autres ressources de l'INR / Other ISIT resources
+
+- GR491, guide de conception responsable de services numériques : https://gr491.isit-europe.org
+- Charte Numérique Responsable : https://charter.isit-europe.org
+- Académie NR (MOOC) : https://www.academie-nr.org
+- Espace membres : https://members.isit-europe.org
+
+## Dépôt / Repository
+
+https://github.com/Institut-du-Numerique-Responsable/myimpact

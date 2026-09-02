@@ -1,0 +1,4 @@
+
+# Caches Python des outils de build
+__pycache__/
+*.pyc
