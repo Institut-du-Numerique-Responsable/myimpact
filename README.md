@@ -191,7 +191,7 @@ Version 1.3 restores browser zoom, visible keyboard focus and accessible disclos
 
 - static HTML5, CSS and JavaScript;
 - jQuery 3.7.1;
-- tarteaucitron.js for consent management;
+- tarteaucitron.js 1.34.0 for consent management;
 - self-hosted Matomo analytics;
 - the public Impact CO₂ API, with local fallback factors;
 - self-hosted Montserrat variable font;
@@ -224,12 +224,41 @@ myimpact/
 ├── equipment-additions.js
 ├── cookie-consent.js
 ├── stylesheet-inr.css
+├── impactco2-equivalents.js
 ├── fr/ nl/ de/ es/ it/
 ├── tests/check-static.rb
+├── tools/build-seo.py
+├── docs/
 ├── tarteaucitron/
 ├── sitemap.xml
-└── robots.txt
+├── robots.txt
+├── llms.txt
+└── llms-full.txt
 ```
+
+## Search engines and answer engines
+
+`hreflang` links, structured data, `sitemap.xml` and `llms-full.txt` are
+**generated** across the 25 pages and six languages:
+
+```bash
+python3 tools/build-seo.py
+```
+
+Run it after adding or renaming a page, and after revising the impact factors.
+The site also ships `llms.txt` and `CITATION.cff` so that answer engines can
+quote it accurately. See [`docs/seo.md`](docs/seo.md).
+
+## Operations documentation
+
+Written in French, for the team that maintains the site:
+
+| Document | Contents |
+|---|---|
+| [`docs/architecture.md`](docs/architecture.md) | File layout, calculation flow, analytics, security headers and CSP |
+| [`docs/deploiement.md`](docs/deploiement.md) | Publishing to production, post-deployment checks, rollback, prod/repository comparison |
+| [`docs/seo.md`](docs/seo.md) | SEO generator, files for answer engines, attribution, IndexNow |
+| [`docs/maintenance.md`](docs/maintenance.md) | Third-party library updates, impact factors, adding a language, legal notices, schedule |
 
 ## Contributors and history
 
