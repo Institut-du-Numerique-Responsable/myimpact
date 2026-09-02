@@ -37,3 +37,9 @@ RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
   ExpiresByType image/ico            "access plus 1 year"
   ExpiresByType font/woff2           "access plus 1 year"
 </IfModule>
+
+# ── Fichiers de développement non destinés au web ────────────────────────────
+# Ils sont versionnés et déployés pour que la production reste identique au
+# dépôt, mais n'ont aucune raison d'être servis.
+RedirectMatch 404 ^/(tools|\.github)(/|$)
+RedirectMatch 404 ^/\.gitignore$
