@@ -24,6 +24,16 @@
   tarteaucitron.user.matomoId = 6;
   tarteaucitron.user.matomoHost = "https://analytic.institutnr.org:8443/";
   tarteaucitron.user.matomoCustomJSPath = "https://analytic.institutnr.org:8443/matomo.js";
+  // Après consentement seulement : conteneur Matomo Tag Manager INR (événements).
+  tarteaucitron.user.matomoMore = function () {
+    // Matomo Tag Manager INR : événements (lecture, formulaires, boutons clés),
+    // sans page vue ni cookie. Conteneur partagé par les sites INR.
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+    var dm = document, gm = dm.createElement('script'), sm = dm.getElementsByTagName('script')[0];
+    gm.async = true; gm.src = 'https://analytic.institutnr.org:8443/js/container_6cIda3yV.js';
+    sm.parentNode.insertBefore(gm, sm);
+  };
 
   tarteaucitron.init({
     privacyUrl: legalPages[language] || legalPages.en,
