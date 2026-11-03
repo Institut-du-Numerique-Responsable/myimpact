@@ -1,15 +1,35 @@
 Copyright © Institut du Numérique Responsable (INR), ISIT Belgique, ISIT Suisse.
-Tous droits réservés. / All rights reserved.
 
-Le code source, les contenus, les textes et les éléments graphiques de ce dépôt
-sont la propriété de l'Institut du Numérique Responsable. Toute reproduction,
-représentation, modification, publication ou adaptation, même partielle, est
-interdite sans autorisation écrite préalable de l'INR.
+MyImpact est distribué sous deux licences libres :
 
-The source code, content, texts and graphic elements in this repository are the
-property of the Institut du Numérique Responsable. Any reproduction,
-representation, modification, publication or adaptation, even partial, is
-prohibited without prior written permission from INR.
+- le code source (HTML, CSS, JavaScript, scripts de `tools/` et de `tests/`) :
+  licence publique de l'Union européenne EUPL-1.2, voir LICENSES/EUPL-1.2.txt ;
+- les contenus (textes, traductions, documentation, captures d'écran et
+  illustrations propres au projet) : Creative Commons Attribution 4.0
+  International (CC BY 4.0), voir LICENSES/CC-BY-4.0.txt.
+
+Vous pouvez utiliser, adapter et redistribuer MyImpact, y compris dans un cadre
+commercial, en respectant ces licences. Citez la source : « MyImpact, Institut
+du Numérique Responsable (INR) ».
+
+Les noms, logos et marques INR et ISIT ne sont pas couverts par ces licences.
+Une version adaptée ne doit pas laisser croire qu'elle est publiée ou
+approuvée par l'INR.
+
+MyImpact is released under two open licences:
+
+- source code (HTML, CSS, JavaScript, `tools/` and `tests/` scripts):
+  European Union Public Licence EUPL-1.2, see LICENSES/EUPL-1.2.txt;
+- content (texts, translations, documentation, screenshots and project
+  illustrations): Creative Commons Attribution 4.0 International (CC BY 4.0),
+  see LICENSES/CC-BY-4.0.txt.
+
+You may use, adapt and redistribute MyImpact, including commercially, under
+these licences. Credit the source: "MyImpact, Institut du Numérique
+Responsable (INR)".
+
+INR and ISIT names, logos and trademarks are not covered by these licences.
+An adapted version must not suggest that INR publishes or endorses it.
 
 Contact : contact@institutnr.org
 
@@ -17,22 +37,22 @@ Contact : contact@institutnr.org
 
 Composants tiers / Third-party components
 
-Les bibliothèques, polices et icônes distribuées avec ce projet restent régies
-par leurs propres licences. Voir THIRD_PARTY_NOTICES.md.
+Les bibliothèques, polices, icônes et données sources distribuées avec ce
+projet restent régies par leurs propres licences. Voir THIRD_PARTY_NOTICES.md.
 
-The libraries, fonts and icons shipped with this project remain governed by
-their own licences. See THIRD_PARTY_NOTICES.md.
+The libraries, fonts, icons and source data shipped with this project remain
+governed by their own licences. See THIRD_PARTY_NOTICES.md.
 
 ---
 
 Note sur l'historique / Note on history
 
-Les versions de ce dépôt publiées avant le 2 septembre 2026 l'ont été sous
-CC0 1.0 Universal. Une mise à disposition sous CC0 étant irrévocable, ces
-versions demeurent réutilisables selon les termes de CC0 ; la présente licence
-s'applique aux versions publiées à compter de cette date.
+Les versions publiées avant le 2 septembre 2026 l'ont été sous CC0 1.0
+Universal et restent réutilisables selon ces termes. Les versions publiées du
+2 septembre 2026 jusqu'à ce changement l'ont été sous licence propriétaire ;
+l'INR les place désormais sous les licences ci-dessus.
 
-Versions of this repository published before 2 September 2026 were released
-under CC0 1.0 Universal. A CC0 dedication being irrevocable, those versions
-remain reusable under CC0; this licence applies to versions published from
-that date onwards.
+Versions published before 2 September 2026 were released under CC0 1.0
+Universal and remain reusable under those terms. Versions published from
+2 September 2026 until this change were released under a proprietary licence;
+INR now places them under the licences above.

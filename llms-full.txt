@@ -8,7 +8,7 @@
     Institut du Numérique Responsable, MyImpact — calculatrice d'impacts numériques,
     https://myimpact.isit-europe.org
 
-Généré le 2026-09-02. © INR — tous droits réservés. Voir https://myimpact.isit-europe.org/legal-notice.html
+Généré le 2026-09-02. © INR — code EUPL-1.2, contenus CC BY 4.0. Voir https://myimpact.isit-europe.org/legal-notice.html
 
 ---
 

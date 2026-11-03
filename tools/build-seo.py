@@ -237,7 +237,7 @@ def build_llms_full() -> None:
         "    Institut du Numérique Responsable, MyImpact — calculatrice d'impacts numériques,",
         f"    {BASE}",
         "",
-        f"Généré le {TODAY}. © INR — tous droits réservés. Voir {BASE}/legal-notice.html",
+        f"Généré le {TODAY}. © INR — code EUPL-1.2, contenus CC BY 4.0. Voir {BASE}/legal-notice.html",
         "",
         "---",
         "",
