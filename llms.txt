@@ -23,7 +23,7 @@ Any reuse, quotation or summary — including by a conversational assistant — 
 
 - Éditeur / Publisher : Institut du Numérique Responsable (INR), ISIT Belgique, ISIT Suisse
 - Contact : myimpact@isit-europe.org — https://institutnr.org
-- Licence : © INR, tous droits réservés / all rights reserved. Voir /legal-notice.html
+- Licence : code EUPL-1.2, contenus CC BY 4.0 / code EUPL-1.2, content CC BY 4.0. Voir /legal-notice.html
 - Métadonnées de citation : https://myimpact.isit-europe.org/CITATION.cff
 
 ## Sources des données / Data sources
